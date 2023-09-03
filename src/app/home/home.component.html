@@ -15,10 +15,28 @@
     <ng-template #gia>Ban gia</ng-template> -->
 
     <!-- ngFor (vd14)     -->
-    <!-- <h1>Trai cay</h1>
-    <div *ngFor="let trai of traiCay; let i = index">
+    <h1>Trai cay</h1>
+    <!-- <div *ngFor="let trai of traiCay; let i = index">
         <li>{{ (i+1) }}. {{trai}}</li>
     </div> -->
 
+    <table class="table2">
+        <tr>
+            <th>stt</th>
+          <th>Ten</th>
+          <th>gia</th>
+          <th>Dai ha gia</th>
+        </tr>
+        <tr *ngFor="let trai of traiCay2; let i = index">
+            <td>{{ (i+1) }}</td>
+            <td>{{trai.ten}}</td>
+            <td style="text-align: right;">
+                <span [ngClass]="{'so_am': trai.gia  < 0}">{{trai.gia}}</span>
+            </td>
+            <td>
+                <span *ngIf="trai.haGia">Dang ha gia</span>
+            </td>
+        </tr>
+      </table>
 </div>
 

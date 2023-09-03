@@ -1,4 +1,20 @@
 .test {
     border: 1px solid red;
-    width: 200px;
+    width: auto;
 }
+
+.table2 {
+    border-collapse: collapse;
+  }
+
+  table, td, th {
+    border: 1px solid black;
+  }
+  
+  td, th {
+    min-width: 100px;
+  }
+
+  .so_am{
+    color: red;
+  }
