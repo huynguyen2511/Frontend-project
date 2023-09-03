@@ -34,7 +34,7 @@
                 <span [ngClass]="{'so_am': trai.gia  < 0}">{{trai.gia}}</span>
             </td>
             <td>
-                <span *ngIf="trai.haGia">Dang ha gia</span>
+                <span>{{ trai.haGia | onSale | uppercase }}</span>
             </td>
         </tr>
       </table>
