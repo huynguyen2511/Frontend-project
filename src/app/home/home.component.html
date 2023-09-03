@@ -29,7 +29,7 @@
         </tr>
         <tr *ngFor="let trai of traiCay2; let i = index">
             <td>{{ (i+1) }}</td>
-            <td>{{trai.ten}}</td>
+            <td>{{trai.ten | uppercase}}</td>
             <td style="text-align: right;">
                 <span [ngClass]="{'so_am': trai.gia  < 0}">{{trai.gia}}</span>
             </td>
