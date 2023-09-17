@@ -1,18 +1,29 @@
-<mat-toolbar color="accent">
+<mat-toolbar color="white">
     <span>
-        <a routerLink="/">
+        <a routerLink="/" style="font-size: 22px; color: rgb(113, 74, 137);">
             <span>Web Tuyen Dung</span>
         </a>
     </span>
-    <span>
-        <a routerLinkActive="active-link" routerLink="/posts">
-            <span>Posts</span>
+    <span class="nav1">
+        <a routerLinkActive="active-link" routerLink="/jobs">
+            <span>Jobs</span>
         </a>
-        <a routerLinkActive="active-link" routerLink="/login">
+        <a routerLinkActive="active-link" routerLink="/company">
+            <span>Company</span>
+        </a>
+    </span>
+    <span class="nav2">
+        <!-- <a routerLinkActive="active-link" routerLink="/posts">
+            <span>Posts</span>
+        </a> -->
+        <a routerLinkActive="active-link" routerLink="/login" style="color: gray;">
             <span>Login</span>
         </a>
-        <a routerLinkActive="active-link" routerLink="/signup">
+        <a routerLinkActive="active-link" routerLink="/signup" style="background-color: rgb(178, 76, 76); color: white;">
             <span>Signup</span>
+        </a>
+        <a routerLinkActive="active-link" routerLink="/employer" style="background-color: rgb(33, 33, 33); color: white;">
+            <span>Post jobs, find resumes</span>
         </a>
     </span>
 </mat-toolbar>
