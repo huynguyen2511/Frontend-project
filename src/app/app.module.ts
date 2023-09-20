@@ -18,6 +18,11 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { EmployerNavComponent } from './employerComp/employer-nav/employer-nav.component';
+import { EmployerLoginComponent } from './employerComp/employer-login/employer-login.component';
+import { EmployerRegisComponent } from './employerComp/employer-regis/employer-regis.component';
+import { EmployerHomeComponent } from './employerComp/employer-home/employer-home.component';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +32,10 @@ import { PostsComponent } from './components/posts/posts.component';
     LoginComponent,
     HomeComponent,
     PostsComponent,
+    EmployerNavComponent,
+    EmployerLoginComponent,
+    EmployerRegisComponent,
+    EmployerHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +48,8 @@ import { PostsComponent } from './components/posts/posts.component';
     MatListModule,
     MatToolbarModule,
     HttpClientModule,
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

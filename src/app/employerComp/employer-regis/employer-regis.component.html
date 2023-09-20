@@ -1,0 +1,55 @@
+<div class="container row">
+  <div class="col-md-4">
+    <form action="" method="POST" [formGroup]="employerRegisForm" (ngSubmit)="onCreate()">
+      <legend>Registation Form</legend>
+  
+      <div class="form-group">
+        <mat-label>Fullname</mat-label>
+        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="name" />
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="email" />
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" class="form-control" placeholder="Ex. Jon" formControlName="password" />
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Sex</mat-label>
+        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="sex" />
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Phone</mat-label>
+        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="phone" />
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Job Position</mat-label>
+        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="jobPosition" />
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Work Location</mat-label>
+        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="workLocation" />
+      </div>
+  
+      <div class="form-group">
+        <mat-label>District</mat-label>
+        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="district" />
+      </div>
+  
+      <button
+        color="accent"
+        class="btn btn-primary"
+        type="submit"
+      >
+        <span>Sign up</span>
+      </button>
+    </form>
+  </div>
+</div>
