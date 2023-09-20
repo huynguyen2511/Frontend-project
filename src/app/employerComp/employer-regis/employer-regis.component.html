@@ -1,46 +1,47 @@
-<div class="container row">
-  <div class="col-md-4">
-    <form action="" method="POST" [formGroup]="employerRegisForm" (ngSubmit)="onCreate()">
+<section class="auth">
+  <div class="auth-inner">
+    <form action="" method="POST" [formGroup]="employerRegisForm" (ngSubmit)="onCreate()" class="auth-form">
+      <h1>Welcome to Web tuyen dung</h1>
       <legend>Registation Form</legend>
   
       <div class="form-group">
         <mat-label>Fullname</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="name" />
+        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="name" />
       </div>
   
       <div class="form-group">
         <mat-label>Email</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="email" />
+        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="email" />
       </div>
   
       <div class="form-group">
         <mat-label>Password</mat-label>
-        <input matInput type="password" class="form-control" placeholder="Ex. Jon" formControlName="password" />
+        <input matInput type="password" class="form-control" placeholder="Ex. hehe" formControlName="password" />
       </div>
   
       <div class="form-group">
         <mat-label>Sex</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="sex" />
+        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="sex" />
       </div>
   
       <div class="form-group">
         <mat-label>Phone</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="phone" />
+        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="phone" />
       </div>
   
       <div class="form-group">
         <mat-label>Job Position</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="jobPosition" />
+        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="jobPosition" />
       </div>
   
       <div class="form-group">
         <mat-label>Work Location</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="workLocation" />
+        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="workLocation" />
       </div>
   
       <div class="form-group">
         <mat-label>District</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. Jon" formControlName="district" />
+        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="district" />
       </div>
   
       <button
@@ -50,6 +51,10 @@
       >
         <span>Sign up</span>
       </button>
+      <div class="h2">     
+        <h2>Already have account? <a routerLink="/employerlogin">Login now.</a> </h2>
+      </div>
     </form>
+    
   </div>
-</div>
+</section>

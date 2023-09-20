@@ -1,25 +1,30 @@
-<div class="container">
-    <div class="row">
-        <h2>Login</h2>
-        <hr/>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <form action="">
-                <div class="form-group">
-                    <label for="exampleInputEmail">Email address</label>
-                    <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="stemail" placeholder="Ex. abc@gmaill.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleInputPassword">Password</label>
-                    <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="stpassword" placeholder="Ex. password">
-                </div>
-                <br>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
-                </div>
-            </form>
+<section class="auth">
+    <div class="auth-inner">
+      <form action="" method="POST" [formGroup]="loginForm" (ngSubmit)="onCreate()" class="auth-form">
+        <h1>Welcome to Web tuyen dung</h1>
+        <legend>Login Form</legend>
+    
+        <div class="form-group">
+          <mat-label>Email</mat-label>
+          <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="email" />
         </div>
+    
+        <div class="form-group">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" class="form-control" placeholder="Ex. hehe" formControlName="password" />
+        </div>
+    
+        <button
+          color="accent"
+          class="btn btn-primary"
+          type="submit"
+        >
+          <span>Login</span>
+        </button>
+        <div class="h2">     
+          <h2>Don't have an account? <a routerLink="/signup">Sign-up now.</a> </h2>
+        </div>
+      </form>
+      
     </div>
-</div>
+  </section>

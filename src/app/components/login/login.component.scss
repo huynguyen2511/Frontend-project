@@ -1,8 +1,47 @@
-mat-form-field {
-    width: 100%;
+button {
+  width: 600px;
+  margin-top: 20px;
+}
+
+.auth {
+  -ms-overflow-style: none;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-family: Inter,sans-serif;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 60px 16px 20px;
+  position: relative;
+  scrollbar-width: none;
+  .auth-inner {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
   }
-  
-  button {
-    float: right;
-    width: 200px;
+  .auth-form {
+    background-color: #fff;
+    width: 600px;
+
+    .form-group{
+      margin: 10px 0px;
+    }
+
+    .h2{
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
   }
+
+  legend{
+    margin-bottom: 30px;
+  }
+
+  h1{
+    font-size: 35px;
+    color: lightblue;
+  }
+}
+

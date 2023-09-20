@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 
@@ -9,34 +8,26 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   
-  name : string ="";
-  email: string ="";
-  password : string ="";
-  avatar : string ="";
+  constructor(private authService: AuthService) {}
 
-  constructor (private http : HttpClient) {}
+  regisForm: FormGroup = new FormGroup({
+    name: new FormControl(),
+    email: new FormControl(),
+    password: new FormControl()
+  });
 
   ngOnInit(): void {
     
   }
 
-  signup()
-  {
-    let bodydata = {
-      "name" : this.name,
-      "email" : this.email,
-      "password" : this.password
-    } ;
-    this.http.post("http://localhost:5000/api/v1/auth/register", bodydata).subscribe((resultData: any)=>
-    {
-      console.log(resultData);
-      alert("Registation Successfully")
-    });
+  onCreate(){
+    this.authService.authRegis(this.regisForm.value).subscribe(data =>{
+      console.log(data);
+      
+    })
   }
 
-  save(){
-    this.signup();
-  }
+  
 }

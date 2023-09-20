@@ -1,43 +1,37 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   
-  email: string ="";
-  password : string ="";
+  constructor(private authService: AuthService, private router:Router) {}
 
-  isLogin: boolean = true;
+  loginForm: FormGroup = new FormGroup({
+    email: new FormControl,
+    password: new FormControl(),
+  });
 
-  errorMsg: string = "";
-
-  constructor (private router:Router ,private http : HttpClient) {}
-
-  login() {
-    console.log(this.email);
-    console.log(this.password);
+  ngOnInit(): void {
     
-    let bodyData={
-      email : this.email,
-      password: this.password
-    };
+  }
 
-    this.http.post("http://localhost:5000/api/v1/auth/login", bodyData).subscribe((resultData: any) =>{
-      console.log(resultData);
+  onCreate(){
+    this.authService.authLogin(this.loginForm.value).subscribe(data =>{
+      console.log(data);
 
-      if(resultData.status){
-
-        this.router.navigateByUrl('')
+      if(data.status){
+        alert("Login successful");
+        this.router.navigateByUrl('/employer')
       }
       else{
         alert("Incorrect email or password");
         console.log("Error Login");
-        
       }
     })
   }
