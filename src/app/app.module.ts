@@ -12,6 +12,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatSidenavModule } from "@angular/material/sidenav";
 
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -21,7 +22,9 @@ import { PostsComponent } from './components/posts/posts.component';
 import { EmployerNavComponent } from './employerComp/employer-nav/employer-nav.component';
 import { EmployerLoginComponent } from './employerComp/employer-login/employer-login.component';
 import { EmployerRegisComponent } from './employerComp/employer-regis/employer-regis.component';
-import { EmployerHomeComponent } from './employerComp/employer-home/employer-home.component';
+import { EmployerDashboardComponent } from './employerComp/employer-dashboard/employer-dashboard.component';
+
+
 
 
 @NgModule({
@@ -35,7 +38,8 @@ import { EmployerHomeComponent } from './employerComp/employer-home/employer-hom
     EmployerNavComponent,
     EmployerLoginComponent,
     EmployerRegisComponent,
-    EmployerHomeComponent,
+    EmployerDashboardComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,8 @@ import { EmployerHomeComponent } from './employerComp/employer-home/employer-hom
     MatToolbarModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSidenavModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

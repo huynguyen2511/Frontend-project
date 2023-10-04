@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { EmployerService } from 'src/app/services/employer.service';
+import { EmployerAuthService } from 'src/app/services/employer-auth.service';
 
 @Component({
   selector: 'app-employer-login',
@@ -11,29 +11,25 @@ import { EmployerService } from 'src/app/services/employer.service';
 export class EmployerLoginComponent implements OnInit{
 
   
-  constructor(private employerService: EmployerService, private router:Router) {}
+  constructor(private employerAuthService: EmployerAuthService, private router:Router) {}
 
   employerLoginForm: FormGroup = new FormGroup({
-    email: new FormControl(),
-    password: new FormControl(),
-  });
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+  }, {updateOn: 'submit'});
 
   ngOnInit(): void {
     
   }
 
   onCreate(){
-    this.employerService.employerLogin(this.employerLoginForm.value).subscribe(data =>{
-      console.log(data);
-
-      if(data.status){
-        alert("Login successful");
-        this.router.navigateByUrl('/employer')
-      }
-      else{
-        alert("Incorrect email or password");
-        console.log("Error Login");
-      }
-    })
+    if(this.employerLoginForm.invalid){
+      return;
+    }
+    
+    this.employerAuthService.employerLogin(this.employerLoginForm.value).subscribe((res: any) =>{
+      console.log(res);
+        this.router.navigateByUrl('/dashboard')
+      });
   }
 }

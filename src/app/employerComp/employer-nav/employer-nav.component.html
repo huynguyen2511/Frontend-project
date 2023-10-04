@@ -12,7 +12,7 @@
             <span>Company</span>
         </a>
     </span> -->
-    <span class="nav2">
+    <span class="nav2" *ngIf="isLoggedOut$ | async as isLoggedOut">
         <!-- <a routerLinkActive="active-link" routerLink="/posts">
             <span>Posts</span>
         </a> -->
@@ -26,4 +26,12 @@
             <span>Post CV, search for jobs</span>
         </a>
     </span>
+    <div class="dropdown" *ngIf="isLoggedIn$ | async as isLoggedIn">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a (click)="logout()">Logout</a>
+        </div>
+      </div>
 </mat-toolbar>

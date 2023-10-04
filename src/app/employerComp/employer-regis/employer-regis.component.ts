@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { EmployerAuthService } from "src/app/services/employer-auth.service";
 
-import { EmployerService } from "src/app/services/employer.service";
 
 @Component({
   selector: 'app-employer-regis',
@@ -11,7 +11,7 @@ import { EmployerService } from "src/app/services/employer.service";
 })
 export class EmployerRegisComponent implements OnInit {
   
-  constructor(private employerService: EmployerService) {}
+  constructor(private employerAuthService: EmployerAuthService) {}
 
   employerRegisForm: FormGroup = new FormGroup({
     name: new FormControl(),
@@ -29,7 +29,7 @@ export class EmployerRegisComponent implements OnInit {
   }
 
   onCreate(){
-    this.employerService.employerRegister(this.employerRegisForm.value).subscribe(data =>{
+    this.employerAuthService.employerRegister(this.employerRegisForm.value).subscribe(data =>{
       console.log(data);
       
     })
