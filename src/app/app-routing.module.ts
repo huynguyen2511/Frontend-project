@@ -9,6 +9,9 @@ import { SignupComponent } from "./components/signup/signup.component";
 import { EmployerLoginComponent } from './employerComp/employer-login/employer-login.component';
 import { EmployerRegisComponent } from './employerComp/employer-regis/employer-regis.component';
 import { EmployerDashboardComponent } from './employerComp/employer-dashboard/employer-dashboard.component';
+import { EmployerSettingComponent } from './employerComp/employer-setting/employer-setting.component';
+import { CvManagementComponent } from './employerComp/cv-management/cv-management.component';
+import { RecruitmentPostComponent } from './employerComp/recruitment-post/recruitment-post.component';
 
 
 const routes: Routes = [
@@ -19,6 +22,9 @@ const routes: Routes = [
   { path: "dashboard", component: EmployerDashboardComponent },
   { path: "employerlogin", component: EmployerLoginComponent },
   { path: "employersignup", component: EmployerRegisComponent },
+  { path: "account-setting", component: EmployerSettingComponent },
+  { path: "cv-management", component: CvManagementComponent },
+  { path: "recruitment-post", component: RecruitmentPostComponent },
   { path: "**", redirectTo: "" },
 ];
 

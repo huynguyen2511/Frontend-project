@@ -12,7 +12,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -23,6 +24,9 @@ import { EmployerNavComponent } from './employerComp/employer-nav/employer-nav.c
 import { EmployerLoginComponent } from './employerComp/employer-login/employer-login.component';
 import { EmployerRegisComponent } from './employerComp/employer-regis/employer-regis.component';
 import { EmployerDashboardComponent } from './employerComp/employer-dashboard/employer-dashboard.component';
+import { CvManagementComponent } from './employerComp/cv-management/cv-management.component';
+import { RecruitmentPostComponent } from './employerComp/recruitment-post/recruitment-post.component';
+import { EmployerSettingComponent } from './employerComp/employer-setting/employer-setting.component';
 
 
 
@@ -39,6 +43,9 @@ import { EmployerDashboardComponent } from './employerComp/employer-dashboard/em
     EmployerLoginComponent,
     EmployerRegisComponent,
     EmployerDashboardComponent,
+    CvManagementComponent,
+    RecruitmentPostComponent,
+    EmployerSettingComponent,
 
   ],
   imports: [
@@ -54,7 +61,8 @@ import { EmployerDashboardComponent } from './employerComp/employer-dashboard/em
     HttpClientModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatSidenavModule 
+    MatSidenavModule,
+    BrowserAnimationsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,8 @@ import { EmployerAuthService } from 'src/app/services/employer-auth.service';
   styleUrls: ['./employer-nav.component.scss']
 })
 export class EmployerNavComponent implements OnInit{
+  opened = false;
+
   public isLoggedIn$: Observable<boolean> = new Observable<boolean>();
   public isLoggedOut$: Observable<boolean> = new Observable<boolean>();
 
@@ -21,4 +23,6 @@ export class EmployerNavComponent implements OnInit{
   public logout(){
     this.employerAuthService.logout()
   }
+
+  
 }
