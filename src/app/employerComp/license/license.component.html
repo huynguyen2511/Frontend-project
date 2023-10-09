@@ -1,0 +1,45 @@
+<mat-toolbar>
+    <p>Business license</p>
+</mat-toolbar>
+<div class="updateForm">
+    <form action="" method="PUT" class="form">
+        <div class="table-form">
+            <table>
+                <tr>
+                    <th style="height: 40px; width: 45%; padding-top: 10px; padding-left: 23px;">
+                        <p>Status: </p>
+                    </th>
+                </tr>
+                <tr class="tr">
+                    <th>
+                        <p>Business license/authorization letter/employee card</p>
+                    </th>
+                    <th>
+                        <p>Additional documents</p>
+                    </th>
+                </tr>
+                <tr class="tr">
+                    <th>
+                        <div class="file-container" *ngIf="!file">
+                            <input type="file" (change)="getFile($event)" class="file">
+                        </div>
+                        <div *ngIf="file">
+                            File name: {{file.name}} <br/>
+                            <button (click)="file= undefined">Cancel</button>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="file-container" *ngIf="!additionalFile">
+                            <input type="file" (change)="getAdditionalFile($event)" class="file">
+                        </div>
+                        <div *ngIf="additionalFile">
+                            File name: {{additionalFile.name}} <br/>
+                            <button (click)="additionalFile= undefined">Cancel</button>
+                        </div>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <button class="btn btn-primary" type="submit"><span>Upload</span></button>
+    </form>
+</div>

@@ -27,6 +27,9 @@ import { EmployerDashboardComponent } from './employerComp/employer-dashboard/em
 import { CvManagementComponent } from './employerComp/cv-management/cv-management.component';
 import { RecruitmentPostComponent } from './employerComp/recruitment-post/recruitment-post.component';
 import { EmployerSettingComponent } from './employerComp/employer-setting/employer-setting.component';
+import { EmployerInfoComponent } from './employerComp/employer-info/employer-info.component';
+import { LicenseComponent } from './employerComp/license/license.component';
+import { CompanyInfoComponent } from './employerComp/company-info/company-info.component';
 
 
 
@@ -46,6 +49,9 @@ import { EmployerSettingComponent } from './employerComp/employer-setting/employ
     CvManagementComponent,
     RecruitmentPostComponent,
     EmployerSettingComponent,
+    EmployerInfoComponent,
+    LicenseComponent,
+    CompanyInfoComponent,
 
   ],
   imports: [

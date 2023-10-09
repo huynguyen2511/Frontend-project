@@ -12,6 +12,9 @@ import { EmployerDashboardComponent } from './employerComp/employer-dashboard/em
 import { EmployerSettingComponent } from './employerComp/employer-setting/employer-setting.component';
 import { CvManagementComponent } from './employerComp/cv-management/cv-management.component';
 import { RecruitmentPostComponent } from './employerComp/recruitment-post/recruitment-post.component';
+import { EmployerInfoComponent } from './employerComp/employer-info/employer-info.component';
+import { LicenseComponent } from './employerComp/license/license.component';
+import { CompanyInfoComponent } from './employerComp/company-info/company-info.component';
 
 
 const routes: Routes = [
@@ -19,12 +22,23 @@ const routes: Routes = [
   { path: "posts", component: PostsComponent},
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },
-  { path: "dashboard", component: EmployerDashboardComponent },
+
+
+  
+  { path: "dashboard", component: EmployerDashboardComponent , 
+    children:[
+      { path: "account-setting", component: EmployerSettingComponent,
+        children:[
+          {path: "employer-info" , component: EmployerInfoComponent},
+          {path: "license" , component: LicenseComponent},
+          {path: "company-info" , component: CompanyInfoComponent}
+        ] },
+      { path: "cv-management", component: CvManagementComponent },
+      { path: "recruitment-post", component: RecruitmentPostComponent }
+    ]
+  },
   { path: "employerlogin", component: EmployerLoginComponent },
   { path: "employersignup", component: EmployerRegisComponent },
-  { path: "account-setting", component: EmployerSettingComponent },
-  { path: "cv-management", component: CvManagementComponent },
-  { path: "recruitment-post", component: RecruitmentPostComponent },
   { path: "**", redirectTo: "" },
 ];
 

@@ -1,0 +1,67 @@
+<mat-toolbar>
+    <p>Update company information</p>
+</mat-toolbar>
+<div class="updateForm">
+    <form action="" method="PUT" class="form">
+        <div class="table-form">
+            <table>
+                <tr>
+                    <th style="height: 40px; width: 95%; padding-top: 10px; ">
+                        <p>Logo </p>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="thUpdate">
+                        <mat-label>Company name</mat-label>
+                        <input matInput type="text" class="form-control" placeholder="Ex. hehe"  />
+                    </th>
+                    <th class="thUpdate">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="text" class="form-control" placeholder="Ex. hehe"  />
+                    </th>
+                </tr>
+                <tr>
+                    <th class="thUpdate">
+                        <mat-label>Tax number</mat-label>
+                        <input matInput type="text" class="form-control" placeholder="Ex. hehe" />
+                    </th>
+                    <th class="thUpdate">
+                        <mat-label>Phone number</mat-label>
+                        <input matInput type="text" class="form-control" placeholder="Ex. hehe"  />
+                    </th>
+                </tr>
+                <tr>
+                    <th class="thUpdate">
+                        <mat-label>Field of activity</mat-label>
+                        <select name="field_of-activity" id="" class="select">
+                            <option>--Select--</option>
+                            <option *ngFor="let i of fieldData">
+                                {{i}}
+                            </option>
+                        </select>
+                    </th>
+                    <th class="thUpdate">
+                        <mat-label>Staff size</mat-label>
+                        <select name="field_of-activity" id="" class="select">
+                            <option>--Select--</option>
+                            <option *ngFor="let i of fieldData">
+                                {{i}}
+                            </option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="thUpdate">
+                        <mat-label>Address</mat-label>
+                        <input matInput type="text" class="form-control" placeholder="Ex. hehe" />
+                    </th>
+                    <th class="thUpdate">
+                        <mat-label>Description</mat-label>
+                        <input matInput type="text" class="form-control" placeholder="Ex. hehe"  />
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <button class="btn btn-primary" type="submit"><span>Save</span></button>
+    </form>
+</div>

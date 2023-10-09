@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./employer-setting.component.scss']
 })
 export class EmployerSettingComponent {
-
+  opened = true;
 }

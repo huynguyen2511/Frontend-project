@@ -1,36 +1,66 @@
 mat-toolbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 64px;
+  background-color: #3b3854;
+
+  justify-content: space-between;
+  font-family:Arial, Helvetica, sans-serif;
+  
+  mat-toolbar-row {
+    padding: 0;
+
+    .menuBtn{
+      color: white;
+      height: inherit;
+      font-size: 22px;
+      border-radius: 0;
+    }
+
+    .menuBtn:hover{
+      background-color: #534e6f;
+    }
+
     a {
       text-decoration: none;
       margin: 0 10px;
-      padding: 10px 15px;
+      padding: 3px 15px;
       &.active-link {
         color: rgb(132, 132, 132);
       }
     }
+      
+    .nav2{
+      display: flex;
+      justify-content: flex-end;
+      flex-grow: 8;
+      font-size: 18px;
+      
+      a{
+        text-align: center;
+        border: 0.5px solid rgb(203, 203, 203);
+        border-radius: 20px;
+        color: white;
+      }
+
+      .signup{
+        background-color: rgb(178, 76, 76); 
+      }
+
+      .cv{
+        background-color: rgb(33, 33, 33); 
+      }
+
+      a:hover{
+        background-color: rgb(0, 92, 90);
+      }
+      a:active{
+        background-color: rgb(6, 167, 169);
+      }
+      
+    }
   }
 
-.nav1{
-  font-size: 18px;
-  
-  a{
-    color: black;
-  }
 }
 
-.nav2{
-  font-size: 18px;
 
-  a{
-    text-align: center;
-    border: 1px solid greenyellow;
-    border-radius: 10px;
-  }
-  
-
-}
 
 .dropdown {
   position: relative;
@@ -74,7 +104,48 @@ mat-sidenav-container{
   height: calc(205vh - 115vh);
 
   mat-sidenav{
-    width: 200px;
-    background-color: #eee;
+    background-color: #534e6f;
+    
   }
+
+  mat-list{
+    width: 100%;
+  
+   
+
+    mat-list-item{
+      display: flex;
+      align-items: center;
+      height: 3rem;
+      text-decoration: none;
+      transition: all .3s ease;
+      margin-right: 0;
+
+      mat-icon{
+        color: #f1f1f1;
+        font-size: 22px;
+        width: 2rem;
+        min-width: 2rem;
+        margin: 3px 0 0 0;
+        text-align: center;
+      }
+
+      p{
+        color: #f1f1f1;
+        float: right;
+        margin: 3px 0 0 0;
+      }
+    } 
+    mat-list-item:hover {
+      background-color: rgb(255, 255, 255);
+      mat-icon{
+        color: #3b3854;
+      }
+      p{
+        color: #3b3854;
+      }
+      
+    }
+  }
+
 }

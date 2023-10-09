@@ -1,34 +1,23 @@
-<mat-toolbar color="white">
+<mat-toolbar>
     <mat-toolbar-row>
-        <button mat-button (click)="opened=!opened"><mat-icon>menu</mat-icon></button>
-        <button mat-button routerLink="/dashboard" style="font-size: 22px; color: rgb(113, 74, 137);"><mat-icon>home</mat-icon>Web Tuyen Dung</button>
-        <!-- <span>
-            <a routerLink="/" style="font-size: 22px; color: rgb(113, 74, 137);">
-                <span>Web Tuyen Dung</span>
-            </a>
-        </span> -->
-        <!-- <span class="nav1">
-            <a routerLinkActive="active-link" routerLink="/jobs">
-                <span>Jobs</span>
-            </a>
-            <a routerLinkActive="active-link" routerLink="/company">
-                <span>Company</span>
-            </a>
-        </span> -->
+        <button class="menuBtn" mat-button (click)=" isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+        <button mat-button routerLink="/dashboard" style="font-size: 22px; color: rgb(255, 255, 255);"><mat-icon>home</mat-icon>Web Tuyen Dung</button>
+
         <span class="nav2" *ngIf="isLoggedOut$ | async as isLoggedOut">
             <!-- <a routerLinkActive="active-link" routerLink="/posts">
                 <span>Posts</span>
             </a> -->
-            <a routerLinkActive="active-link" routerLink="/employerlogin" style="color: gray;">
+            <a class="login" routerLinkActive="active-link" routerLink="/employerlogin">
                 <span>Login</span>
             </a>
-            <a routerLinkActive="active-link" routerLink="/employersignup" style="background-color: rgb(178, 76, 76); color: white;">
+            <a class="signup" routerLinkActive="active-link" routerLink="/employersignup">
                 <span>Signup</span>
             </a>
-            <a routerLinkActive="active-link" routerLink="" style="background-color: rgb(33, 33, 33); color: white;">
+            <a class="cv" routerLinkActive="active-link" routerLink="">
                 <span>Post CV, search for jobs</span>
             </a>
         </span>
+
         <div class="dropdown" *ngIf="isLoggedIn$ | async as isLoggedIn">
             <button class="dropbtn">Dropdown</button>
             <div class="dropdown-content">
@@ -39,16 +28,16 @@
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
-<mat-sidenav-container>
-    <mat-sidenav [(opened)]="opened" mode="side">
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav opened="true" mode="side">
         <mat-list>
-            <mat-list-item><a routerLink="account-setting"><mat-icon>home</mat-icon>Account settings</a></mat-list-item>
-            <mat-list-item><a routerLink="cv-management"><mat-icon>home</mat-icon>CV management</a></mat-list-item>
-            <mat-list-item><a routerLink="recruitment-post"><mat-icon>home</mat-icon>Recruitment post</a></mat-list-item>
+            <mat-list-item routerLink="account-setting"><mat-icon>settings</mat-icon><p *ngIf="isExpanded">Account settings</p></mat-list-item>
+            <mat-list-item routerLink="cv-management"><mat-icon>library_books</mat-icon><p *ngIf="isExpanded">CV management</p></mat-list-item>
+            <mat-list-item routerLink="recruitment-post"><mat-icon>account_box</mat-icon><p *ngIf="isExpanded">Recruitment post</p></mat-list-item>
             <!-- <mat-list-item><a routerLink=""><mat-icon>home</mat-icon>Home</a></mat-list-item> -->
         </mat-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content style="background-color: rgb(218, 218, 218);">
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 
