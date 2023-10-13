@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./recruitment-post.component.scss']
 })
 export class RecruitmentPostComponent {
-
+  opened = true;
 }

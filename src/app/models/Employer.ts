@@ -1,11 +1,11 @@
 export interface Employer {
-    id: number;
+    id: string;
+    companyid: string;
     name: string;
     email: string;
     password: string;
-    sex: string;
+    gender: string;
     phone: string;
     jobPosition: string;
-    workLocation: string;
-    district: string;
+    avatar: string;
 }

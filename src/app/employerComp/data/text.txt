@@ -1,0 +1,29 @@
+onCreate(){
+
+    let i = this.findValue(this.employerRegisForm.value.gender);
+    this.employerRegisForm.patchValue({
+      gender : i
+    })
+    console.log(this.employerRegisForm.value);
+}
+findValue(str : string){
+    let value = ""
+    for (let i of this.fieldData){
+      if (i.name == str){
+        value = i.value
+        break;
+      }
+    }
+    return value
+}
+
+
+[{"name": "name1", "value" : "1-9"}, {"name": "name2", "value" : "adu"}]
+
+
+<select name="field_of-activity" id="" class="form-control" formControlName="gender">
+            <option>--Select--</option>
+            <option *ngFor="let i of fieldData">
+                {{i.name}}
+            </option>
+        </select>

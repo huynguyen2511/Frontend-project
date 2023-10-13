@@ -1,6 +1,6 @@
 mat-toolbar {
   background-color: #3b3854;
-
+  
   justify-content: space-between;
   font-family:Arial, Helvetica, sans-serif;
   
@@ -19,12 +19,10 @@ mat-toolbar {
     }
 
     a {
+      font-size: 15px;
       text-decoration: none;
-      margin: 0 10px;
-      padding: 3px 15px;
-      &.active-link {
-        color: rgb(132, 132, 132);
-      }
+      margin: 0 7px;
+      padding: 0px 15px;
     }
       
     .nav2{
@@ -32,28 +30,35 @@ mat-toolbar {
       justify-content: flex-end;
       flex-grow: 8;
       font-size: 18px;
+      margin-right: 10px;
       
       a{
+        background-color: #534e6f;
         text-align: center;
-        border: 0.5px solid rgb(203, 203, 203);
+        border: 0px solid;
         border-radius: 20px;
         color: white;
       }
-
-      .signup{
-        background-color: rgb(178, 76, 76); 
-      }
-
-      .cv{
-        background-color: rgb(33, 33, 33); 
-      }
-
       a:hover{
-        background-color: rgb(0, 92, 90);
+        background-color: rgb(25, 171, 169);
       }
       a:active{
         background-color: rgb(6, 167, 169);
       }
+
+      .dropdown {
+      
+        .dropbtn {
+          padding: 0px 15px;
+          font-size: 15px;
+          background-color: #534e6f;
+          text-align: center;
+          border: 0px solid;
+          border-radius: 20px;
+          color: white;
+        }
+      }
+      
       
     }
   }
@@ -62,18 +67,6 @@ mat-toolbar {
 
 
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-
-  .dropbtn {
-    background-color: rgb(255, 247, 247);
-    color: rgb(0, 0, 0);
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
-}
 
 
 
@@ -83,10 +76,11 @@ mat-toolbar {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  margin-right: 20px;
+  border-radius: 10px;
 
-  a {
+  p {
     font-size: 14px;
     color: black;
     padding: 8px 15px;
@@ -95,13 +89,13 @@ mat-toolbar {
     margin: 0;
   }
 
-  a:hover {background-color: #ddd;}
 }
 
 .dropdown:hover .dropdown-content {display: block;}
 
 mat-sidenav-container{
   height: calc(205vh - 115vh);
+  z-index: 0;
 
   mat-sidenav{
     background-color: #534e6f;

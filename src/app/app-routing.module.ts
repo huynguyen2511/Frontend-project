@@ -15,6 +15,8 @@ import { RecruitmentPostComponent } from './employerComp/recruitment-post/recrui
 import { EmployerInfoComponent } from './employerComp/employer-info/employer-info.component';
 import { LicenseComponent } from './employerComp/license/license.component';
 import { CompanyInfoComponent } from './employerComp/company-info/company-info.component';
+import { CreatePostComponent } from './employerComp/create-post/create-post.component';
+import { JobPostsComponent } from './employerComp/job-posts/job-posts.component';
 
 
 const routes: Routes = [
@@ -34,7 +36,11 @@ const routes: Routes = [
           {path: "company-info" , component: CompanyInfoComponent}
         ] },
       { path: "cv-management", component: CvManagementComponent },
-      { path: "recruitment-post", component: RecruitmentPostComponent }
+      { path: "recruitment-post", component: RecruitmentPostComponent,
+        children:[
+          {path: "posts" , component: JobPostsComponent},
+          {path: "create-post" , component: CreatePostComponent},
+        ] }
     ]
   },
   { path: "employerlogin", component: EmployerLoginComponent },

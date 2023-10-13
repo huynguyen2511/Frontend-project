@@ -1,7 +1,12 @@
 mat-toolbar{
   background-color: rgb(249, 248, 233);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 mat-sidenav-container{
+  z-index: 0;
     height: calc(205vh - 115vh);
     padding: 0;
   

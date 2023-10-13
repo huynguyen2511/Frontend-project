@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class EmployerAuthService {
-  
+  http_:"http://localhost:5000/api/auth";
+
   private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
   private loggedOut: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true)
 
@@ -27,15 +28,15 @@ export class EmployerAuthService {
     
   }
 
-  employerRegister(data: any): Observable<any>{
-    return this.http.post<any>( 'http://localhost:5000/api/auth/employer/signup', data).pipe(
+  employerRegister(data): Observable<any>{
+    return this.http.post<any>('http://localhost:5000/api/auth/employer/signup', data).pipe(
       first(),
       catchError(this.errorHandlerService.handlerError<any>("signup"))
     );
   }
 
   employerLogin(data): Observable<any>{
-    return this.http.post<any>( 'http://localhost:5000/api/auth/employer/login', data).pipe(
+    return this.http.post<any>('http://localhost:5000/api/auth/employer/login', data).pipe(
       tap(response =>{
         localStorage.setItem('Employer auth', response.access_token);
         this.loggedIn.next(true);

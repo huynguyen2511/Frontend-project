@@ -33,15 +33,21 @@ button {
         justify-content: center;
         display: flex;
       }
+      
     }
 
+    h2{
+      margin-top: 10px;
+    }
     legend{
-      margin-bottom: 30px;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid rgb(73, 73, 73);
     }
 
     h1{
       font-size: 35px;
-      color: lightblue;
+      color: rgb(30, 134, 169);
     }
 }
 

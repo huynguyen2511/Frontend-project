@@ -1,0 +1,254 @@
+[
+    {
+        "code": "IBGCAFG",
+        "value": "Bắc Giang"
+    },
+    {
+        "code": "AAIDNFG",
+        "value": "An Giang"
+    },
+    {
+        "code": "ABIAVDU",
+        "value": "Bà Rịa - Vũng Tàu"
+    },
+    {
+        "code": "IBLDEFU",
+        "value": "Bạc Liêu"
+    },
+    {
+        "code": "IBNDNFH",
+        "value": "Bắc Ninh"
+    },
+    {
+        "code": "ABKDAFN",
+        "value": "Bắc Kạn"
+    },
+    {
+        "code": "RBTDRFE",
+        "value": "Bến Tre"
+    },
+    {
+        "code": "ĐBHCIFH",
+        "value": "Bình Định"
+    },
+    {
+        "code": "DBHCUEG",
+        "value": "Bình Dương"
+    },
+    {
+        "code": "PBHCHEC",
+        "value": "Bình Phước"
+    },
+    {
+        "code": "TBHCHEN",
+        "value": "Bình Thuận"
+    },
+    {
+        "code": "UCAEUGU",
+        "value": "Cà Mau"
+    },
+    {
+        "code": "HCTDHFO",
+        "value": "Cần Thơ"
+    },
+    {
+        "code": "ACBDNFG",
+        "value": "Cao Bằng"
+    },
+    {
+        "code": "NĐADNFG",
+        "value": "Đà Nẵng"
+    },
+    {
+        "code": "AĐLDAFK",
+        "value": "Đắk Lắk"
+    },
+    {
+        "code": "OĐNDNFG",
+        "value": "Đắk Nông"
+    },
+    {
+        "code": "BĐNCIFN",
+        "value": "Điện Biên"
+    },
+    {
+        "code": "NĐGDAFI",
+        "value": "Đồng Nai"
+    },
+    {
+        "code": "TĐGCHFP",
+        "value": "Đồng Tháp"
+    },
+    {
+        "code": "AGLDAFI",
+        "value": "Gia Lai"
+    },
+    {
+        "code": "AHIDNFG",
+        "value": "Hà Giang"
+    },
+    {
+        "code": "MHAEMGM",
+        "value": "Hà Nam"
+    },
+    {
+        "code": "IHOEIGI",
+        "value": "Hà Nội"
+    },
+    {
+        "code": "NHIDNFH",
+        "value": "Hà Tĩnh"
+    },
+    {
+        "code": "UHDCOFG",
+        "value": "Hải Dương"
+    },
+    {
+        "code": "HHPCOFG",
+        "value": "Hải Phòng"
+    },
+    {
+        "code": "IHGCAFG",
+        "value": "Hậu Giang"
+    },
+    {
+        "code": "IHBDNFH",
+        "value": "Hòa Bình"
+    },
+    {
+        "code": "YHGDEFN",
+        "value": "Hưng Yên"
+    },
+    {
+        "code": "HKNCHFA",
+        "value": "Khánh Hòa"
+    },
+    {
+        "code": "GKNCIEG",
+        "value": "Kiên Giang"
+    },
+    {
+        "code": "UKTDUFM",
+        "value": "Kon Tum"
+    },
+    {
+        "code": "HLCDAFU",
+        "value": "Lai Châu"
+    },
+    {
+        "code": "OLĐDNFG",
+        "value": "Lâm Đồng"
+    },
+    {
+        "code": "SLGDOFN",
+        "value": "Lạng Sơn"
+    },
+    {
+        "code": "ALCDAFI",
+        "value": "Lào Cai"
+    },
+    {
+        "code": "ALGDAFN",
+        "value": "Long An"
+    },
+    {
+        "code": "INĐDNFH",
+        "value": "Nam Định"
+    },
+    {
+        "code": "ANEDAFN",
+        "value": "Nghệ An"
+    },
+    {
+        "code": "BNHCIFH",
+        "value": "Ninh Bình"
+    },
+    {
+        "code": "TNHCHEN",
+        "value": "Ninh Thuận"
+    },
+    {
+        "code": "HPTDHFO",
+        "value": "Phú Thọ"
+    },
+    {
+        "code": "EPYDEFN",
+        "value": "Phú Yên"
+    },
+    {
+        "code": "GQNCBEH",
+        "value": "Quảng Bình"
+    },
+    {
+        "code": "GQNCNFM",
+        "value": "Quảng Nam"
+    },
+    {
+        "code": "GQNCNEI",
+        "value": "Quảng Ngãi"
+    },
+    {
+        "code": "GQNCNEH",
+        "value": "Quảng Ninh"
+    },
+    {
+        "code": "GQNCTFI",
+        "value": "Quảng Trị"
+    },
+    {
+        "code": "RSTCAFG",
+        "value": "Sóc Trăng"
+    },
+    {
+        "code": "ASLEAGA",
+        "value": "Sơn La"
+    },
+    {
+        "code": "ITNDNFH",
+        "value": "Tây Ninh"
+    },
+    {
+        "code": "BTICIFH",
+        "value": "Thái Bình"
+    },
+    {
+        "code": "NTIBGEN",
+        "value": "Thái Nguyên"
+    },
+    {
+        "code": "HTNCHFA",
+        "value": "Thanh Hóa"
+    },
+    {
+        "code": "TTAAIDE",
+        "value": "Thừa Thiên Huế"
+    },
+    {
+        "code": "GTNCIEG",
+        "value": "Tiền Giang"
+    },
+    {
+        "code": "CTOBIEH",
+        "value": "TP Hồ Chí Minh"
+    },
+    {
+        "code": "ITVDNFH",
+        "value": "Trà Vinh"
+    },
+    {
+        "code": "NTEBQEG",
+        "value": "Tuyên Quang"
+    },
+    {
+        "code": "LVHCOFG",
+        "value": "Vĩnh Long"
+    },
+    {
+        "code": "PVHCHFC",
+        "value": "Vĩnh Phúc"
+    },
+    {
+        "code": "AYBDAFI",
+        "value": "Yên Bái"
+    }
+]

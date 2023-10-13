@@ -30,6 +30,8 @@ import { EmployerSettingComponent } from './employerComp/employer-setting/employ
 import { EmployerInfoComponent } from './employerComp/employer-info/employer-info.component';
 import { LicenseComponent } from './employerComp/license/license.component';
 import { CompanyInfoComponent } from './employerComp/company-info/company-info.component';
+import { CreatePostComponent } from './employerComp/create-post/create-post.component';
+import { JobPostsComponent } from './employerComp/job-posts/job-posts.component';
 
 
 
@@ -52,6 +54,8 @@ import { CompanyInfoComponent } from './employerComp/company-info/company-info.c
     EmployerInfoComponent,
     LicenseComponent,
     CompanyInfoComponent,
+    CreatePostComponent,
+    JobPostsComponent,
 
   ],
   imports: [

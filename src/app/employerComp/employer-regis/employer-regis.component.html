@@ -1,49 +1,87 @@
+<app-employer-nav></app-employer-nav>
 <section class="auth">
   <div class="auth-inner">
-    <form action="" method="POST" [formGroup]="employerRegisForm" (ngSubmit)="onCreate()" class="auth-form">
+    <form action="" method="POST" [formGroup]="employerRegisForm" #localform="ngForm" (ngSubmit)="onCreate()" class="auth-form">
       <h1>Welcome to Web tuyen dung</h1>
-      <legend>Registation Form</legend>
-  
-      <div class="form-group">
-        <mat-label>Fullname</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="name" />
+      <legend>Registration form</legend>
+      
+      <div style="border-bottom: 0.5px solid rgb(199, 199, 199);">
+        <h2>Employer Information</h2>
+        <div class="form-group">
+          <mat-label>Fullname</mat-label>
+          <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="name"
+          [class.is-invalid]="localform.submitted && employerRegisForm.get('name')?.invalid" />
+          <div class="invalid-feedback">Your name is required</div>
+        </div>
+    
+        <div class="form-group">
+          <mat-label>Email</mat-label>
+          <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="email"
+          [class.is-invalid]="localform.submitted && employerRegisForm.get('email')?.invalid" />
+          <div class="invalid-feedback">Email is required</div>
+        </div>
+    
+        <div class="form-group">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" class="form-control" placeholder="Ex. hehe" formControlName="password"
+          [class.is-invalid]="localform.submitted && employerRegisForm.get('password')?.invalid" />
+          <div class="invalid-feedback">Password is required</div>
+        </div>
+    
+        <div class="form-group">
+          <mat-label>Gender</mat-label>
+          <select name="field_of-activity" class="form-control" formControlName="gender">
+            <option>--Select gender--</option>
+            <option *ngFor="let i of genderC">
+                {{i}}
+            </option>
+        </select>
+        </div>
+    
+        <div class="form-group">
+          <mat-label>Phone</mat-label>
+          <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="phone"
+          [class.is-invalid]="localform.submitted && employerRegisForm.get('phone')?.invalid" />
+          <div class="invalid-feedback">Phone is required</div>
+        </div>
+    
+        <div class="form-group">
+          <mat-label>Job Position</mat-label>
+          <select name="jobPosition" class="form-control" formControlName="jobPosition">
+            <option>--Select job position--</option>
+            <option *ngFor="let i of jobC">
+                {{i}}
+            </option>
+          </select>
+        </div>
       </div>
-  
-      <div class="form-group">
-        <mat-label>Email</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="email" />
+      
+      <div>
+        <h2>Company Information</h2>
+        <div class="form-group">
+          <mat-label>Company Name</mat-label>
+          <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="companyName"
+          [class.is-invalid]="localform.submitted && employerRegisForm.get('companyName')?.invalid" />
+          <div class="invalid-feedback">Company name is required</div>
+        </div>
+    
+        <div class="form-group">
+          <mat-label>Address</mat-label>
+          <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="address"
+          [class.is-invalid]="localform.submitted && employerRegisForm.get('address')?.invalid" />
+          <div class="invalid-feedback">Address is required</div>
+        </div>
+        
+        <div class="form-group">
+          <mat-label>Province</mat-label>
+          <select name="provinceCode" class="form-control" formControlName="provinceCode">
+            <option>--Select province--</option>
+            <option *ngFor="let i of provinceC">
+                {{i.value}}
+            </option>
+        </select>
+        </div>
       </div>
-  
-      <div class="form-group">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" class="form-control" placeholder="Ex. hehe" formControlName="password" />
-      </div>
-  
-      <div class="form-group">
-        <mat-label>Sex</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="sex" />
-      </div>
-  
-      <div class="form-group">
-        <mat-label>Phone</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="phone" />
-      </div>
-  
-      <div class="form-group">
-        <mat-label>Job Position</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="jobPosition" />
-      </div>
-  
-      <div class="form-group">
-        <mat-label>Work Location</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="workLocation" />
-      </div>
-  
-      <div class="form-group">
-        <mat-label>District</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="district" />
-      </div>
-  
       <button
         color="accent"
         class="btn btn-primary"
