@@ -1,54 +1,85 @@
 <mat-toolbar>
-    <p>Update personal information</p>
+  <p>Update personal information</p>
 </mat-toolbar>
 <div class="updateForm">
-    <form action="" method="PUT" class="form" [formGroup]="employerUpdate" #localform="ngForm" (ngSubmit)="onCreate()">
-        <div class="table-form">
-            <table>
-                <tr>
-                    <th style="height: 40px; width: 45%; padding-top: 10px;">
-                        Avatar
-                    </th>
-                    <th style="height: 40px; width: 45%; padding-top: 10px;">
-                        Email: {{employer.email}}
-                    </th>
-                </tr>
-                <tr>
-                    <th class="thUpdate">
-                        <mat-label>Fullname</mat-label>
-                        <input matInput type="text" class="form-control" formControlName="name" 
-                        [class.is-invalid]="localform.submitted && employerUpdate.get('name')?.invalid" />
-                        <div class="invalid-feedback">Name is required</div>
-                    </th>
-                    <th class="thUpdate">
-                        <mat-label>Gender</mat-label>
-                        <select name="gender" class="select" formControlName="gender">
-                            <option style="background-color: rgb(176, 174, 174); font-style: italic;">{{employer.gender}}</option>
-                            <option *ngFor="let i of genderC">
-                                {{i}}
-                            </option>
-                        </select>
-                    </th>
-                </tr>
-                <tr>
-                    <th class="thUpdate">
-                        <mat-label>Phone number</mat-label>
-                        <input matInput type="text" class="form-control" formControlName="phone"
-                        [class.is-invalid]="localform.submitted && employerUpdate.get('phone')?.invalid"/>
-                        <div class="invalid-feedback">Phone number is required</div>
-                    </th>
-                    <th class="thUpdate">
-                        <mat-label>Position</mat-label>
-                        <select name="jobPosition" class="select" formControlName="jobPosition">
-                            <option style="background-color: rgb(176, 174, 174); font-style: italic;">{{employer.jobPosition}}</option>
-                            <option *ngFor="let i of jobC">
-                                {{i}}
-                            </option>
-                        </select>
-                    </th>
-                </tr>
-            </table>
-        </div>
-        <button class="btn btn-primary" type="submit"><span>Save</span></button>
-    </form>
+  <form
+    action=""
+    method="PUT"
+    class="form"
+    [formGroup]="employerUpdate"
+    #localform="ngForm"
+    (ngSubmit)="onCreate()"
+  >
+    <div class="table-form">
+      <table>
+        <tr>
+          <th style="height: 40px; width: 45%; padding-top: 10px">Avatar</th>
+          <th style="height: 40px; width: 45%; padding-top: 10px">
+            Email: {{ employer.email }}
+          </th>
+        </tr>
+        <tr>
+          <th class="thUpdate">
+            <mat-label>Fullname</mat-label>
+            <input
+              matInput
+              type="text"
+              class="form-control"
+              formControlName="name"
+              [class.is-invalid]="
+                localform.submitted && employerUpdate.get('name')?.invalid
+              "
+            />
+            <div class="invalid-feedback">Name is required</div>
+          </th>
+          <th class="thUpdate">
+            <mat-label>Gender</mat-label>
+            <select name="gender" class="select" formControlName="gender">
+              <option
+                style="background-color: rgb(176, 174, 174); font-style: italic"
+              >
+                {{ employer.gender }}
+              </option>
+              <option *ngFor="let i of genderC">
+                {{ i }}
+              </option>
+            </select>
+          </th>
+        </tr>
+        <tr>
+          <th class="thUpdate">
+            <mat-label>Phone number</mat-label>
+            <input
+              matInput
+              type="text"
+              class="form-control"
+              formControlName="phone"
+              [class.is-invalid]="
+                localform.submitted && employerUpdate.get('phone')?.invalid
+              "
+            />
+            <div class="invalid-feedback">Phone number is required</div>
+          </th>
+          <th class="thUpdate">
+            <mat-label>Position</mat-label>
+            <select
+              name="jobPosition"
+              class="select"
+              formControlName="jobPosition"
+            >
+              <option
+                style="background-color: rgb(176, 174, 174); font-style: italic"
+              >
+                {{ employer.jobPosition }}
+              </option>
+              <option *ngFor="let i of jobC">
+                {{ i }}
+              </option>
+            </select>
+          </th>
+        </tr>
+      </table>
+    </div>
+    <button class="btn btn-primary" type="submit"><span>Save</span></button>
+  </form>
 </div>

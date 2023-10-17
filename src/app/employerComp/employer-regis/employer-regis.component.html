@@ -76,7 +76,7 @@
           <mat-label>Province</mat-label>
           <select name="provinceCode" class="form-control" formControlName="provinceCode">
             <option>--Select province--</option>
-            <option *ngFor="let i of provinceC">
+            <option *ngFor="let i of provinceC" value="{{i.code}}">
                 {{i.value}}
             </option>
         </select>

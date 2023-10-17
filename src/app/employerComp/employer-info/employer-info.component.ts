@@ -13,7 +13,6 @@ export class EmployerInfoComponent implements OnInit{
   public jobC = jobposition;
   public genderC = ["Male", "Female"]
 
-  employerArr: any
   employer:any
   
   employerUpdate: FormGroup = new FormGroup({
@@ -26,10 +25,8 @@ export class EmployerInfoComponent implements OnInit{
 
   constructor(private employerService: EmployerService) {
     this.employerService.GetEmployer().subscribe(data => {
-      this.employerArr = Object.values(data)
-      for (let i of this.employerArr){
-        this.employer = i
-      }
+      let arr = Object.values(data)
+      this.employer = arr[0]
       this.employerUpdate.setValue({
         name : this.employer.name,
         phone : this.employer.phone,

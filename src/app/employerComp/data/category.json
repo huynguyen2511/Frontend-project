@@ -1,0 +1,17 @@
+[
+    {
+        "code": "pt",
+        "value": "Part-time",
+        "header": "Tuyển nhân viên part-time"
+    },
+    {
+        "code": "ft",
+        "value": "Full-time",
+        "header": "Tuyển nhân viên full-time"
+    },
+    {
+        "code": "pft",
+        "value": "Part-time, Full-time",
+        "header": "Tuyển nhân viên part-time, full-time"
+    }
+]

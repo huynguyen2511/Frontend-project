@@ -14,6 +14,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {CloudinaryModule} from '@cloudinary/ng';
 
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -32,6 +33,9 @@ import { LicenseComponent } from './employerComp/license/license.component';
 import { CompanyInfoComponent } from './employerComp/company-info/company-info.component';
 import { CreatePostComponent } from './employerComp/create-post/create-post.component';
 import { JobPostsComponent } from './employerComp/job-posts/job-posts.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { ManageJobseekerComponent } from './admin/manage-jobseeker/manage-jobseeker.component';
+import { ManageEmployerComponent } from './admin/manage-employer/manage-employer.component';
 
 
 
@@ -56,6 +60,9 @@ import { JobPostsComponent } from './employerComp/job-posts/job-posts.component'
     CompanyInfoComponent,
     CreatePostComponent,
     JobPostsComponent,
+    AdminDashboardComponent,
+    ManageJobseekerComponent,
+    ManageEmployerComponent,
 
   ],
   imports: [
@@ -72,7 +79,8 @@ import { JobPostsComponent } from './employerComp/job-posts/job-posts.component'
     FormsModule, 
     ReactiveFormsModule,
     MatSidenavModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    CloudinaryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

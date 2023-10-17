@@ -2,12 +2,12 @@
     <p>Business license</p>
 </mat-toolbar>
 <div class="updateForm">
-    <form action="" method="PUT" class="form">
+    <form action="" method="PUT" [formGroup] = "uploadForm" class="form" (ngSubmit)="upload()">
         <div class="table-form">
             <table>
                 <tr>
                     <th style="height: 40px; width: 45%; padding-top: 10px; padding-left: 23px;">
-                        <p>Status: </p>
+                        <p>Status: {{status}}</p>
                     </th>
                 </tr>
                 <tr class="tr">
@@ -15,7 +15,7 @@
                         <p>Business license/authorization letter/employee card</p>
                     </th>
                     <th>
-                        <p>Additional documents</p>
+                        
                     </th>
                 </tr>
                 <tr class="tr">
@@ -28,7 +28,7 @@
                             <button (click)="file= undefined">Cancel</button>
                         </div>
                     </th>
-                    <th>
+                    <!-- <th>
                         <div class="file-container" *ngIf="!additionalFile">
                             <input type="file" (change)="getAdditionalFile($event)" class="file">
                         </div>
@@ -36,7 +36,7 @@
                             File name: {{additionalFile.name}} <br/>
                             <button (click)="additionalFile= undefined">Cancel</button>
                         </div>
-                    </th>
+                    </th> -->
                 </tr>
             </table>
         </div>
