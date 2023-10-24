@@ -1,1 +1,38 @@
-<p>manage-employer works!</p>
+<mat-toolbar>
+  <p>Manage employer</p>
+</mat-toolbar>
+
+<div>
+  <div class="table-form">
+    <table>
+      <thead>
+        <tr style="background-color: rgb(240, 248, 193)">
+          <th style="width: 8%">Action</th>
+          <th style="width: 10%">Name</th>
+          <th style="width: 5%">Gender</th>
+          <th style="width: 15%">Email</th>
+          <th style="width: 15%">Job position</th>
+          <th style="width: 15%">Company</th>
+          <th style="width: 5%">License</th>
+          <th style="width: 10%">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="trchild" *ngFor="let i of employerArr">
+          <td>
+            <button>View</button>
+            <button>Delete</button>
+          </td>
+
+          <td>{{i.name}}</td>
+          <td>{{i.gender}}</td>
+          <td>{{i.email}}</td>
+          <td>{{i.jobPosition}}</td>
+          <td>{{i.employerComp.companyName}}</td>
+          <td>{{i.employerLicense.statusCode}}</td>
+          <td>{{i.statusData.value}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

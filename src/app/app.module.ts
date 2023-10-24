@@ -14,7 +14,9 @@ import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {CloudinaryModule} from '@cloudinary/ng';
+import { CloudinaryModule } from '@cloudinary/ng';
+import { AlertModule } from '@coreui/angular';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -36,6 +38,9 @@ import { JobPostsComponent } from './employerComp/job-posts/job-posts.component'
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { ManageJobseekerComponent } from './admin/manage-jobseeker/manage-jobseeker.component';
 import { ManageEmployerComponent } from './admin/manage-employer/manage-employer.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { SearchModuleComponent } from './components/search-module/search-module.component';
+import { RandomJobComponent } from './components/pageComponents/random-job/random-job.component';
 
 
 
@@ -63,6 +68,9 @@ import { ManageEmployerComponent } from './admin/manage-employer/manage-employer
     AdminDashboardComponent,
     ManageJobseekerComponent,
     ManageEmployerComponent,
+    AdminLoginComponent,
+    SearchModuleComponent,
+    RandomJobComponent,
 
   ],
   imports: [
@@ -80,7 +88,9 @@ import { ManageEmployerComponent } from './admin/manage-employer/manage-employer
     ReactiveFormsModule,
     MatSidenavModule,
     BrowserAnimationsModule,
-    CloudinaryModule
+    CloudinaryModule,
+    AlertModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

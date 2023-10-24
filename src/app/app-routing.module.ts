@@ -20,6 +20,7 @@ import { JobPostsComponent } from './employerComp/job-posts/job-posts.component'
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { ManageJobseekerComponent } from './admin/manage-jobseeker/manage-jobseeker.component';
 import { ManageEmployerComponent } from './admin/manage-employer/manage-employer.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -54,6 +55,8 @@ const routes: Routes = [
   { path: 'employerlogin', component: EmployerLoginComponent },
   { path: 'employersignup', component: EmployerRegisComponent },
 
+
+  { path: 'adminlogin', component: AdminLoginComponent },
   {
     path: 'admin',
     component: AdminDashboardComponent,
@@ -62,6 +65,8 @@ const routes: Routes = [
       { path: 'manage-Employer', component: ManageEmployerComponent },
     ],
   },
+
+
 
   { path: '**', redirectTo: '' },
 ];

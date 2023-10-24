@@ -1,37 +1,79 @@
 <mat-toolbar color="white">
-    <span>
-        <a routerLink="/" style="font-size: 22px; color: rgb(113, 74, 137);">
-            <span>Web Tuyen Dung</span>
-        </a>
+  <div class="navbar-header">
+    <span class="icon">
+      <a routerLink="/" style="font-size: 22px; color: rgb(113, 74, 137)">
+        <span>Web Tuyen Dung</span>
+      </a>
     </span>
     <span class="nav1">
-        <a routerLinkActive="active-link" routerLink="/jobs">
-            <span>Jobs</span>
-        </a>
-        <a routerLinkActive="active-link" routerLink="/company">
-            <span>Company</span>
-        </a>
-    </span>
-    <span class="nav2" *ngIf="isLoggedOut$ | async as isLoggedOut">
-        <!-- <a routerLinkActive="active-link" routerLink="/posts">
-            <span>Posts</span>
-        </a> -->
-        <a routerLinkActive="active-link" routerLink="/login" style="color: gray;">
-            <span>Login</span>
-        </a>
-        <a routerLinkActive="active-link" routerLink="/signup" style="background-color: rgb(178, 76, 76); color: white;">
-            <span>Signup</span>
-        </a>
-        <a routerLinkActive="active-link" routerLink="/dashboard" style="background-color: rgb(33, 33, 33); color: white;">
-            <span>Post jobs, find resumes</span>
-        </a>
-    </span>
-    <div class="dropdown" *ngIf="isLoggedIn$ | async as isLoggedIn">
-        <button class="dropbtn">Dropdown</button>
+      <div class="dropdown">
+        <button class="dropbtn">Jobs</button>
         <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a (click)="logout()">Logout</a>
+          <a href="#">Find job<span>></span></a>
+          <span class="split-line"></span>
+          <a href="#">Job has applied for<span>></span></a>
+          <a href="#">Saved jobs<span>></span></a>
         </div>
       </div>
+      <div class="dropdown">
+        <button class="dropbtn">Profile, CV</button>
+        <div class="dropdown-content">
+          <a href="#">CV Manager<span>></span></a>
+          <!-- <span class="split-line"></span>
+          <a href="#">Link 1 <span>></span></a>
+          <a href="#">Link 2 <span>></span></a> -->
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Company</button>
+        <div class="dropdown-content">
+          <a href="#">List of companies<span>></span></a>
+          <!-- <span class="split-line"></span>
+          <a href="#">Link 1 <span>></span></a> -->
+        </div>
+      </div>
+    </span>
+  </div>
+  <ul
+    class="navbar-nav navbar-right"
+    *ngIf="isLoggedOut$ | async as isLoggedOut"
+  >
+    <span class="nav2">
+      <a routerLinkActive="active-link" routerLink="/login" style="color: gray">
+        <span>Login</span>
+      </a>
+      <a
+        routerLinkActive="active-link"
+        routerLink="/signup"
+        style="background-color: rgb(178, 76, 76); color: white"
+      >
+        <span>Signup</span>
+      </a>
+      <a
+        routerLinkActive="active-link"
+        routerLink="/dashboard"
+        style="background-color: rgb(33, 33, 33); color: white"
+      >
+        <span>Post jobs, find resumes</span>
+      </a>
+    </span>
+  </ul>
+  <ul class="navbar-nav navbar-right" *ngIf="isLoggedIn$ | async as isLoggedIn">
+    <div class="dropdown">
+      <button class="dropbtn">{{user.name}}</button>
+      <div class="dropdown-content">
+        <div class="in4">
+          <span class="in4-name">{{user.name}}</span><br />
+          <span class="in4-des">ID: {{user.id}}</span><br />
+          <span class="in4-des">Email: {{user.email}}</span>
+        </div>
+        <a href="#">Personal information settings<span>></span></a>
+        <a href="#">Change password<span>></span></a>
+        <span class="split-line"></span>
+        <a href="#">Employers view resumes<span>></span></a>
+        <span class="split-line"></span>
+        <a (click)="logout()">Logout <span>></span></a>
+      </div>
+    </div>
+  </ul>
 </mat-toolbar>

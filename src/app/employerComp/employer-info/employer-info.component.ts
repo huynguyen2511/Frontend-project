@@ -26,7 +26,11 @@ export class EmployerInfoComponent implements OnInit{
   constructor(private employerService: EmployerService) {
     this.employerService.GetEmployer().subscribe(data => {
       let arr = Object.values(data)
+      console.log(arr);
+      
       this.employer = arr[0]
+      console.log(this.employer);
+      
       this.employerUpdate.setValue({
         name : this.employer.name,
         phone : this.employer.phone,
