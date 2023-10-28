@@ -21,12 +21,22 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { ManageJobseekerComponent } from './admin/manage-jobseeker/manage-jobseeker.component';
 import { ManageEmployerComponent } from './admin/manage-employer/manage-employer.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UserChangePassComponent } from './components/user-change-pass/user-change-pass.component';
+import { FindJobComponent } from './components/find-job/find-job.component';
+import { ManageCvComponent } from './components/manage-cv/manage-cv.component';
+import { CompanyListComponent } from './components/company-list/company-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'account-setting', component: UserInfoComponent },
+  { path: 'password', component: UserChangePassComponent },
+  { path: 'find-job', component: FindJobComponent },
+  { path: 'manage-Cv', component: ManageCvComponent },
+  { path: 'company-list', component: CompanyListComponent },
 
   {
     path: 'dashboard',

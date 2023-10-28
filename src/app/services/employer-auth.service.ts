@@ -5,57 +5,72 @@ import { BehaviorSubject, Observable, catchError, first, tap } from 'rxjs';
 import { ErrorHandlerService } from './error-handler.service';
 import { Router } from '@angular/router';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployerAuthService {
-  http_:"http://localhost:5000/api/auth";
+  http_: 'http://localhost:5000/api/auth';
 
-  private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
-  private loggedOut: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true)
+  private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  private loggedOut: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    true
+  );
 
-  constructor(private http: HttpClient, private errorHandlerService: ErrorHandlerService, private router: Router)  { 
+  constructor(
+    private http: HttpClient,
+    private errorHandlerService: ErrorHandlerService,
+    private router: Router
+  ) {
     const token = localStorage.getItem('Employer auth');
-    if(!!token){
-      this.loggedIn.next(true)
-      this.loggedOut.next(false)
-    }else{
-      this.loggedIn.next(false)
-      this.loggedOut.next(true)
+    if (!!token) {
+      this.loggedIn.next(true);
+      this.loggedOut.next(false);
+    } else {
+      this.loggedIn.next(false);
+      this.loggedOut.next(true);
     }
-
-    
   }
 
-  employerRegister(data): Observable<any>{
-    return this.http.post<any>('http://localhost:5000/api/auth/employer/signup', data).pipe(
-      first(),
-      catchError(this.errorHandlerService.handlerError<any>("signup"))
-    );
+  employerRegister(data): Observable<any> {
+    return this.http
+      .post<any>('http://localhost:5000/api/auth/employer/signup', data)
+      .pipe(
+        first(),
+        catchError(this.errorHandlerService.handlerError<any>('signup'))
+      );
   }
 
-  employerLogin(data): Observable<any>{
-    return this.http.post<any>('http://localhost:5000/api/auth/employer/login', data).pipe(
-      tap(response =>{
-        localStorage.setItem('Employer auth', response.access_token);
-        this.loggedIn.next(true);
-        this.loggedOut.next(false);
-      })
-    );
+  employerLogin(data): Observable<any> {
+    return this.http
+      .post<any>('http://localhost:5000/api/auth/employer/login', data)
+      .pipe(
+        tap((response) => {
+          if (response.err == 0) {
+            localStorage.setItem('Employer auth', response.access_token);
+            this.loggedIn.next(true);
+            this.loggedOut.next(false);
+          } else {
+            this.loggedIn.next(false);
+            this.loggedOut.next(true);
+            return;
+          }
+        })
+      );
   }
 
-  public logout(): void{
+  public logout(): void {
     localStorage.removeItem('Employer auth');
-    this.loggedIn.next(false)
-    this.loggedOut.next(true)
-    this.router.navigateByUrl('/employerlogin')
+    this.loggedIn.next(false);
+    this.loggedOut.next(true);
+    this.router.navigateByUrl('/employerlogin');
   }
 
-  public isLoggedIn() : Observable<boolean>{
+  public isLoggedIn(): Observable<boolean> {
     return this.loggedIn.asObservable();
   }
-  public isLoggedOut() : Observable<boolean>{
+  public isLoggedOut(): Observable<boolean> {
     return this.loggedOut.asObservable();
   }
 }

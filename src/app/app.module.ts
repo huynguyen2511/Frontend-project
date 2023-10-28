@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CloudinaryModule } from '@cloudinary/ng';
 import { AlertModule } from '@coreui/angular';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { NgxPaginationModule } from 'ngx-pagination'; 
 
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -41,6 +42,13 @@ import { ManageEmployerComponent } from './admin/manage-employer/manage-employer
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { SearchModuleComponent } from './components/search-module/search-module.component';
 import { RandomJobComponent } from './components/pageComponents/random-job/random-job.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UserChangePassComponent } from './components/user-change-pass/user-change-pass.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ManageCvComponent } from './components/manage-cv/manage-cv.component';
+import { CompanyListComponent } from './components/company-list/company-list.component';
+import { FindJobComponent } from './components/find-job/find-job.component';
+
 
 
 
@@ -71,6 +79,12 @@ import { RandomJobComponent } from './components/pageComponents/random-job/rando
     AdminLoginComponent,
     SearchModuleComponent,
     RandomJobComponent,
+    UserInfoComponent,
+    UserChangePassComponent,
+    ManageCvComponent,
+    CompanyListComponent,
+    FindJobComponent,
+
 
   ],
   imports: [
@@ -90,7 +104,9 @@ import { RandomJobComponent } from './components/pageComponents/random-job/rando
     BrowserAnimationsModule,
     CloudinaryModule,
     AlertModule,
-    MatGridListModule
+    MatGridListModule,
+    NgxPaginationModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

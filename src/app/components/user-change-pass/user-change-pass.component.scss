@@ -1,0 +1,55 @@
+.header{
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.body{
+    width: 100%;
+    padding-left: 13%;
+    padding-right: 13%;
+    padding-top: 2%;
+    background-color: rgb(237, 237, 237);
+    height: 700px;
+    .row{
+
+        .col-8{
+            
+            padding-right: 20px;
+            .main-content{
+                border-radius: 9px;
+                background-color: white;
+                padding: 2% 4% 4% 4%;
+                font-family: Arial, Helvetica, sans-serif;
+                h2{
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+                p{
+                    color: rgb(86, 86, 86);
+                }
+                .form{
+                    display: block;
+                    .form-group{
+                        display: block;
+                        margin-bottom: 3%;
+                        mat-label{
+                            font-size: 15px;
+                            display: block;
+                            margin-bottom: 1.5%;
+                        }
+                        .form-control{
+                            display: block;
+                        }
+                    }
+                    .btn{
+                        display: block;
+                        background-color: rgb(51, 159, 51);
+                        color: white;
+                        padding: 7px 20px;
+                    }
+                }
+            }
+        }
+    }
+}

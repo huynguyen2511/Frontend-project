@@ -1,0 +1,65 @@
+<div class="header">
+  <app-navigation></app-navigation>
+</div>
+<div class="body">
+  <div class="row">
+    <div class="col-8">
+      <div class="main-content">
+        <h2>Change login password</h2>
+        <form
+          action=""
+          class="form"
+          method="PUT"
+          [formGroup]="updatePassword"
+          #localform="ngForm"
+          (ngSubmit)="onCreate(updatePassword.value)"
+        >
+          <div class="form-group">
+            <mat-label>Email login</mat-label>
+            <input type="text" class="form-control" formControlName="email" />
+          </div>
+          <div class="form-group">
+            <mat-label>Current password</mat-label>
+            <input
+              matInput
+              type="password"
+              class="form-control"
+              formControlName="password"
+              [class.is-invalid]="
+                localform.submitted && updatePassword.get('password')?.invalid
+              "
+            />
+            <div class="invalid-feedback">Current password is required</div>
+          </div>
+          <div class="form-group">
+            <mat-label>New password</mat-label>
+            <input
+              matInput
+              type="password"
+              class="form-control"
+              formControlName="newPassword"
+              [class.is-invalid]="
+                localform.submitted &&
+                updatePassword.get('newPassword')?.invalid
+              "
+            />
+            <div class="invalid-feedback">New password is required</div>
+          </div>
+          <div class="form-group">
+            <mat-label>Enter again new password</mat-label>
+            <input
+              matInput
+              type="password"
+              class="form-control"
+              formControlName="enterAgain"
+            />
+          </div>
+          <button class="btn" type="submit">
+            <span>Save</span>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>

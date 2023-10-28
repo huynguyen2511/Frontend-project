@@ -6,31 +6,38 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit{
-  
-  constructor(private authService: AuthService, private router:Router) {}
+export class LoginComponent implements OnInit {
+  constructor(private authService: AuthService, private router: Router) {}
 
-  loginForm: FormGroup = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-  }, {updateOn: 'submit'});
+  loginForm: FormGroup = new FormGroup(
+    {
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+    },
+    { updateOn: 'submit' }
+  );
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
-  onCreate(){
-    if(this.loginForm.invalid){
+  onCreate() {
+    if (this.loginForm.invalid) {
       return;
     }
-    
-    this.authService.authLogin(this.loginForm.get('email')?.value, this.loginForm.get('password')?.value ).subscribe((res: any) =>{
-      console.log(res);
-        this.router.navigateByUrl('/')
+
+    this.authService
+      .authLogin(
+        this.loginForm.get('email')?.value,
+        this.loginForm.get('password')?.value
+      )
+      .subscribe((res: any) => {
+        console.log(res);
+        if (res.err == 0) {
+          this.router.navigateByUrl('/');
+        } else {
+          alert(res.mes);
+        }
       });
-      
-    }
+  }
 }
- 
