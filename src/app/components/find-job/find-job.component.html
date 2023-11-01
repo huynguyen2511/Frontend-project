@@ -60,33 +60,36 @@
       <div class="job-body">
         <div class="row">
           <div class="col col-9">
-            <div class="job-found">
-              <div class="content">
-                <div class="content-header">
-                  <a href="" class="logo">
-                    <div>logo</div>
-                  </a>
-                  <div class="title">
-                    <span
-                      ><a href=""
-                        ><strong>Nhan vien ky thuat tai binh duong dawac aw d awd asd aw</strong></a
-                      ></span
-                    >
-                    <a href="" class="company">Cong ty Hung Phat</a>
+            <table *ngFor="let i of jobLists">
+              <tr>
+                <div class="content">
+                  <div class="content-logo">
+                    <a href="" class="logo">
+                      <div>logo</div>
+                    </a>
+                  </div>
+                  <div class="content-body">
+                    <div class="content-main">
+                      <div class="left">
+                        <span><a href=""><strong>{{i.title}}</strong></a></span>
+                        <a href="" class="company">{{i.company.companyName}}</a>
+                      </div>
+                      <div class="right">
+                        <label for="" class="salary">{{i.attributes.salary}}</label>
+                      </div>
+                    </div>
+                    <div class="info">
+                      <div class="info-left">
+                        <label for="" class="address">{{i.address}}</label>
+                      </div>
+                      <div class=" info-right">
+                        <button>Apply for this job</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="content-footer">
-                  <div>
-                    <div class="footer salary">
-                      <span>11-13 trieu</span>
-                    </div>
-                    <div class="footer address">
-                      <span>Binh Duong</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </tr>
+            </table>
           </div>
           <div class="col col-3">
             <div class="random-job">

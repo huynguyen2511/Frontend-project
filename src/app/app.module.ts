@@ -17,7 +17,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CloudinaryModule } from '@cloudinary/ng';
 import { AlertModule } from '@coreui/angular';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { NgxPaginationModule } from 'ngx-pagination'; 
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -105,8 +108,10 @@ import { FindJobComponent } from './components/find-job/find-job.component';
     CloudinaryModule,
     AlertModule,
     MatGridListModule,
-    NgxPaginationModule,
-    NgbModule
+    NgbModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

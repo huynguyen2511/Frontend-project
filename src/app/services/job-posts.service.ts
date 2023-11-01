@@ -16,4 +16,8 @@ export class JobPostsService {
     let header_obj = new HttpHeaders().set("Authorization", token)
     return this.http.post<any>(this.url + "post/create-new", data, {headers:header_obj});
   }
+
+  getAllJobs():Observable<any>{
+    return this.http.get<any>(this.url + "post/allPosts");
+  }
 }
