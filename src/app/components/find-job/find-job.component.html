@@ -3,50 +3,42 @@
 </div>
 <div class="body">
     <div class="search-form">
-        <form action="">
+        <form action="" [formGroup]="findForm" (ngSubmit)="onSubmit()">
             <table>
                 <tr>
                     <th class="th-input">
-                        <select  class="drop-select" >
-                            <option
-                              style="background-color: rgb(176, 174, 174); font-style: italic"
-                            >
+                        <select  class="drop-select" formControlName="postition">
+                            <option style="background-color: rgb(176, 174, 174); font-style: italic">
                               1
                             </option>
                             <option>2</option>
                         </select>
                     </th>
                     <th class="th-input">
-                        <select  class="drop-select" >
-                            <option
-                              style="background-color: rgb(176, 174, 174); font-style: italic"
-                            >
-                              1
-                            </option>
+                        <select  class="drop-select" formControlName="province">
+                          <option style="background-color: rgb(176, 174, 174); font-style: italic">
+                            1
+                          </option>
                             <option>2</option>
                         </select>
                     </th>
                     <th class="th-input">
-                        <select  class="drop-select" >
-                            <option
-                              style="background-color: rgb(176, 174, 174); font-style: italic"
-                            >
-                              1
-                            </option>
+                        <select  class="drop-select" formControlName="workExperience">
+                          <option style="background-color: rgb(176, 174, 174); font-style: italic">
+                            1
+                          </option>
                             <option>2</option>
                         </select>
                     </th>
                     <th class="th-input">
-                        <select  class="drop-select" >
-                            <option
-                              style="background-color: rgb(176, 174, 174); font-style: italic"
-                            >
-                              1
-                            </option>
+                        <select  class="drop-select" formControlName="salary">
+                          <option style="background-color: rgb(176, 174, 174); font-style: italic">
+                            1
+                          </option>
                             <option>2</option>
                         </select>
                     </th>
-                    <th class="th-button">
+                    <th class="th-button" type="submit">
                         <button>Find</button>
                     </th>
                 </tr>

@@ -17,7 +17,8 @@ export class UserInfoComponent implements OnInit{
       
       this.updateInfo.patchValue({
         email : this.user.email,
-        name : this.user.name
+        name : this.user.name,
+        phone : this.user.phone,
       })
       console.log(this.updateInfo.value);
       this.updateInfo.get('email').disable()

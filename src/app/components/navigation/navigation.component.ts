@@ -24,7 +24,6 @@ export class NavigationComponent implements OnInit {
 
     this.userService.GetUser().subscribe(data => {
       let arr = Object.values(data)
-      console.log(arr[2]);
       this.user = arr[2]
     })
   }

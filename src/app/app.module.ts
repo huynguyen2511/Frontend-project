@@ -51,6 +51,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ManageCvComponent } from './components/manage-cv/manage-cv.component';
 import { CompanyListComponent } from './components/company-list/company-list.component';
 import { FindJobComponent } from './components/find-job/find-job.component';
+import { JobComponent } from './components/find-job/job/job.component';
 
 
 
@@ -87,6 +88,7 @@ import { FindJobComponent } from './components/find-job/find-job.component';
     ManageCvComponent,
     CompanyListComponent,
     FindJobComponent,
+    JobComponent,
 
 
   ],

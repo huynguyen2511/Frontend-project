@@ -26,6 +26,7 @@ import { UserChangePassComponent } from './components/user-change-pass/user-chan
 import { FindJobComponent } from './components/find-job/find-job.component';
 import { ManageCvComponent } from './components/manage-cv/manage-cv.component';
 import { CompanyListComponent } from './components/company-list/company-list.component';
+import { JobComponent } from './components/find-job/job/job.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,9 +35,11 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'account-setting', component: UserInfoComponent },
   { path: 'password', component: UserChangePassComponent },
-  { path: 'find-job', component: FindJobComponent },
   { path: 'manage-Cv', component: ManageCvComponent },
   { path: 'company-list', component: CompanyListComponent },
+
+  { path: 'find-job', component: FindJobComponent},
+  { path: 'find-job/job', component: JobComponent},
 
   {
     path: 'dashboard',
