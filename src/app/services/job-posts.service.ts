@@ -20,4 +20,6 @@ export class JobPostsService {
   getAllJobs():Observable<any>{
     return this.http.get<any>(this.url + "post/allPosts");
   }
+
+  
 }

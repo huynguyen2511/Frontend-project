@@ -39,7 +39,7 @@ const routes: Routes = [
   { path: 'company-list', component: CompanyListComponent },
 
   { path: 'find-job', component: FindJobComponent},
-  { path: 'find-job/job', component: JobComponent},
+  { path: 'find-job/job/:id', component: JobComponent},
 
   {
     path: 'dashboard',

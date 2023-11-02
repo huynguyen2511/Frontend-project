@@ -14,10 +14,6 @@
     display: flex;
     gap: 24px;
 
-    .flex-column {
-      display: flex;
-      flex-direction: column;
-    }
     .job-detail_body-left {
       gap: 24px;
       width: 67%;
@@ -45,7 +41,7 @@
             gap: 16px;
             .info-section-icon {
               align-items: center;
-              background: linear-gradient(11deg, #00bf5d, #00907c);
+              background: linear-gradient(11deg, #0092bf, #003e90);
               border-radius: 30px;
               display: flex;
               flex-direction: column;
@@ -100,7 +96,7 @@
           gap: 12px;
           margin-top: 4px;
           a {
-            background: #11a152;
+            background: #1176a1;
             color: #fff;
             width: 100%;
             align-items: center;
@@ -125,7 +121,7 @@
         background-color: white;
         border-radius: 8px;
         .detail-title {
-          border-left: 6px solid #00b14f;
+          border-left: 6px solid #8e00b1;
           font-size: 20px;
           font-style: normal;
           font-weight: 700;
@@ -166,7 +162,7 @@
             display: flex;
             a {
               align-items: center;
-              background: #11a152;
+              background: #1176a1;
               border: unset;
               border-radius: 6px;
               color: #fff;
@@ -216,9 +212,172 @@
       }
     }
     .job-detail_body-right {
-      display: block;
+      align-items: center;
+      background: #f4f5f5;
       border: 1px solid rgb(70, 202, 22);
       width: calc(33% - 24px);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      .job-detail_box-right {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        width: 100%;
+        .box-title {
+          color: #212f3f;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          letter-spacing: -0.2px;
+          line-height: 28px;
+        }
+      }
+      .job-detail_company {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        position: relative;
+        .company-info {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          .company-info-item {
+            align-items: flex-start;
+            display: flex;
+            gap: 16px;
+            .company-title {
+              align-items: center;
+              color: #7f878f;
+              display: flex;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              gap: 8px;
+              letter-spacing: 0.14px;
+              line-height: 22px;
+              width: 88px;
+            }
+            .company-value {
+              color: #212f3f;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 500;
+              letter-spacing: 0.14px;
+              line-height: 22px;
+              width: calc(100% - 104px);
+            }
+          }
+          .company-name {
+            margin-bottom: 12px;
+            .company-logo {
+              align-items: center;
+              background: #fff;
+              border: 1px solid var(--gray-10, #e9eaec);
+              border-radius: 8px;
+              display: flex;
+              height: 88px;
+              justify-content: center;
+              padding: 7.04px;
+              width: 88px;
+            }
+            .company-name-label {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              margin: 0;
+              width: calc(100% - 106px);
+              .name {
+                align-self: stretch;
+                color: #212f3f;
+                display: block;
+                font-size: 17px;
+                font-style: normal;
+                font-weight: 500;
+                letter-spacing: -0.16px;
+                line-height: 24px;
+                max-height: 70px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
+                text-decoration: none;
+              }
+            }
+          }
+          .company-scale {
+            margin-bottom: 8px;
+          }
+          .company-address {
+          }
+        }
+        .company-link {
+          align-items: center;
+          display: flex;
+          gap: 10px;
+          justify-content: center;
+          width: 100%;
+        }
+      }
+      .job-detail_general {
+        .box-title {
+          margin-bottom: 16px;
+          margin-top: 0;
+        }
+        .general-content {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .general-group {
+            align-items: center;
+            display: flex;
+            gap: 16px;
+            .general-group-icon {
+              align-items: center;
+              background: #0061b1;
+              border-radius: 30px;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              height: 40px;
+              justify-content: center;
+              padding: 10px;
+              width: 40px;
+            }
+            .general-group-info {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              .group-info-title {
+                color: #4d5965;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                letter-spacing: 0.14px;
+                line-height: 22px;
+              }
+              .group-info-value {
+                color: #212f3f;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                letter-spacing: 0.175px;
+                line-height: 22px;
+              }
+            }
+          }
+        }
+      }
+      .job-detail_category {
+      }
     }
   }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }

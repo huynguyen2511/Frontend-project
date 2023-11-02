@@ -5,7 +5,7 @@
   <div class="job-detail">
     <div class="job-detail_body-left flex-column">
       <div class="job-detail_info flex-column">
-        <h1 class="info-title">Trường Nhóm Marketing</h1>
+        <h1 class="info-title">{{post.title}}</h1>
         <div class="info-sections">
           <div class="info-section">
             <div class="info-section-icon">
@@ -16,7 +16,7 @@
             </div>
             <div class="info-section-content">
               <div class="info-section-content-title">Salary</div>
-              <div class="info-section-content-value">18 - 30 triệu</div>
+              <div class="info-section-content-value">{{post.attributes.salary}}</div>
             </div>
           </div>
           <div class="info-section">
@@ -86,21 +86,7 @@
               <h3>Yêu cầu ứng viên</h3>
               <div class="job-description-item-content">
                 <p>
-                  - Xây dựng kế hoạch Marketing, tổ chức thực hiện và đánh giá
-                  hiệu quả theo mỗi tháng/ quý/ năm
-                </p>
-                <p>
-                  - Lập kế hoạch và trực tiếp chạy quảng cáo qua các kênh mạng
-                  xã hội hiện tại, và phát triển thêm các kênh quảng cáo online
-                  khác để tăng khách hàng tiềm năng.
-                </p>
-                <p>
-                  - Theo dõi thị trường, phân tích số liệu và kết quả kinh doanh
-                  để có các chiến lược Marketing phù hợp
-                </p>
-                <p>
-                  - Giám sát hiệu quả của các lead mang về; tối ưu hiệu suất và
-                  chi phí các chiến dịch quảng cáo
+                  {{post.attributes.requirements}}
                 </p>
               </div>
             </div>
@@ -108,21 +94,7 @@
               <h3>Quyền lợi</h3>
               <div class="job-description-item-content">
                 <p>
-                  - Xây dựng kế hoạch Marketing, tổ chức thực hiện và đánh giá
-                  hiệu quả theo mỗi tháng/ quý/ năm
-                </p>
-                <p>
-                  - Lập kế hoạch và trực tiếp chạy quảng cáo qua các kênh mạng
-                  xã hội hiện tại, và phát triển thêm các kênh quảng cáo online
-                  khác để tăng khách hàng tiềm năng.
-                </p>
-                <p>
-                  - Theo dõi thị trường, phân tích số liệu và kết quả kinh doanh
-                  để có các chiến lược Marketing phù hợp
-                </p>
-                <p>
-                  - Giám sát hiệu quả của các lead mang về; tối ưu hiệu suất và
-                  chi phí các chiến dịch quảng cáo
+                  {{post.attributes.benefits}}
                 </p>
               </div>
             </div>
@@ -130,21 +102,7 @@
               <h3>Địa điểm làm việc</h3>
               <div class="job-description-item-content">
                 <p>
-                  - Xây dựng kế hoạch Marketing, tổ chức thực hiện và đánh giá
-                  hiệu quả theo mỗi tháng/ quý/ năm
-                </p>
-                <p>
-                  - Lập kế hoạch và trực tiếp chạy quảng cáo qua các kênh mạng
-                  xã hội hiện tại, và phát triển thêm các kênh quảng cáo online
-                  khác để tăng khách hàng tiềm năng.
-                </p>
-                <p>
-                  - Theo dõi thị trường, phân tích số liệu và kết quả kinh doanh
-                  để có các chiến lược Marketing phù hợp
-                </p>
-                <p>
-                  - Giám sát hiệu quả của các lead mang về; tối ưu hiệu suất và
-                  chi phí các chiến dịch quảng cáo
+                  {{post.address}}
                 </p>
               </div>
             </div>
@@ -176,9 +134,66 @@
           >
         </div>
       </div>
-      <h3>trai</h3>
     </div>
     <div class="job-detail_body-right">
+      <div class="job-detail_box-right job-detail_company">
+        <div class="company-info">
+          <div class="company-name company-info-item">
+            <a href="" class="company-logo">
+              <img src="" alt="logo">
+            </a>
+            <h2 class="company-name-label">
+              <a href="" class="name">{{post.company.companyName}}</a>
+            </h2>
+          </div>
+          <div class="company-scale company-info-item">
+            <div class="company-title"><i class="fa-solid fa-users fa-lg" style="color: #2d579f;"></i> Quy mô: </div>
+            <div class="company-value">25-99 nhân viên</div>
+          </div>
+          <div class="company-address company-info-item">
+            <div class="company-title"><i class="fa-solid fa-location-dot fa-lg" style="color: #2d579f;"></i> Địa điểm: </div>
+            <div class="company-value">{{post.address}}</div>
+          </div>
+        </div>
+        <div class="company-link">
+          <a href="">Xem trang công ty</a>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </div>
+      </div>
+      <div class="job-detail_box-right job-detail_general">
+        <h2 class="box-title">Thông tin chung</h2>
+        <div class="general-content">
+          <div class="general-group">
+            <div class="general-group-icon"><i class="fa-solid fa-medal fa-lg" style="color: #ffffff;"></i></div>
+            <div class="general-group-info">
+              <div class="group-info-title">Cấp bậc</div>
+              <div class="group-info-value">Nhân viên</div>
+            </div>
+          </div>
+          <div class="general-group">
+            <div class="general-group-icon"><i class="fa-solid fa-users fa-lg" style="color: #ffffff;"></i></div>
+            <div class="general-group-info">
+              <div class="group-info-title">Số lượng tuyển</div>
+              <div class="group-info-value">2 người</div>
+            </div>
+          </div>
+          <div class="general-group">
+            <div class="general-group-icon"><i class="fa-solid fa-briefcase fa-lg" style="color: #ffffff;"></i></div>
+            <div class="general-group-info">
+              <div class="group-info-title">Hình thức làm việc</div>
+              <div class="group-info-value">Toàn thời gian</div>
+            </div>
+          </div>
+          <div class="general-group">
+            <div class="general-group-icon"><i class="fa-solid fa-person-half-dress fa-lg" style="color: #ffffff;"></i></div>
+            <div class="general-group-info">
+              <div class="group-info-title">Giới tính</div>
+              <div class="group-info-value">Không yêu cầu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="job-detail_box-right job-detail_category"></div>
       <h3>phai</h3>
     </div>
   </div>
