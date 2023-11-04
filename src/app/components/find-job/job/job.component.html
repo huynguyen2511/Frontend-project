@@ -129,12 +129,12 @@
               <img src="" alt="logo">
             </a>
             <h2 class="company-name-label">
-              <a href="" class="name">{{post.company.companyName}}</a>
+              <a href="" class="name">{{post.companyPost.companyName}}</a>
             </h2>
           </div>
           <div class="company-scale company-info-item">
             <div class="company-title"><i class="fa-solid fa-users fa-lg" style="color: #2d579f;"></i> Quy mô: </div>
-            <div class="company-value">{{post.company.staffSize}} nhân viên</div>
+            <div class="company-value">{{post.companyPost.staffSize}} nhân viên</div>
           </div>
           <div class="company-address company-info-item">
             <div class="company-title"><i class="fa-solid fa-location-dot fa-lg" style="color: #2d579f;"></i> Địa điểm: </div>
@@ -142,7 +142,7 @@
           </div>
         </div>
         <div class="company-link">
-          <a href="">Xem trang công ty</a>
+          <a routerLink="/company-list/company/{{post.companyPost.id}}">Xem trang công ty</a>
           <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </div>
       </div>

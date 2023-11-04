@@ -56,15 +56,15 @@
               <tr *ngFor="let i of jobLists">
                 <div class="content" routerLink="/find-job/job/{{i.id}}">
                   <div class="content-logo">
-                    <a href="" class="logo">
+                    <a class="logo">
                       <div>logo</div>
                     </a>
                   </div>
                   <div class="content-body">
                     <div class="content-main">
                       <div class="left">
-                        <span><a href=""><strong>{{i.title}}</strong></a></span>
-                        <a href="" class="company">{{i.company.companyName}}</a>
+                        <span><strong>{{i.title}}</strong></span>
+                        <a routerLink="/company-list/company/{{i.companyPost.id}}" class="company">{{i.companyPost.companyName}}</a>
                       </div>
                       <div class="right">
                         <label for="" class="salary">{{i.attributes.salary}}</label>

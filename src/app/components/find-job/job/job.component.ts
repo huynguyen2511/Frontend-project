@@ -10,7 +10,7 @@ import { JobPostsService } from 'src/app/services/job-posts.service';
 export class JobComponent implements OnInit{
   post;
   postId;
-  jobLists;
+  jobList;
   constructor(private activatedRoute: ActivatedRoute, private jobService: JobPostsService){
   }
 
@@ -18,11 +18,8 @@ export class JobComponent implements OnInit{
     this.postId = this.activatedRoute.snapshot.paramMap.get('id');
     this.jobService.getAllJobs().subscribe(data =>{
       let arr = Object.values(data)
-      this.jobLists = arr[2]
-      console.log(this.jobLists);
-      this.post = this.jobLists.find(x => x.id == this.postId);
-      console.log(this.post);
+      this.jobList = arr[2]
+      this.post = this.jobList.find(x => x.id == this.postId);
     })
-    
   }
 }

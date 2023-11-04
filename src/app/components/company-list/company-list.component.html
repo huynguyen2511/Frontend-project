@@ -34,30 +34,24 @@
             <p class="count">DANH SÁCH CÁC CÔNG TY NỔI BẬT</p>
 
             <table class="search-result">
-              <tr class="result-company">
+              <tr class="result-company" *ngFor="let i of companyLists">
                 <a href="" class="logo"
                   ><img src="../image/company-logo.png" alt="Company" class="img-responsive"
                 /></a>
                 <div class="company-info">
                   <div class="title">
-                    <strong><a href="" class="company-name">NGÂN HÀNG</a></strong>
-                    <span class="count-job"><i class="fa-solid fa-circle" style="color: #1a4899;"></i>Đang tuyển 0 vị trí</span>
+                    <strong><a routerLink="/company-list/company/{{i.id}}" class="company-name">{{i.companyName}}</a></strong>
+                    <span class="count-job"><i class="fa-solid fa-minus" style="color: rgba(156, 156, 183, 0.468); margin: auto;"></i> Đang tuyển 0 vị trí</span>
                   </div>
                   <div class="address d-flex">
                     <i class="fa-solid fa-compass fa-lg"></i>
                     <span
-                      ><span style="color: #999999">Trụ sở chính:</span> 78 Dịch
-                      Vọng Hậu, Phường Dịch Vọng Hậu, Quận Cầu Giấy, Thành phố
-                      Hà Nội</span
+                      ><span style="color: #999999">Trụ sở chính:</span>{{i.address}}, thành phố {{i.province.value}}</span
                     >
                   </div>
-                  <div class="intro d-flex">
+                  <div class="intro d-flex" *ngIf="i.description">
                     <i class="fa-solid fa-circle-info fa-lg"></i>
-                    <p>
-                      Aviva là tập đoàn bảo hiểm đến từ vương quốc Anh với hơn
-                      323 năm kinh nghiệm hoạt động trong lĩnh vực bảo hiểm và
-                      hiện đang là tập đoàn...
-                    </p>
+                    <p>{{i.description}}</p>
                   </div>
                 </div>
               </tr>

@@ -1,0 +1,185 @@
+.header {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.body {
+  display: block;
+  z-index: 90;
+  background: #f3f5f7;
+  div {
+    display: block;
+  }
+  .company-cover {
+    background-image: url(./company-background.jpg);
+    background-size: cover;
+    font-family: Inter, sans-serif;
+    margin-bottom: 24px;
+    height: 200px;
+    .container {
+      width: 1170px;
+      padding-top: 15px;
+      .company-detail-overview {
+        align-items: center;
+        column-gap: 32px;
+        display: flex;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding-right: 40px;
+        position: relative;
+        .logo {
+          display: block;
+          img {
+            width: 140px;
+            height: 140px;
+            border-radius: 100px;
+          }
+        }
+        .detail {
+          display: block;
+          .detail-name {
+            color: rgb(234, 255, 4);
+            display: -webkit-box;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 28px;
+            margin-bottom: 16px;
+            margin-top: 0;
+            max-width: 100%;
+            overflow: hidden;
+            width: fit-content;
+          }
+          .sub-detail {
+            .info {
+              display: flex;
+              margin-bottom: 10px;
+              white-space: nowrap;
+              i {
+                color: rgb(234, 255, 4);
+                align-items: center;
+                display: flex;
+                font-size: 16px;
+                justify-content: center;
+                margin-right: 16px;
+                width: 20px;
+              }
+              .info-text {
+                color: #fff;
+                display: block;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 20px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .company-body {
+    .container {
+      width: 1170px;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      .row {
+        display: flex;
+        width: 100%;
+        margin-right: -15px;
+        margin-left: -15px;
+        .col-md-8 {
+          display: block;
+          width: 66.66666%;
+          .company-intro {
+            margin: 0 0 32px;
+            background-color: #fff;
+            font-family: Inter, sans-serif;
+            border-radius: 10px;
+            .info {
+              .title {
+                border-radius: 10px 10px 0 0;
+                background: linear-gradient(90deg, #2a396e, #3554df);
+                color: #fff;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 26px;
+                margin: 0;
+                padding: 10px 14px;
+              }
+              .box-body {
+                display: block;
+                padding: 20px 16px 28px;
+                .content {
+                  position: relative;
+                  min-height: 100px;
+                  p {
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .col-md-4 {
+          display: block;
+          width: 33.33333333%;
+          .company-contact {
+            margin: 0 0 32px;
+            border-radius: 10px;
+            background-color: #fff;
+            font-family: Inter, sans-serif;
+            .title {
+              border-radius: 10px 10px 0 0;
+              background: linear-gradient(90deg, #2a396e, #3554df);
+              color: #fff;
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 26px;
+              margin: 0;
+              padding: 10px 14px;
+            }
+            .box-body {
+              padding: 0 20px 8px;
+              .item {
+                border-bottom: 1px solid #dee0e2;
+                padding: 20px 0;
+                .item-header {
+                  align-items: center;
+                  display: flex;
+                  margin-bottom: 8px;
+                  i {
+                    color: #0023b1;
+                    font-size: 19.2px;
+                    font-weight: 900;
+                    height: 25.6px;
+                    line-height: 26px;
+                    margin-right: 7.2px;
+                    text-align: center;
+                    width: 25.6px;
+                  }
+                  span {
+                    color: #000000;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 20px;
+                  }
+                }
+                .item-desc {
+                  color: #4d5965;
+                  font-size: 14px;
+                  font-weight: 400;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

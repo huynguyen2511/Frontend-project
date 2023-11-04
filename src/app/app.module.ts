@@ -52,6 +52,7 @@ import { ManageCvComponent } from './components/manage-cv/manage-cv.component';
 import { CompanyListComponent } from './components/company-list/company-list.component';
 import { FindJobComponent } from './components/find-job/find-job.component';
 import { JobComponent } from './components/find-job/job/job.component';
+import { CompanyComponent } from './components/company-list/company/company.component';
 
 
 
@@ -89,6 +90,7 @@ import { JobComponent } from './components/find-job/job/job.component';
     CompanyListComponent,
     FindJobComponent,
     JobComponent,
+    CompanyComponent,
 
 
   ],
