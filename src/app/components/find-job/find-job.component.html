@@ -52,8 +52,8 @@
       <div class="job-body">
         <div class="row">
           <div class="col col-9">
-            <table *ngFor="let i of jobLists">
-              <tr>
+            <table >
+              <tr *ngFor="let i of jobLists">
                 <div class="content" routerLink="/find-job/job/{{i.id}}">
                   <div class="content-logo">
                     <a href="" class="logo">

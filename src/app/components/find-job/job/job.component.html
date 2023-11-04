@@ -5,7 +5,7 @@
   <div class="job-detail">
     <div class="job-detail_body-left flex-column">
       <div class="job-detail_info flex-column">
-        <h1 class="info-title">{{post.title}}</h1>
+        <h1 class="info-title">{{post.overview.area}}</h1>
         <div class="info-sections">
           <div class="info-section">
             <div class="info-section-icon">
@@ -28,7 +28,7 @@
             </div>
             <div class="info-section-content">
               <div class="info-section-content-title">Location</div>
-              <div class="info-section-content-value">Hồ Chí Minh</div>
+              <div class="info-section-content-value">{{post.province.value}}</div>
             </div>
           </div>
           <div class="info-section">
@@ -40,7 +40,7 @@
             </div>
             <div class="info-section-content">
               <div class="info-section-content-title">Experience</div>
-              <div class="info-section-content-value">2 years</div>
+              <div class="info-section-content-value">{{post.attributes.experience}} years</div>
             </div>
           </div>
         </div>
@@ -64,21 +64,7 @@
               <h3>Mô tả công việc</h3>
               <div class="job-description-item-content">
                 <p>
-                  - Xây dựng kế hoạch Marketing, tổ chức thực hiện và đánh giá
-                  hiệu quả theo mỗi tháng/ quý/ năm
-                </p>
-                <p>
-                  - Lập kế hoạch và trực tiếp chạy quảng cáo qua các kênh mạng
-                  xã hội hiện tại, và phát triển thêm các kênh quảng cáo online
-                  khác để tăng khách hàng tiềm năng.
-                </p>
-                <p>
-                  - Theo dõi thị trường, phân tích số liệu và kết quả kinh doanh
-                  để có các chiến lược Marketing phù hợp
-                </p>
-                <p>
-                  - Giám sát hiệu quả của các lead mang về; tối ưu hiệu suất và
-                  chi phí các chiến dịch quảng cáo
+                  {{post.description}}
                 </p>
               </div>
             </div>
@@ -148,7 +134,7 @@
           </div>
           <div class="company-scale company-info-item">
             <div class="company-title"><i class="fa-solid fa-users fa-lg" style="color: #2d579f;"></i> Quy mô: </div>
-            <div class="company-value">25-99 nhân viên</div>
+            <div class="company-value">{{post.company.staffSize}} nhân viên</div>
           </div>
           <div class="company-address company-info-item">
             <div class="company-title"><i class="fa-solid fa-location-dot fa-lg" style="color: #2d579f;"></i> Địa điểm: </div>
@@ -167,21 +153,21 @@
             <div class="general-group-icon"><i class="fa-solid fa-medal fa-lg" style="color: #ffffff;"></i></div>
             <div class="general-group-info">
               <div class="group-info-title">Cấp bậc</div>
-              <div class="group-info-value">Nhân viên</div>
+              <div class="group-info-value">{{post.attributes.level}}</div>
             </div>
           </div>
           <div class="general-group">
             <div class="general-group-icon"><i class="fa-solid fa-users fa-lg" style="color: #ffffff;"></i></div>
             <div class="general-group-info">
               <div class="group-info-title">Số lượng tuyển</div>
-              <div class="group-info-value">2 người</div>
+              <div class="group-info-value">{{post.attributes.recruitNumber}} people</div>
             </div>
           </div>
           <div class="general-group">
             <div class="general-group-icon"><i class="fa-solid fa-briefcase fa-lg" style="color: #ffffff;"></i></div>
             <div class="general-group-info">
               <div class="group-info-title">Hình thức làm việc</div>
-              <div class="group-info-value">Toàn thời gian</div>
+              <div class="group-info-value">{{post.overview.category}}</div>
             </div>
           </div>
           <div class="general-group">
@@ -193,8 +179,7 @@
           </div>
         </div>
       </div>
-      <div class="job-detail_box-right job-detail_category"></div>
-      <h3>phai</h3>
+      <!-- <div class="job-detail_box-right job-detail_category"></div> -->
     </div>
   </div>
 </div>
