@@ -14,7 +14,7 @@
             </p>
           </div>
           <form action="" class="form-search">
-            <i class="fa-light fa-magnifying-glass"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
             <input
               type="text"
               class="form-control"
@@ -34,7 +34,7 @@
             <p class="count">DANH SÁCH CÁC CÔNG TY NỔI BẬT</p>
 
             <table class="search-result">
-              <tr class="result-company" *ngFor="let i of companyLists">
+              <tr class="result-company" *ngFor="let i of companyLists" routerLink="/company-list/company/{{i.id}}">
                 <a href="" class="logo"
                   ><img src="../image/company-logo.png" alt="Company" class="img-responsive"
                 /></a>

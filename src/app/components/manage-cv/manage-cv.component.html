@@ -1,4 +1,91 @@
 <div class="header">
-    <app-navigation></app-navigation>
+  <app-navigation></app-navigation>
 </div>
-<p>manage-cv works!</p>
+<div class="body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 manage-cv">
+        <div id="cv-upload-list" class="box-block">
+          <div class="box-header">
+            <h1 class="title">CV đã tải lên</h1>
+            <a routerLink="/upload-Cv" class="btn btn-upload-cv btn-primary-hover">
+              <i class="fa-solid fa-upload"></i> Tải CV lên
+            </a>
+          </div>
+          <div class="box-content">
+            <div class="row inner-row">
+              <div class="col-md-6 col-12">
+                <div class="box-cv">
+                  <img src="" alt="" class="img-responsive" />
+                  <div class="box-bg">
+                    <div class="cv-main">
+                      <a href="">Đặt làm CV chính</a>
+                    </div>
+                    <div class="box-info">
+                      <h4 class="title-cv">
+                        <a href="">GCH190518_Nguyen Van Huy.pdf</a>
+                      </h4>
+                      <p class="update-at">
+                        Cập nhật lần cuối <span>21-10-2023 16:04 PM</span>
+                      </p>
+                      <ul class="action" style="padding-left: 0">
+                        <li>
+                          <a href="" class="btn btn-sm bold">
+                            <i class="fa-solid fa-download"></i> Tải xuống
+                          </a>
+                        </li>
+                        <li class="li-lasst-child">
+                          <a href=""><i class="fa-regular fa-trash-can"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 sidebar">
+        <div class="box box-white">
+          <div class="box-header">
+            <div class="profile-avatar">
+              <img src="" alt="" />
+            </div>
+            <div class="profile-info">
+              <div class="text-welcome">Chào bạn,</div>
+              <h4 class="fullname">Nguyen Huy</h4>
+              <div class="account-type">
+                <span>Tài khoản chưa xác thực</span>
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <div>
+              <div class="col-xs-12 group-switch">
+                <div class="switch-box">
+                  <input type="checkbox" id="switch" class="checkbox" />
+                  <label for="switch" class="toggle">
+                  </label>
+                </div>
+                <span class="job-waiting-status-text job-off-show">
+                  <strong class="text-neutral-neutral-40"
+                    >Đang Tắt tìm việc</strong
+                  >
+                </span>
+                <span class="job-waiting-status-text job-on-show">
+                  <strong class="text-highlight"
+                    >Trạng thái tìm việc đang bật</strong
+                  >
+                  <a href="" style="display: inline-block; margin-left: 10px">
+                    <i class="fa-solid fa-pencil"></i> Chỉnh sửa tiêu chí</a
+                  >
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

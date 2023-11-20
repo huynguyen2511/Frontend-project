@@ -53,6 +53,11 @@ import { CompanyListComponent } from './components/company-list/company-list.com
 import { FindJobComponent } from './components/find-job/find-job.component';
 import { JobComponent } from './components/find-job/job/job.component';
 import { CompanyComponent } from './components/company-list/company/company.component';
+import { UploadCvComponent } from './components/upload-cv/upload-cv.component';
+import { UpdateDemandJobComponent } from './components/update-demand-job/update-demand-job.component';
+import { AppliedJobComponent } from './components/applied-job/applied-job.component';
+import { FindCvComponent } from './employerComp/cv-management/find-cv/find-cv.component';
+import { AppliedCvComponent } from './employerComp/cv-management/applied-cv/applied-cv.component';
 
 
 
@@ -91,6 +96,11 @@ import { CompanyComponent } from './components/company-list/company/company.comp
     FindJobComponent,
     JobComponent,
     CompanyComponent,
+    UploadCvComponent,
+    UpdateDemandJobComponent,
+    AppliedJobComponent,
+    FindCvComponent,
+    AppliedCvComponent,
 
 
   ],

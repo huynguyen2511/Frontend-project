@@ -1,0 +1,208 @@
+<div class="header">
+  <app-navigation></app-navigation>
+</div>
+<div class="body">
+  <div class="box-step">
+    <div class="step-item">
+      <div class="step-number">1</div>
+      <div class="step-text">Upload CV</div>
+    </div>
+    <div class="line"></div>
+    <div class="step-item">
+      <div class="step-number" style="background: #0058b1">2</div>
+      <div class="step-text" style="color: #000">Update job search needs</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card box-white mb-3">
+          <div class="header">
+            <div class="d-flex">
+              <div class="header-left">
+                <h1 class="title">
+                  Update information so our website can connects you with the
+                  most suitable
+                  <span style="color: #0012b1">job opportunities</span>
+                </h1>
+                <p class="caption">
+                  Let us understand your job search needs by updating some
+                  information below
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="upload-avt d-flex">
+                <div class="avatar">
+                    <img src="" alt="avatar">
+                </div>
+                <button class="btn btn-change-avatar btn-upload-avatar mt-2">
+                    <i class="fa-solid fa-camera"></i>
+                    Change avatar
+                </button>
+            </div>
+            <form class="form" action="" method="POST" #localform="ngForm" [formGroup]="demandJobForm" (ngSubmit)="onCreate()">
+              <div class="sub-content">
+                <table>
+                  <tr class="xsmax">
+                    <th style="height: 40px; width: 95%; padding-top: 10px; ">
+                      <h2 class="sub-title"><span class="icon text-primary">
+                        <i class="fa-solid fa-briefcase"></i></span>Basic job search information</h2>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Fullname<span class="text-red">*</span></mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="name"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('name')?.invalid"/>
+                      <div class="invalid-feedback">This field is required</div>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Birth year<span class="text-red">*</span></mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="birthYear"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('birthYear')?.invalid"/>
+                      <div class="invalid-feedback">This field is required</div>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Gender<span class="text-red">*</span></mat-label>
+                    </th>
+                    <th class="box-input">
+                      <span *ngFor="let i of gender" class="gender">
+                        <input type="radio" id="{{i.id}}" value="{{i.value}}" name="gender" >
+                        <label for="{{i.value}}">{{i.value}}</label>
+                      </span>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Profession<span class="text-red">*</span></mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input matInput type="text" class="form-control border-hover" formControlName="profession"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('profession')?.invalid"/>
+                      <div class="invalid-feedback">This field is required</div>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Experience<span class="text-red">*</span></mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="experience"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('experience')?.invalid"/>
+                      <div class="invalid-feedback">This field is required</div>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Qualification<span class="text-red">*</span></mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="qualification"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('qualification')?.invalid"/>
+                      <div class="invalid-feedback">This field is required</div>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>English level<span class="text-red">*</span></mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="englishLevel"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('englishLevel')?.invalid"/>
+                      <div class="invalid-feedback">This field is required</div>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Work location<span class="text-red">*</span></mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="workLocation"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('workLocation')?.invalid"/>
+                      <div class="invalid-feedback">This field is required</div>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Form of work<span class="text-red">*</span></mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="workForm"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('workForm')?.invalid"/>
+                      <div class="invalid-feedback">This field is required</div>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Desired salary<span class="text-red">*</span></mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="desiredSalary"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('desiredSalary')?.invalid"/>
+                      <div class="invalid-feedback">This field is required</div>
+                    </th>
+                  </tr>
+                  <tr class="xsmax">
+                    <th class="sub-header">
+                      <h2 class="sub-title"><span class="icon text-primary">
+                        <i class="fa-solid fa-circle-info"></i></span>
+                        Additional information (optional)</h2>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Home town</mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="homeTown"/>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Skill</mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="skill"/>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Your wishes</mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="wishes"/>
+                    </th>
+                  </tr>
+                  <tr class="content">
+                    <th class="label">
+                      <mat-label>Introduce yourself</mat-label>
+                    </th>
+                    <th class="box-input">
+                      <input type="text" matInput class="form-control border-hover" formControlName="introduce"/>
+                    </th>
+                  </tr>
+
+                </table>
+              </div>
+
+              <div class="action text-center my-5">
+                <a href="" class="btn btn-cancel mx-1">Skip</a>
+                <button class="btn btn-primary mx-1" type="submit">Update information</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

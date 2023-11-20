@@ -28,6 +28,11 @@ import { ManageCvComponent } from './components/manage-cv/manage-cv.component';
 import { CompanyListComponent } from './components/company-list/company-list.component';
 import { JobComponent } from './components/find-job/job/job.component';
 import { CompanyComponent } from './components/company-list/company/company.component';
+import { UploadCvComponent } from './components/upload-cv/upload-cv.component';
+import { UpdateDemandJobComponent } from './components/update-demand-job/update-demand-job.component';
+import { AppliedJobComponent } from './components/applied-job/applied-job.component';
+import { FindCvComponent } from './employerComp/cv-management/find-cv/find-cv.component';
+import { AppliedCvComponent } from './employerComp/cv-management/applied-cv/applied-cv.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,6 +44,9 @@ const routes: Routes = [
   { path: 'manage-Cv', component: ManageCvComponent },
   { path: 'company-list', component: CompanyListComponent },
   { path: 'company-list/company/:id', component: CompanyComponent },
+  { path: 'upload-Cv', component: UploadCvComponent },
+  { path: 'update-demand-job', component: UpdateDemandJobComponent },
+  { path: 'job-applied-for', component: AppliedJobComponent},
 
   { path: 'find-job', component: FindJobComponent},
   { path: 'find-job/job/:id', component: JobComponent},
@@ -56,7 +64,12 @@ const routes: Routes = [
           { path: 'company-info', component: CompanyInfoComponent },
         ],
       },
-      { path: 'cv-management', component: CvManagementComponent },
+      { path: 'cv-management', component: CvManagementComponent,
+        children:[
+          { path: 'find-cv', component: FindCvComponent },
+          { path: 'applied-cv', component: AppliedCvComponent },
+        ] 
+      },
       {
         path: 'recruitment-post',
         component: RecruitmentPostComponent,

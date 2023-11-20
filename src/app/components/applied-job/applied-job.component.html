@@ -1,0 +1,81 @@
+<div class="header">
+  <app-navigation></app-navigation>
+</div>
+<div class="body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="box-group">
+          <div class="box-group-header-applied box-group-header">
+            <div class="box-group-title">Job applied for</div>
+            <div class="box-filter-status">
+              <select
+                name="field_of-activity"
+                class="select2-hidden-accessible"
+                formControlName="field_of_activity"
+              >
+                <option>--Select--</option>
+                <option>1</option>
+              </select>
+            </div>
+          </div>
+          <div class="box-group-body">
+            <div class="empty-job">
+              <div class="image-empty">
+                <img
+                  src="https://static.topcv.vn/v4/image/history-apply/empty.png"
+                  alt="empty apply"
+                />
+              </div>
+              <h3 class="title">You haven't applied for any jobs yet!</h3>
+              <div class="btn-action">
+                <a routerLink="/find-job" class="btn btn-primary"
+                  >Find a job now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 sidebar">
+        <div class="box box-white">
+          <div class="box-header">
+            <div class="profile-avatar">
+              <img src="" alt="" />
+            </div>
+            <div class="profile-info">
+              <div class="text-welcome">Chào bạn,</div>
+              <h4 class="fullname">Nguyen Huy</h4>
+              <div class="account-type">
+                <span>Tài khoản chưa xác thực</span>
+              </div>
+            </div>
+          </div>
+          <div class="box-body">
+            <div>
+              <div class="col-xs-12 group-switch">
+                <div class="switch-box">
+                  <input type="checkbox" id="switch" class="checkbox" />
+                  <label for="switch" class="toggle"> </label>
+                </div>
+                <span class="job-waiting-status-text job-off-show">
+                  <strong class="text-neutral-neutral-40"
+                    >Đang Tắt tìm việc</strong
+                  >
+                </span>
+                <span class="job-waiting-status-text job-on-show">
+                  <strong class="text-highlight"
+                    >Trạng thái tìm việc đang bật</strong
+                  >
+                  <a href="" style="display: inline-block; margin-left: 10px">
+                    <i class="fa-solid fa-pencil"></i> Chỉnh sửa tiêu chí</a
+                  >
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./cv-management.component.scss']
 })
 export class CvManagementComponent {
+  opened = true;
 
 }

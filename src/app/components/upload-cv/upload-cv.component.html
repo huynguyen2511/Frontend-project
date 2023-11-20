@@ -1,0 +1,44 @@
+<div class="header">
+    <app-navigation></app-navigation>
+</div>
+<div class="body">
+    <div class="box-step">
+        <div class="step-item">
+            <div class="step-number" style="background: #0058b1;">1</div>
+            <div class="step-text" style="color: #000;">Upload CV</div>
+        </div>
+        <div class="line"></div>
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-text">Update job search needs</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box-upload-cv">
+            <div class="box-header">
+                <h1 class="title">Upload your CV so job opportunities will find you</h1>
+                <h2 class="sub-title">Reduce the amount of time required to find a suitable job by up to 50%.</h2>
+            </div>
+            <div class="box-body">
+                <p class="desc">If you already have a CV, upload it, and our system will automatically suggest it to reputable employers. Save time, find smart jobs, seize opportunities, and take control of your career path.</p>
+                <div class="box-upload">
+                    <div class="file-container" *ngIf="!file">
+                        <input type="file" (change)="getFile($event)" class="file">
+                    </div>
+                    <div *ngIf="file">
+                        File name: {{file.name}} <br/>
+                        <button (click)="file= undefined">Cancel</button>
+                    </div>
+                </div>
+                <div class="file-format">
+                    <div>Supported files: PDF, PNG</div>
+                    <div>Uploaded file must not exceed: 5 MB</div>
+                </div>
+                <div class="box-button">
+                    <button class="btn btn-primary-hover btn-upload">Upload your CV</button>
+                    <p class="text-highlight upload-process">Hệ thống đang xử lý CV của bạn thông thường mất từ 10 đến 15 giây, xin vui lòng đợi !!!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,148 @@
+.header {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+div {
+  display: block;
+}
+.body {
+  background: #f1f2f6;
+  display: block;
+  z-index: 90;
+  .box-step {
+    padding: 26px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    .step-item {
+      margin: 0 16px;
+      display: flex;
+      margin: 0 16px;
+      align-items: center;
+      .step-number {
+        font-size: 15px;
+        margin-right: 12px;
+        padding: 2px 8px;
+        background: #cccccc;
+        border-radius: 50%;
+        color: white;
+        font-weight: bold;
+        height: 24px;
+        width: 24px;
+      }
+      .step-text {
+        color: #999999;
+        font-weight: bold;
+      }
+    }
+    .line {
+      border: 1px solid #eeeeee;
+      height: 2px;
+      width: 120px;
+    }
+  }
+  .container {
+    width: 1170px;
+    .box-upload-cv {
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      margin-top: 24px;
+      .box-header {
+        background: #e5f7ed;
+        border-radius: 5px 5px 0 0;
+        padding: 32px;
+        .title {
+          color: #0047b1;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 30px;
+          margin: 0 0 8px;
+        }
+        .sub-title {
+          font-size: 19px;
+          font-weight: 700;
+          margin: 0;
+          line-height: 1.1;
+        }
+      }
+      .box-body {
+        padding: 24px 32px;
+        .desc {
+          color: #333;
+          font-size: 15px;
+          line-height: 20px;
+        }
+        .box-upload {
+          border: 2px dashed rgb(3, 57, 183);
+          border-radius: 8px;
+          cursor: pointer;
+          margin-left: 100px;
+          margin-right: 100px;
+          margin-bottom: 16px;
+          margin-top: 32px;
+          position: relative;
+          transition: 0.4s;
+          .file-container {
+            width: 100%;
+            .file {
+              width: 100%;
+              padding: 20px;
+              border: 1px solid black;
+              cursor: pointer;
+            }
+          }
+        }
+        .file-format {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 32px;
+        }
+        .box-button {
+          border-bottom: 1px solid #eee;
+          padding-bottom: 32px;
+          text-align: center;
+          .btn {
+            height: 40px;
+            min-width: 100px;
+            transition: 0.4s;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+          }
+          .btn-upload {
+            background: #00b14f;
+            color: #fff;
+          }
+          .upload-process {
+            display: none;
+            margin-top: 10px;
+            transition: 0.4s;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
