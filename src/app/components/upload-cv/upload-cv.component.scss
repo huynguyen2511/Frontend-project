@@ -47,6 +47,7 @@ div {
   }
   .container {
     width: 1170px;
+    min-height: 600px;
     .box-upload-cv {
       background: #fff;
       border-radius: 5px;
@@ -88,14 +89,20 @@ div {
           margin-top: 32px;
           position: relative;
           transition: 0.4s;
+          min-height: 100px;
           .file-container {
             width: 100%;
+            min-height: 99px;
             .file {
+              min-height: 99px;
               width: 100%;
               padding: 20px;
               border: 1px solid black;
               cursor: pointer;
             }
+          }
+          .after{
+            padding: 20px;
           }
         }
         .file-format {

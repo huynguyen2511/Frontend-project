@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ErrorHandlerService } from './error-handler.service';
+// import { ErrorHandlerService } from './error-handler.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JobPostsService {
   url = 'http://localhost:5000/api/';
-  constructor(private http: HttpClient, private errorHandlerService: ErrorHandlerService) {
+  constructor(private http: HttpClient) {
    }
 
   postCreate(data):Observable<any>{

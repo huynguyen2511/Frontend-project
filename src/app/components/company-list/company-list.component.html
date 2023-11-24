@@ -34,13 +34,13 @@
             <p class="count">DANH SÁCH CÁC CÔNG TY NỔI BẬT</p>
 
             <table class="search-result">
-              <tr class="result-company" *ngFor="let i of companyLists" routerLink="/company-list/company/{{i.id}}">
+              <tr class="result-company" *ngFor="let i of companyLists" [routerLink]="['/company-list/company']" [queryParams]="{id: i.id}">
                 <a href="" class="logo"
-                  ><img src="../image/company-logo.png" alt="Company" class="img-responsive"
+                  ><img src="https://s3.amazonaws.com/freestock-prod/450/freestock_565622158.jpg" style="background: rgb(197, 195, 195)" alt="Company" class="img-responsive"
                 /></a>
                 <div class="company-info">
                   <div class="title">
-                    <strong><a routerLink="/company-list/company/{{i.id}}" class="company-name">{{i.companyName}}</a></strong>
+                    <strong><a [routerLink]="['/company-list/company']" [queryParams]="{id: i.id}" class="company-name">{{i.companyName}}</a></strong>
                     <span class="count-job"><i class="fa-solid fa-minus" style="color: rgba(156, 156, 183, 0.468); margin: auto;"></i> Đang tuyển 0 vị trí</span>
                   </div>
                   <div class="address d-flex">

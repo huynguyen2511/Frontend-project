@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 import { EmployerService } from 'src/app/services/employer.service';
-import jobposition from  "../data/jobPosition.json"
+import jobposition from  "../../data/jobPosition.json"
 
 @Component({
   selector: 'app-employer-info',

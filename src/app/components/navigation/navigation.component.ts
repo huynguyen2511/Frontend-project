@@ -7,28 +7,36 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent implements OnInit {
   public isLoggedIn$: Observable<boolean> = new Observable<boolean>();
   public isLoggedOut$: Observable<boolean> = new Observable<boolean>();
 
-  user:any;
+  user: any;
 
-  constructor(public authService: AuthService, private userService: UserService){
+  constructor(
+    public authService: AuthService,
+  ) {
+    this.isLoggedIn$ = this.authService.isLoggedIn();
+    this.isLoggedOut$ = this.authService.isLoggedOut();
   }
 
   public ngOnInit(): void {
-    this.isLoggedIn$ = this.authService.isLoggedIn();
-    this.isLoggedOut$ = this.authService.isLoggedOut();
-
-    this.userService.GetUser().subscribe(data => {
-      let arr = Object.values(data)
-      this.user = arr[2]
-    })
+    this.authService.GetUser().subscribe((data) => {
+      if (data) {
+        let arr = Object.values(data);
+        console.log(arr);
+        this.user = arr[2];
+      } else {
+        window.location.reload();
+      }
+      this.isLoggedIn$ = this.authService.isLoggedIn();
+      this.isLoggedOut$ = this.authService.isLoggedOut();
+    });
   }
-  
-  public logout(){
-    this.authService.logout()
+
+  public logout() {
+    this.authService.logout();
   }
 }

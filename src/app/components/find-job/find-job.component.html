@@ -7,6 +7,7 @@
             <table>
                 <tr>
                     <th class="th-input">
+                      <i class="fa-solid fa-magnifying-glass"></i>
                         <select  class="drop-select" formControlName="postition">
                             <option style="background-color: rgb(176, 174, 174); font-style: italic">
                               1
@@ -15,28 +16,31 @@
                         </select>
                     </th>
                     <th class="th-input">
-                        <select  class="drop-select" formControlName="province">
-                          <option style="background-color: rgb(176, 174, 174); font-style: italic">
-                            1
-                          </option>
-                            <option>2</option>
-                        </select>
+                      <i class="fa-solid fa-location-dot"></i>
+                      <select name="province" class="drop-select" formControlName="province" id="province">
+                        <option value="">All location</option>
+                        <option *ngFor="let i of province" value="{{i.value}}">
+                          {{i.value}}
+                        </option>
+                      </select>
                     </th>
                     <th class="th-input">
-                        <select  class="drop-select" formControlName="workExperience">
-                          <option style="background-color: rgb(176, 174, 174); font-style: italic">
-                            1
-                          </option>
-                            <option>2</option>
-                        </select>
+                      <i class="fa-solid fa-graduation-cap"></i>
+                      <select name="workExperience" class="drop-select" formControlName="workExperience">
+                        <option value="">All experience</option>
+                        <option *ngFor="let i of exp" value="{{i}}">
+                          {{i}}
+                        </option>
+                      </select>
                     </th>
                     <th class="th-input">
-                        <select  class="drop-select" formControlName="salary">
-                          <option style="background-color: rgb(176, 174, 174); font-style: italic">
-                            1
-                          </option>
-                            <option>2</option>
-                        </select>
+                      <i class="fa-solid fa-coins"></i>
+                      <select name="salary" class="drop-select" formControlName="salary">
+                        <option value="">All salary range</option>
+                        <option *ngFor="let i of sal" value="{{i}}">
+                          {{i}}
+                        </option>
+                      </select>
                     </th>
                     <th class="th-button" type="submit">
                         <button>Find</button>
@@ -54,9 +58,9 @@
           <div class="col col-9">
             <table >
               <tr *ngFor="let i of jobLists">
-                <div class="content" routerLink="/find-job/job/{{i.id}}">
+                <div class="content" [routerLink]="['/find-job/job']" [queryParams]="{id: i.id}">
                   <div class="content-logo">
-                    <a class="logo">
+                    <a class="logo" style="background: white url(https://s3.amazonaws.com/freestock-prod/450/freestock_565622158.jpg);">
                       <div>logo</div>
                     </a>
                   </div>
@@ -64,7 +68,7 @@
                     <div class="content-main">
                       <div class="left">
                         <span><strong>{{i.title}}</strong></span>
-                        <a routerLink="/company-list/company/{{i.companyPost.id}}" class="company">{{i.companyPost.companyName}}</a>
+                        <a [routerLink]="['/company-list/company']" [queryParams]="{id: i.companyPost.id}" class="company">{{i.companyPost.companyName}}</a>
                       </div>
                       <div class="right">
                         <label for="" class="salary">{{i.attributes.salary}}</label>

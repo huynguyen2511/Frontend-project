@@ -142,7 +142,7 @@
           </div>
         </div>
         <div class="company-link">
-          <a routerLink="/company-list/company/{{post.companyPost.id}}">Xem trang công ty</a>
+          <a [routerLink]="['/company-list/company']" [queryParams]="{id: post.companyPost.id}">Xem trang công ty</a>
           <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </div>
       </div>
@@ -174,7 +174,7 @@
             <div class="general-group-icon"><i class="fa-solid fa-person-half-dress fa-lg" style="color: #ffffff;"></i></div>
             <div class="general-group-info">
               <div class="group-info-title">Giới tính</div>
-              <div class="group-info-value">Không yêu cầu</div>
+              <div class="group-info-value">{{post.attributes.gender}}</div>
             </div>
           </div>
         </div>

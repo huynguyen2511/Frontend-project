@@ -8,28 +8,29 @@ mat-toolbar {
     font-family: Arial, Helvetica, sans-serif;
   }
 }
-
-.form-wrapper {
-  height: auto;
+.body {
+  height: max-content;
+  min-height: 595px;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 30px;
-  position: initial;
-  .form {
-    display:grid;
-    .form-group{
+  .form-wrapper {
+    padding: 30px;
+    .form {
+      display: grid;
+      .form-group {
         width: auto;
         margin-bottom: 10px;
 
-        select{
+        select {
           border: 1px rgb(216, 216, 216) solid;
           border-radius: 5px;
           width: 100%;
           height: 38px;
+        }
       }
-    }
-    .btn{
-      width: 20%;
+      .btn {
+        width: 20%;
+      }
     }
   }
 }

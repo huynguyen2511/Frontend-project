@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { first, catchError, tap } from 'rxjs/operators';
 
-import { ErrorHandlerService } from './error-handler.service';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -16,7 +15,7 @@ export class AdminService {
   private loggedOut: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true)
 
 
-  constructor(private http : HttpClient, private errorHandlerService: ErrorHandlerService, private router: Router) {
+  constructor(private http : HttpClient, private router: Router) {
     const token = localStorage.getItem('Admin auth');
     if(!!token){
       this.loggedIn.next(true)

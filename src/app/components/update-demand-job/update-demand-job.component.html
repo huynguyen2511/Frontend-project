@@ -66,9 +66,12 @@
                       <mat-label>Birth year<span class="text-red">*</span></mat-label>
                     </th>
                     <th class="box-input">
-                      <input type="text" matInput class="form-control border-hover" formControlName="birthYear"
-                      [class.is-invalid]="localform.submitted && demandJobForm.get('birthYear')?.invalid"/>
-                      <div class="invalid-feedback">This field is required</div>
+                      <select name="birthYear" class="form-control border-hover" formControlName="birthYear" id="years">
+                        <option value="">-- Choose birth year --</option>
+                        <option *ngFor="let i of years" value="{{i}}">
+                          {{i}}
+                        </option>
+                      </select>
                     </th>
                   </tr>
                   <tr class="content">
@@ -77,7 +80,7 @@
                     </th>
                     <th class="box-input">
                       <span *ngFor="let i of gender" class="gender">
-                        <input type="radio" id="{{i.id}}" value="{{i.value}}" name="gender" >
+                        <input type="radio" id="{{i.id}}" value="{{i.value}}" name="gender" formControlName="gender">
                         <label for="{{i.value}}">{{i.value}}</label>
                       </span>
                     </th>
@@ -89,7 +92,7 @@
                     <th class="box-input">
                       <input matInput type="text" class="form-control border-hover" formControlName="profession"
                       [class.is-invalid]="localform.submitted && demandJobForm.get('profession')?.invalid"/>
-                      <div class="invalid-feedback">This field is required</div>
+                      
                     </th>
                   </tr>
                   <tr class="content">
@@ -97,9 +100,13 @@
                       <mat-label>Experience<span class="text-red">*</span></mat-label>
                     </th>
                     <th class="box-input">
-                      <input type="text" matInput class="form-control border-hover" formControlName="experience"
-                      [class.is-invalid]="localform.submitted && demandJobForm.get('experience')?.invalid"/>
-                      <div class="invalid-feedback">This field is required</div>
+                      <select name="experience" class="form-control border-hover" formControlName="experience" id="experience"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('experience')?.invalid">
+                        <option value="">-- Working time in selected profession --</option>
+                        <option *ngFor="let i of exp" value="{{i}}">
+                          {{i}}
+                        </option>
+                      </select>
                     </th>
                   </tr>
                   <tr class="content">
@@ -107,9 +114,14 @@
                       <mat-label>Qualification<span class="text-red">*</span></mat-label>
                     </th>
                     <th class="box-input">
-                      <input type="text" matInput class="form-control border-hover" formControlName="qualification"
-                      [class.is-invalid]="localform.submitted && demandJobForm.get('qualification')?.invalid"/>
-                      <div class="invalid-feedback">This field is required</div>
+                      <select name="qualification" class="form-control border-hover" formControlName="qualification" id="qualification"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('qualification')?.invalid">
+                        <option value="">-- Choose qualification --</option>
+                        <option *ngFor="let i of qualifi" value="{{i}}">
+                          {{i}}
+                        </option>
+                      </select>
+                      
                     </th>
                   </tr>
                   <tr class="content">
@@ -117,9 +129,14 @@
                       <mat-label>English level<span class="text-red">*</span></mat-label>
                     </th>
                     <th class="box-input">
-                      <input type="text" matInput class="form-control border-hover" formControlName="englishLevel"
-                      [class.is-invalid]="localform.submitted && demandJobForm.get('englishLevel')?.invalid"/>
-                      <div class="invalid-feedback">This field is required</div>
+                      <select name="englishLevel" class="form-control border-hover" formControlName="englishLevel" id="englishLevel"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('englishLevel')?.invalid">
+                        <option value="">-- Choose English level --</option>
+                        <option *ngFor="let i of engLevel" value="{{i}}">
+                          {{i}}
+                        </option>
+                      </select>
+                      
                     </th>
                   </tr>
                   <tr class="content">
@@ -127,9 +144,13 @@
                       <mat-label>Work location<span class="text-red">*</span></mat-label>
                     </th>
                     <th class="box-input">
-                      <input type="text" matInput class="form-control border-hover" formControlName="workLocation"
-                      [class.is-invalid]="localform.submitted && demandJobForm.get('workLocation')?.invalid"/>
-                      <div class="invalid-feedback">This field is required</div>
+                      <select name="workLocation" class="form-control border-hover" formControlName="workLocation" id="workLocation"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('workLocation')?.invalid">
+                        <option value="">-- Choose work location --</option>
+                        <option *ngFor="let i of province" value="{{i.value}}">
+                          {{i.value}}
+                        </option>
+                      </select>
                     </th>
                   </tr>
                   <tr class="content">
@@ -137,9 +158,13 @@
                       <mat-label>Form of work<span class="text-red">*</span></mat-label>
                     </th>
                     <th class="box-input">
-                      <input type="text" matInput class="form-control border-hover" formControlName="workForm"
-                      [class.is-invalid]="localform.submitted && demandJobForm.get('workForm')?.invalid"/>
-                      <div class="invalid-feedback">This field is required</div>
+                      <select name="workForm" class="form-control border-hover" formControlName="workForm" id="workForm"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('workForm')?.invalid">
+                        <option value="">-- Choose desired form of work --</option>
+                        <option *ngFor="let i of cate" value="{{i.value}}">
+                          {{i.value}}
+                        </option>
+                      </select>
                     </th>
                   </tr>
                   <tr class="content">
@@ -147,9 +172,13 @@
                       <mat-label>Desired salary<span class="text-red">*</span></mat-label>
                     </th>
                     <th class="box-input">
-                      <input type="text" matInput class="form-control border-hover" formControlName="desiredSalary"
-                      [class.is-invalid]="localform.submitted && demandJobForm.get('desiredSalary')?.invalid"/>
-                      <div class="invalid-feedback">This field is required</div>
+                      <select name="desiredSalary" class="form-control border-hover" formControlName="desiredSalary" id="desiredSalary"
+                      [class.is-invalid]="localform.submitted && demandJobForm.get('desiredSalary')?.invalid">
+                        <option value="">-- Choose desired salary --</option>
+                        <option *ngFor="let i of sal" value="{{i}}">
+                          {{i}}
+                        </option>
+                      </select>
                     </th>
                   </tr>
                   <tr class="xsmax">
@@ -164,15 +193,12 @@
                       <mat-label>Home town</mat-label>
                     </th>
                     <th class="box-input">
-                      <input type="text" matInput class="form-control border-hover" formControlName="homeTown"/>
-                    </th>
-                  </tr>
-                  <tr class="content">
-                    <th class="label">
-                      <mat-label>Skill</mat-label>
-                    </th>
-                    <th class="box-input">
-                      <input type="text" matInput class="form-control border-hover" formControlName="skill"/>
+                      <select name="homeTown" class="form-control border-hover" formControlName="homeTown" id="homeTown">
+                        <option value="">-- Choose hometown --</option>
+                        <option *ngFor="let i of province" value="{{i.value}}">
+                          {{i.value}}
+                        </option>
+                      </select>
                     </th>
                   </tr>
                   <tr class="content">
@@ -180,7 +206,8 @@
                       <mat-label>Your wishes</mat-label>
                     </th>
                     <th class="box-input">
-                      <input type="text" matInput class="form-control border-hover" formControlName="wishes"/>
+                      <textarea matInput type="text" class="form-control border-hover" formControlName="wishes" cols="30" rows="5"
+                        ></textarea>
                     </th>
                   </tr>
                   <tr class="content">
@@ -188,7 +215,8 @@
                       <mat-label>Introduce yourself</mat-label>
                     </th>
                     <th class="box-input">
-                      <input type="text" matInput class="form-control border-hover" formControlName="introduce"/>
+                      <textarea matInput type="text" class="form-control border-hover" formControlName="introduce" cols="30" rows="5"
+                        ></textarea>
                     </th>
                   </tr>
 

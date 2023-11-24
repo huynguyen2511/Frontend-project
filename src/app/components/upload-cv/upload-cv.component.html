@@ -25,7 +25,7 @@
                     <div class="file-container" *ngIf="!file">
                         <input type="file" (change)="getFile($event)" class="file">
                     </div>
-                    <div *ngIf="file">
+                    <div *ngIf="file" class="after">
                         File name: {{file.name}} <br/>
                         <button (click)="file= undefined">Cancel</button>
                     </div>
@@ -35,7 +35,7 @@
                     <div>Uploaded file must not exceed: 5 MB</div>
                 </div>
                 <div class="box-button">
-                    <button class="btn btn-primary-hover btn-upload">Upload your CV</button>
+                    <button class="btn btn-primary-hover btn-upload" (click)="uploadCv()">Upload your CV</button>
                     <p class="text-highlight upload-process">Hệ thống đang xử lý CV của bạn thông thường mất từ 10 đến 15 giây, xin vui lòng đợi !!!</p>
                 </div>
             </div>

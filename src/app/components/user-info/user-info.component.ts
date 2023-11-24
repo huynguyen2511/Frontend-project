@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,9 +10,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserInfoComponent implements OnInit{
   user:any;
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService, private authService: AuthService){}
   ngOnInit(): void {
-    this.userService.GetUser().subscribe(data => {
+    this.authService.GetUser().subscribe(data => {
       let arr = Object.values(data)
       this.user = arr[2]
       

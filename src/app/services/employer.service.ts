@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, catchError, first } from 'rxjs';
-import { ErrorHandlerService } from './error-handler.service';
+
 import { JobPost } from '../models/JobPost';
 import { Employer } from '../models/Employer';
 
@@ -15,7 +15,7 @@ import { Employer } from '../models/Employer';
 
 export class EmployerService {
   url = 'http://localhost:5000/api/';
-  constructor(private http: HttpClient, private errorHandlerService: ErrorHandlerService) {
+  constructor(private http: HttpClient) {
    }
 
 
@@ -36,8 +36,6 @@ export class EmployerService {
     let header_obj = new HttpHeaders().set("Authorization", token)
     let formData  = new FormData();
     formData .append('related_documents', file)
-    
-    // formParams.append('additional_documents', additionalFile)
     return this.http.put<any>(this.url + 'employer/setting/updateLicense', formData ,{headers:header_obj})
   }
 
@@ -45,6 +43,12 @@ export class EmployerService {
     let token = localStorage.getItem('Employer auth')
     let header_obj = new HttpHeaders().set("Authorization", token)
     return this.http.get<any>(this.url + "employer/getLicense", {headers:header_obj});
+  }
+
+  getPostById():Observable<any>{
+    let token = localStorage.getItem('Employer auth')
+    let header_obj = new HttpHeaders().set("Authorization", token)
+    return this.http.get<any>(this.url + "post/allPostsByEmployer", {headers:header_obj});
   }
 
 

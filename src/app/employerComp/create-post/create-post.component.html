@@ -1,78 +1,123 @@
 <mat-toolbar>
     <p>Create new post</p>
 </mat-toolbar>
-<div class="form-wrapper">
-  <form action="" method="POST" [formGroup]="createPostForm" #localform="ngForm" (ngSubmit)="onCreate()" class="form">
-    <div class="form-group">
-      <mat-label>Title</mat-label>
-      <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="title"
-        [class.is-invalid]="localform.submitted && createPostForm.get('title')?.invalid" />
-      <div class="invalid-feedback">Title is required</div>
-    </div>
-    
-    <div class="form-group">
-      <mat-label>Category</mat-label>
-      <select name="category" class="select" formControlName="category">
-        <option *ngFor="let i of cate">
-          {{i.value}}
-        </option>
-      </select>
-    </div>
-    
-    <div class="form-group">
-      <mat-label>Province</mat-label>
-      <select name="provinceCode" class="select" formControlName="provinceCode">
-        <option *ngFor="let i of provinceC" value="{{i.code}}">
-          {{i.value}}
-        </option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <mat-label>Address</mat-label>
-      <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="address"
-      [class.is-invalid]="localform.submitted && createPostForm.get('address')?.invalid" />
-      <div class="invalid-feedback">Address is required</div>
-    </div>
-    
-    <div class="form-group">
-      <mat-label>Salary</mat-label>
-      <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="salary"
-      [class.is-invalid]="localform.submitted && createPostForm.get('salary')?.invalid" />
-      <div class="invalid-feedback">Salary is required</div>
-    </div>
-    
-    <div class="form-group">
-      <mat-label>Benefits</mat-label>
-      <!-- <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="benefits"
-      [class.is-invalid]="localform.submitted && createPostForm.get('benefits')?.invalid" /> -->
-      <textarea matInput type="text" class="form-control" formControlName="benefits" cols="30" rows="5"
-      [class.is-invalid]="localform.submitted && createPostForm.get('benefits')?.invalid"></textarea>
-      <div class="invalid-feedback">Benefits is required</div>
-    </div>
- 
-    <div class="form-group">
-      <mat-label>Requirements</mat-label>
-      <!-- <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="requirements"
-      [class.is-invalid]="localform.submitted && createPostForm.get('requirements')?.invalid" /> -->
-      <textarea matInput type="text" class="form-control" formControlName="requirements" cols="30" rows="5"
-      [class.is-invalid]="localform.submitted && createPostForm.get('requirements')?.invalid"
-      ></textarea>
-      <div class="invalid-feedback">Requirements is required</div>
-    </div>
-
-    <div class="form-group">
-      <mat-label>Description</mat-label>
-      <!-- <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="description"/> -->
-      <textarea matInput type="text" class="form-control" formControlName="description" cols="30" rows="5"
-      ></textarea>
-    </div>
-        
-    <button
-      color="accent"
-      class="btn btn-primary"
-      type="submit">
-      <span>Create post</span>
-    </button>
-  </form>
+<div class="body">
+  <div class="form-wrapper">
+    <form action="" method="POST" [formGroup]="createPostForm" #localform="ngForm" (ngSubmit)="onCreate()" class="form">
+      <div class="form-group">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" class="form-control" placeholder="Ex. Tuyen nhan vien Abc" formControlName="title"
+          [class.is-invalid]="localform.submitted && createPostForm.get('title')?.invalid" />
+        <div class="invalid-feedback">Title is required</div>
+      </div>
+      
+      <div class="form-group">
+        <mat-label>Province</mat-label>
+        <select name="provinceCode" class="select" formControlName="provinceCode">
+          <option value="">-- Choose where you want to find the candidate --</option>
+          <option *ngFor="let i of provinceC" value="{{i.code}}">
+            {{i.value}}
+          </option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Address</mat-label>
+        <input matInput type="text" class="form-control" placeholder="Ex. 118 Cau Dien, Bac Tu Liem" formControlName="address"
+        [class.is-invalid]="localform.submitted && createPostForm.get('address')?.invalid" />
+        <div class="invalid-feedback">Address is required</div>
+      </div>
+  
+          
+      <div class="form-group">
+        <mat-label>Form of work</mat-label>
+        <select name="category" class="select" formControlName="category">
+          <option value="">-- Choose form of work --</option>
+          <option *ngFor="let i of cate" value="{{i.value}}">
+            {{i.value}}
+          </option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Experience</mat-label>
+        <select name="experience" class="select" formControlName="experience">
+          <option value="">-- Select the required experience for the candidate --</option>
+          <option *ngFor="let i of exp" value="{{i}}">
+            {{i}}
+          </option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Level required</mat-label>
+        <select name="level" class="select" formControlName="level">
+          <option value="">-- Select the required level for the candidate --</option>
+          <option *ngFor="let i of jobP" value="{{i}}">
+            {{i}}
+          </option>
+          <option value="Intern">Intern</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Number of recruits</mat-label>
+        <input matInput type="text" class="form-control" placeholder="Ex. 9, 10-15 (number and '-' only)" formControlName="recruitNumber"
+        [class.is-invalid]="localform.submitted && createPostForm.get('recruitNumber')?.invalid" />
+        <div class="invalid-feedback">Number of recruits is required</div>
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Gender</mat-label>
+        <select name="gender" class="select" formControlName="gender">
+          <option value="">-- Select the required gender for the candidate --</option>
+          <option *ngFor="let i of genderC" value="{{i}}">
+            {{i}}
+          </option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Salary</mat-label>
+        <select name="gender" class="select" formControlName="salary" [class.is-invalid]="localform.submitted && createPostForm.get('salary')?.invalid">
+          <option value="">-- Select salary range --</option>
+          <option *ngFor="let i of salary" value="{{i}}">
+            {{i}}
+          </option>
+        </select>
+        <div class="invalid-feedback">Benefits is required</div>
+      </div>
+      
+      <div class="form-group">
+        <mat-label>Benefits</mat-label>
+        <textarea matInput type="text" class="form-control" formControlName="benefits" cols="30" rows="5"
+        [class.is-invalid]="localform.submitted && createPostForm.get('benefits')?.invalid"></textarea>
+        <div class="invalid-feedback">Benefits is required</div>
+      </div>
+   
+      <div class="form-group">
+        <mat-label>Requirements</mat-label>
+        <!-- <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="requirements"
+        [class.is-invalid]="localform.submitted && createPostForm.get('requirements')?.invalid" /> -->
+        <textarea matInput type="text" class="form-control" formControlName="requirements" cols="30" rows="5"
+        [class.is-invalid]="localform.submitted && createPostForm.get('requirements')?.invalid"
+        ></textarea>
+        <div class="invalid-feedback">Requirements is required</div>
+      </div>
+  
+      <div class="form-group">
+        <mat-label>Description</mat-label>
+        <!-- <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="description"/> -->
+        <textarea matInput type="text" class="form-control" formControlName="description" cols="30" rows="5"
+        ></textarea>
+      </div>
+          
+      <button
+        color="accent"
+        class="btn btn-primary"
+        type="submit">
+        <span>Create post</span>
+      </button>
+    </form>
+  </div>
 </div>

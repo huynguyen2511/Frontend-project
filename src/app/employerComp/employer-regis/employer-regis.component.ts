@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmployerAuthService } from 'src/app/services/employer-auth.service';
-import jobposition from '../data/jobPosition.json';
-import Province from '../data/province.json';
+import jobposition from '../../data/jobPosition.json';
+import Province from '../../data/province.json';
 
 @Component({
   selector: 'app-employer-regis',

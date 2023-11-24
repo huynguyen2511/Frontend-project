@@ -15,11 +15,13 @@ export class JobComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.postId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.postId = this.activatedRoute.snapshot.queryParamMap.get('id');
     this.jobService.getAllJobs().subscribe(data =>{
       let arr = Object.values(data)
       this.jobList = arr[2]
       this.post = this.jobList.find(x => x.id == this.postId);
+      console.log(this.post);
+      
     })
   }
 }

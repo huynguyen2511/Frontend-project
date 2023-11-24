@@ -12,9 +12,9 @@ export class LicenseComponent implements OnInit{
   licenseArr: any
   status:any
 
-
   uploadForm: FormGroup; 
   file: File = null;
+
   // additionalFile: File = null;
   constructor(private employerService: EmployerService, private formBuilder: FormBuilder){
     this.employerService.getLicense().subscribe(data => {
@@ -38,10 +38,6 @@ export class LicenseComponent implements OnInit{
       this.uploadForm.get('profile').setValue(this.file);
     }
   }
-  // getAdditionalFile(event:any){
-  //   this.additionalFile = event.target.files[0];
-  //   console.log("Additional files", this.additionalFile);
-  // }
 
   upload(){
     console.log(this.uploadForm.get('profile').value);

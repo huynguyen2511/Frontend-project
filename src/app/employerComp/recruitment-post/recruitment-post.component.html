@@ -1,12 +1,11 @@
 <mat-toolbar>
     <h4>Job postings</h4>
 </mat-toolbar>
-
 <mat-sidenav-container class="container">
     <mat-sidenav [(opened)]="opened" mode="side">
         <mat-list>
-            <mat-list-item routerLink="posts" style="text-decoration: none;">Posts</mat-list-item>
-            <mat-list-item routerLink="create-post" style="text-decoration: none;">Create new post</mat-list-item>
+            <mat-list-item routerLink="posts">Posts</mat-list-item>
+            <mat-list-item routerLink="create-post">Create new post</mat-list-item>
         </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>

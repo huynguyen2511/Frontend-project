@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { BehaviorSubject, Observable, catchError, first, tap } from 'rxjs';
-import { ErrorHandlerService } from './error-handler.service';
+import { BehaviorSubject, Observable, catchError, first, tap, throwError } from 'rxjs';
+// import { ErrorHandlerService } from './error-handler.service';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EmployerAuthService {
-  http_: 'http://localhost:5000/api/auth';
+  url = 'http://localhost:5000/api/';
 
   private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     false
@@ -20,11 +20,11 @@ export class EmployerAuthService {
 
   constructor(
     private http: HttpClient,
-    private errorHandlerService: ErrorHandlerService,
+    // private errorHandlerService: ErrorHandlerService,
     private router: Router
   ) {
     const token = localStorage.getItem('Employer auth');
-    if (!!token) {
+    if (token) {
       this.loggedIn.next(true);
       this.loggedOut.next(false);
     } else {
@@ -36,10 +36,7 @@ export class EmployerAuthService {
   employerRegister(data): Observable<any> {
     return this.http
       .post<any>('http://localhost:5000/api/auth/employer/signup', data)
-      .pipe(
-        first(),
-        catchError(this.errorHandlerService.handlerError<any>('signup'))
-      );
+      
   }
 
   employerLogin(data): Observable<any> {
@@ -58,6 +55,22 @@ export class EmployerAuthService {
           }
         })
       );
+  }
+
+  CheckToken():Observable<any>{
+    let token = localStorage.getItem('Employer auth')
+    let header_obj = new HttpHeaders().set("Authorization", token)
+    return this.http.get<any>(this.url + "employer/", {headers:header_obj}).pipe(
+      catchError((err) => {
+        let Error = err.error;
+        if (Error.err == 1) {
+          localStorage.removeItem('Employer auth');
+          this.loggedIn.next(false);
+          this.loggedOut.next(true);
+        }
+        return throwError(err);
+      })
+    );
   }
 
   public logout(): void {

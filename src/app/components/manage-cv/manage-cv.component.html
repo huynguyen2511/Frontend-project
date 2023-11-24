@@ -14,19 +14,23 @@
           </div>
           <div class="box-content">
             <div class="row inner-row">
-              <div class="col-md-6 col-12">
+              <div class="col-md-6 col-12" *ngFor="let e of cvList">
                 <div class="box-cv">
-                  <img src="" alt="" class="img-responsive" />
+                  <img src="{{e.cv_document}}" alt="" class="img-responsive" />
                   <div class="box-bg">
                     <div class="cv-main">
-                      <a href="">Đặt làm CV chính</a>
+                      <a (click)="setCvMain(e.id)" *ngIf="e.status == 'Off'">Đặt làm CV chính</a>
+                      <span class="main" *ngIf="e.status == 'On'">
+                        <i class="fa-solid fa-star" style="color: #fbff00;"></i>
+                        Main Cv
+                      </span>
                     </div>
                     <div class="box-info">
                       <h4 class="title-cv">
-                        <a href="">GCH190518_Nguyen Van Huy.pdf</a>
+                        <a href="">{{e.cv_name}}</a>
                       </h4>
                       <p class="update-at">
-                        Cập nhật lần cuối <span>21-10-2023 16:04 PM</span>
+                        Cập nhật lần cuối <span>{{e.published}}</span>
                       </p>
                       <ul class="action" style="padding-left: 0">
                         <li>
@@ -42,6 +46,10 @@
                   </div>
                 </div>
               </div>
+              <div class="emptyList" *ngIf="!cvList">
+                <img src="https://static.topcv.vn/v4/image/cv-manager/no-cv-upload.png" alt="no cv">
+                <p>You haven't upload any Cv</p>
+              </div>
             </div>
           </div>
         </div>
@@ -54,7 +62,7 @@
             </div>
             <div class="profile-info">
               <div class="text-welcome">Chào bạn,</div>
-              <h4 class="fullname">Nguyen Huy</h4>
+              <h4 class="fullname">{{user.name}}</h4>
               <div class="account-type">
                 <span>Tài khoản chưa xác thực</span>
               </div>

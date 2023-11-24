@@ -58,6 +58,9 @@ import { UpdateDemandJobComponent } from './components/update-demand-job/update-
 import { AppliedJobComponent } from './components/applied-job/applied-job.component';
 import { FindCvComponent } from './employerComp/cv-management/find-cv/find-cv.component';
 import { AppliedCvComponent } from './employerComp/cv-management/applied-cv/applied-cv.component';
+import { ConfirmationDialogComponent } from './employerComp/confirmation-dialog/confirmation-dialog.component';
+import { PostComponent } from './employerComp/job-posts/post/post.component';
+import { CandidateCvComponent } from './employerComp/cv-management/candidate-cv/candidate-cv.component';
 
 
 
@@ -101,7 +104,9 @@ import { AppliedCvComponent } from './employerComp/cv-management/applied-cv/appl
     AppliedJobComponent,
     FindCvComponent,
     AppliedCvComponent,
-
+    ConfirmationDialogComponent,
+    PostComponent,
+    CandidateCvComponent,
 
   ],
   imports: [

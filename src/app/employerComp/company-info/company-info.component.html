@@ -1,75 +1,124 @@
 <mat-toolbar>
-    <p>Update company information</p>
+  <p>Update company information</p>
 </mat-toolbar>
 <div class="updateForm">
-    <form action="" method="PUT" class="form" [formGroup]="companyUpdate" #localform="ngForm" (ngSubmit)="onCreate()">
-        <div class="table-form">
-            <table>
-                <tr>
-                    <th style="height: 40px; width: 95%; padding-top: 10px; ">
-                        <p>Logo </p>
-                    </th>
-                </tr>
-                <tr>
-                    <th class="thUpdate">
-                        <mat-label>Company name</mat-label>
-                        <input matInput type="text" class="form-control" formControlName="companyName" 
-                        [class.is-invalid]="localform.submitted && companyUpdate.get('companyName')?.invalid" />
-                        <div class="invalid-feedback">Company name is required</div>
-                    </th>
-                    <th class="thUpdate">
-                        <mat-label>Email</mat-label>
-                        <input matInput type="text" class="form-control" formControlName="email"
-                        [class.is-invalid]="localform.submitted && companyUpdate.get('email')?.invalid"  />
-                        <div class="invalid-feedback">Company email is required</div>
-                    </th>
-                </tr>
-                <tr>
-                    <th class="thUpdate">
-                        <mat-label>Tax number</mat-label>
-                        <input matInput type="text" class="form-control" formControlName="taxCode"
-                        [class.is-invalid]="localform.submitted && companyUpdate.get('taxCode')?.invalid" />
-                        <div class="invalid-feedback">Tax number is required</div>
-                    </th>
-                    <th class="thUpdate">
-                        <mat-label>Phone number</mat-label>
-                        <input matInput type="text" class="form-control" formControlName="phone"/>
-                    </th>
-                </tr>
-                <tr>
-                    <th class="thUpdate">
-                        <mat-label>Field of activity</mat-label>
-                        <select name="field_of-activity" class="select" formControlName="field_of_activity">
-                            <option>--Select--</option>
-                            <option *ngFor="let i of fieldData">
-                                {{i}}
-                            </option>
-                        </select>
-                    </th>
-                    <th class="thUpdate">
-                        <mat-label>Staff size</mat-label>
-                        <select name="staffSize" class="select" formControlName="staffSize">
-                            <option>--Select--</option>
-                            <option *ngFor="let i of size">
-                                {{i}} staff
-                            </option>
-                        </select>
-                    </th>
-                </tr>
-                <tr>
-                    <th class="thUpdate">
-                        <mat-label>Address</mat-label>
-                        <input matInput type="text" class="form-control" formControlName="address"
-                        [class.is-invalid]="localform.submitted && companyUpdate.get('address')?.invalid" />
-                        <div class="invalid-feedback">Company address is required</div>
-                    </th>
-                    <th class="thUpdate">
-                        <mat-label>Description</mat-label>
-                        <textarea matInput type="text" class="form-control" formControlName="description" cols="30" rows="5"></textarea>
-                    </th>
-                </tr>
-            </table>
-        </div>
-        <button class="btn btn-primary" type="submit"><span>Save</span></button>
-    </form>
+  <form
+    action=""
+    method="PUT"
+    class="form"
+    [formGroup]="companyUpdate"
+    #localform="ngForm"
+    (ngSubmit)="onCreate()"
+  >
+    <div class="table-form">
+      <table>
+        <tr>
+          <th style="height: 40px; width: 95%; padding-top: 10px">
+            <p>Logo</p>
+          </th>
+        </tr>
+        <tr>
+          <th class="thUpdate">
+            <mat-label>Company name</mat-label>
+            <input
+              matInput
+              type="text"
+              class="form-control"
+              formControlName="companyName"
+              [class.is-invalid]="
+                localform.submitted && companyUpdate.get('companyName')?.invalid
+              "
+            />
+            <div class="invalid-feedback">Company name is required</div>
+          </th>
+          <th class="thUpdate">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              type="text"
+              class="form-control"
+              formControlName="email"
+              [class.is-invalid]="
+                localform.submitted && companyUpdate.get('email')?.invalid
+              "
+            />
+            <div class="invalid-feedback">Company email is required</div>
+          </th>
+        </tr>
+        <tr>
+          <th class="thUpdate">
+            <mat-label>Tax number</mat-label>
+            <input
+              matInput
+              type="text"
+              class="form-control"
+              formControlName="taxCode"
+              [class.is-invalid]="
+                localform.submitted && companyUpdate.get('taxCode')?.invalid
+              "
+            />
+            <div class="invalid-feedback">Tax number is required</div>
+          </th>
+          <th class="thUpdate">
+            <mat-label>Phone number</mat-label>
+            <input
+              matInput
+              type="text"
+              class="form-control"
+              formControlName="phone"
+            />
+          </th>
+        </tr>
+        <tr>
+          <th class="thUpdate">
+            <mat-label>Field of activity</mat-label>
+            <select
+              name="field_of-activity"
+              class="select"
+              formControlName="field_of_activity"
+            >
+              <option>--Select--</option>
+              <option *ngFor="let i of fieldData">
+                {{ i }}
+              </option>
+            </select>
+          </th>
+          <th class="thUpdate">
+            <mat-label>Staff size</mat-label>
+            <select name="staffSize" class="select" formControlName="staffSize">
+              <option>--Select--</option>
+              <option *ngFor="let i of size">{{ i }} staff</option>
+            </select>
+          </th>
+        </tr>
+        <tr>
+          <th class="thUpdate">
+            <mat-label>Address</mat-label>
+            <input
+              matInput
+              type="text"
+              class="form-control"
+              formControlName="address"
+              [class.is-invalid]="
+                localform.submitted && companyUpdate.get('address')?.invalid
+              "
+            />
+            <div class="invalid-feedback">Company address is required</div>
+          </th>
+          <th class="thUpdate">
+            <mat-label>Description</mat-label>
+            <textarea
+              matInput
+              type="text"
+              class="form-control"
+              formControlName="description"
+              cols="30"
+              rows="5"
+            ></textarea>
+          </th>
+        </tr>
+      </table>
+    </div>
+    <button class="btn btn-primary" type="submit"><span>Save</span></button>
+  </form>
 </div>

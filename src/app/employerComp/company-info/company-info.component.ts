@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import fieldActivityData from '../data/field-activity.json'
-import size from '../data/staff-size.json'
+import fieldActivityData from '../../data/field-activity.json'
+import size from '../../data/staff-size.json'
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CompanyService } from 'src/app/services/company.service';

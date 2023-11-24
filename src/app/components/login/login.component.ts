@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
         this.loginForm.get('password')?.value
       )
       .subscribe((res: any) => {
-        console.log(res);
         if (res.err == 0) {
           this.router.navigateByUrl('/');
         } else {

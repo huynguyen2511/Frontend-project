@@ -14,7 +14,7 @@ export class CompanyComponent implements OnInit{
   constructor(private activatedRoute: ActivatedRoute, private userService:UserService){}
 
   ngOnInit(): void {
-    this.companyId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.companyId = this.activatedRoute.snapshot.queryParamMap.get('id');
     this.userService.getAllCompanies().subscribe(data =>{
       let arr = Object.values(data)
       this.companyList = arr[2]

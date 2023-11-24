@@ -1,6 +1,34 @@
 <mat-toolbar>
-    <p>Job posted</p>
+  <p>Job posted</p>
 </mat-toolbar>
-<div>
-    
+<div class="body">
+  <div class="table-form">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 35%">Title</th>
+          <th style="width: 10%">Posting date</th>
+          <th style="width: 10%">Expiration date</th>
+          <th style="width: 10%">Number of recruitment</th>
+          <th style="width: 10%">Number of applied CVs</th>
+          <th style="width: 10%">Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of jobLists">
+          <td>{{i.title}}</td>
+          <td>{{i.attributes.published}}</td>
+          <td>31/11/2023</td>
+          <td>{{i.attributes.recruitNumber}} {{i.attributes.level}}s</td>
+          <td>3</td>
+          <td>On</td>
+          <td>
+            <button routerLink="/dashboard/recruitment-post/post/{{i.id}}">View</button>
+            <button (click)="openConfirmationDialog()">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

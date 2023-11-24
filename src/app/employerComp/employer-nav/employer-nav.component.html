@@ -1,53 +1,89 @@
 <mat-toolbar>
-    <mat-toolbar-row>
-        <button class="menuBtn" mat-button (click)=" isExpanded = !isExpanded" *ngIf="isLoggedIn$ | async as isLoggedIn"><mat-icon>menu</mat-icon></button>
-        <button mat-button routerLink="/dashboard" style="font-size: 22px; color: rgb(255, 255, 255);"><mat-icon>home</mat-icon>Web Tuyen Dung</button>
+  <mat-toolbar-row>
+    <button
+      class="menuBtn"
+      mat-button
+      (click)="isExpanded = !isExpanded"
+      *ngIf="isLoggedIn$ | async as isLoggedIn"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button
+      mat-button
+      routerLink="/dashboard/news"
+      style="font-size: 22px; color: rgb(255, 255, 255)"
+    >
+      <mat-icon>home</mat-icon>Web Tuyen Dung
+    </button>
 
-        <span class="nav2" *ngIf="isLoggedOut$ | async as isLoggedOut">
-            <!-- <a routerLinkActive="active-link" routerLink="/posts">
+    <span class="nav2" *ngIf="isLoggedOut$ | async as isLoggedOut">
+      <!-- <a routerLinkActive="active-link" routerLink="/posts">
                 <span>Posts</span>
             </a> -->
-            <a class="login" routerLinkActive="active-link" routerLink="/employerlogin">
-                <span>Login</span>
-            </a>
-            <a class="signup" routerLinkActive="active-link" routerLink="/employersignup">
-                <span>Signup</span>
-            </a>
-            <a class="cv" routerLinkActive="active-link" routerLink="">
-                <span>Post CV, search for jobs</span>
-            </a>
-        </span>
-        <div class="nav2" *ngIf="isLoggedIn$ | async as isLoggedIn">
-            <a routerLink="/dashboard/recruitment-post">
-                <span>Post recruitment news</span>
-            </a>
-            <a routerLink="">
-                <span>Find CV</span>
-            </a>
-            <a>
-                <span>Help</span>
-            </a>
-            <a>
-                <span>Help</span>
-            </a>
-            
-            <a (click)="logout()"><span>Logout</span></a>
-                
-        </div>
-
-        
-    </mat-toolbar-row>
+      <a
+        class="login"
+        routerLinkActive="active-link"
+        routerLink="/employerlogin"
+      >
+        <span>Login</span>
+      </a>
+      <a
+        class="signup"
+        routerLinkActive="active-link"
+        routerLink="/employersignup"
+      >
+        <span>Signup</span>
+      </a>
+      <a class="cv" routerLinkActive="active-link" routerLink="">
+        <span>Post CV, search for jobs</span>
+      </a>
+    </span>
+    <div class="nav2" *ngIf="isLoggedIn$ | async as isLoggedIn">
+      <a routerLink="/dashboard/recruitment-post">
+        <span>Post recruitment news</span>
+      </a>
+      <a routerLink="/dashboard/cv-management/find-cv">
+        <span>Find CV</span>
+      </a>
+      <a>
+        <span>Help</span>
+      </a>
+      <a>
+        <span>Help</span>
+      </a>
+      <a (click)="logout()"><span>Logout</span></a>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>
-<mat-sidenav-container autosize *ngIf="isLoggedIn$ | async as isLoggedIn">
-    <mat-sidenav #sidenav opened="true" mode="side">
-        <mat-list>
-            <mat-list-item routerLink="account-setting/employer-info"><mat-icon>settings</mat-icon><p *ngIf="isExpanded">Account settings</p></mat-list-item>
-            <mat-list-item routerLink="cv-management/find-cv"><mat-icon>library_books</mat-icon><p *ngIf="isExpanded">CV management</p></mat-list-item>
-            <mat-list-item routerLink="recruitment-post/posts"><mat-icon>account_box</mat-icon><p *ngIf="isExpanded">Recruitment post</p></mat-list-item>
-        </mat-list>
-    </mat-sidenav>
-    <mat-sidenav-content style="background-color: rgb(218, 218, 218);">
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
-
+<mat-sidenav-container
+  autosize
+  *ngIf="isLoggedIn$ | async as isLoggedIn"
+  class="first-sidenav"
+>
+  <mat-sidenav #sidenav opened="true" mode="side">
+    <mat-list>
+      <mat-list-item routerLink="news"
+        ><mat-icon>dashboard</mat-icon>
+        <p *ngIf="isExpanded">Dashboard</p></mat-list-item
+      >
+      <mat-list-item routerLink="account-setting/employer-info"
+        ><mat-icon>settings</mat-icon>
+        <p *ngIf="isExpanded">Account settings</p></mat-list-item
+      >
+      <mat-list-item routerLink="cv-management/find-cv"
+        ><mat-icon>library_books</mat-icon>
+        <p *ngIf="isExpanded">CV management</p></mat-list-item
+      >
+      <mat-list-item routerLink="recruitment-post/posts"
+        ><mat-icon>account_box</mat-icon>
+        <p *ngIf="isExpanded">Recruitment post</p></mat-list-item
+      >
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content
+    style="background-color: rgb(246, 227, 227)"
+    class="sidenav"
+  >
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>

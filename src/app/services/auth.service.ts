@@ -1,16 +1,19 @@
 import { Injectable, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { first, catchError, tap } from 'rxjs/operators';
-
 import { ErrorHandlerService } from './error-handler.service';
 import { Router } from '@angular/router';
+import { UserService } from './user.service';
+import { User } from '../models/User';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService implements OnInit {
+  url = 'http://localhost:5000/api/';
+
   private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     false
   );
@@ -58,8 +61,24 @@ export class AuthService implements OnInit {
       .post<any>('http://localhost:5000/api/auth/register', data)
       .pipe(
         first(),
-        catchError(this.errorHandlerService.handlerError<any>('regis'))
+        catchError(this.errorHandlerService.handlerError<any>('register'))
       );
+  }
+
+  GetUser(): Observable<User> {
+    let token = localStorage.getItem('User auth');
+    let header_obj = new HttpHeaders().set('Authorization', token);
+    return this.http.get<any>(this.url + 'user/', { headers: header_obj }).pipe(
+      catchError((err) => {
+        let Error = err.error;
+        if (Error.err == 1) {
+          localStorage.removeItem('User auth');
+          this.loggedIn.next(false);
+          this.loggedOut.next(true);
+        }
+        return throwError(err);
+      })
+    );
   }
 
   public logout(): void {
