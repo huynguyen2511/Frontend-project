@@ -17,7 +17,7 @@ export class AdminService {
 
   constructor(private http : HttpClient, private router: Router) {
     const token = localStorage.getItem('Admin auth');
-    if(!!token){
+    if(token){
       this.loggedIn.next(true)
       this.loggedOut.next(false)
     }else{
@@ -30,10 +30,15 @@ export class AdminService {
 
   adminLogin(email :string, password: string): Observable<any>{
     return this.http.post<any>( 'http://localhost:5000/api/admin/login', {email , password}).pipe(
-      tap(response =>{
-        localStorage.setItem('Admin auth', response.access_token);
-        this.loggedIn.next(true);
-        this.loggedOut.next(false);
+      tap((response) => {
+        if (response.err == 0) {
+          localStorage.setItem('Admin auth', response.access_token);
+          this.loggedIn.next(true);
+          this.loggedOut.next(false);
+        } else {
+          this.loggedIn.next(false);
+          this.loggedOut.next(true);
+        }
       })
     );
   }
@@ -42,6 +47,11 @@ export class AdminService {
     let token = localStorage.getItem('Admin auth')
     let header_obj = new HttpHeaders().set("Authorization", token)
     return this.http.get<any>(this.url + "admin/getEmployers", {headers:header_obj});
+  }
+  GetUsers():Observable<any>{
+    let token = localStorage.getItem('Admin auth')
+    let header_obj = new HttpHeaders().set("Authorization", token)
+    return this.http.get<any>(this.url + "admin/getUsers", {headers:header_obj});
   }
 
   public logout(): void{
@@ -56,5 +66,11 @@ export class AdminService {
   }
   public isLoggedOut() : Observable<boolean>{
     return this.loggedOut.asObservable();
+  }
+
+  setStatus(data):Observable<any>{
+    let token = localStorage.getItem('Admin auth')
+    let header_obj = new HttpHeaders().set("Authorization", token)
+    return this.http.put<any>(this.url + "admin/setStatusEmployer", data, {headers:header_obj});
   }
 }

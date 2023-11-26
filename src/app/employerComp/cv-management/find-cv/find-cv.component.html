@@ -1,4 +1,46 @@
 <mat-toolbar>
   <p>Find candidate's cv</p>
 </mat-toolbar>
-<div class="body"></div>
+<div class="body">
+  <div class="box-search">
+    <div class="caption">
+      <p class="description">
+        Search candidates by name or email
+      </p>
+    </div>
+    <form action="" class="form-search" [formGroup]="findForm">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter company name"
+        id="keyword"
+        formControlName="companyName"
+      />
+      <button class="btn btn-search" (click)="findCompany()">Find</button>
+    </form>
+  </div>
+  <div class="table-form">
+    <table>
+      <thead>
+        <tr>
+          <th>Name of applicant</th>
+          <th>Email</th>
+          <th>Apply date</th>
+          <th style="width: 30%">Job post</th>
+          <th style="width: 10%">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

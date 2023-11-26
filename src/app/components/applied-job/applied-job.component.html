@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="box-group-body">
-            <div class="empty-job">
+            <div class="empty-job" *ngIf="list == 0">
               <div class="image-empty">
                 <img
                   src="https://static.topcv.vn/v4/image/history-apply/empty.png"
@@ -33,6 +33,32 @@
                   >Find a job now</a
                 >
               </div>
+            </div>
+            <div class="list-job" *ngIf="list == 1">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title of post</th>
+                    <th>Address</th>
+                    <th>Apply date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let i of appliedList">
+                    <td>{{i.postAppliedCv.title}}</td>
+                    <td>{{i.postAppliedCv.address}}</td>
+                    <td>{{i.dateApply}}</td>
+                    <td>{{i.status}}</td>
+                    <td>
+                      <button [routerLink]="['/find-job/job']" [queryParams]="{id: i.postAppliedCv.id}">
+                        View
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

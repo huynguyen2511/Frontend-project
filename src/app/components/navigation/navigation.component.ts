@@ -26,7 +26,6 @@ export class NavigationComponent implements OnInit {
     this.authService.GetUser().subscribe((data) => {
       if (data) {
         let arr = Object.values(data);
-        console.log(arr);
         this.user = arr[2];
       } else {
         window.location.reload();

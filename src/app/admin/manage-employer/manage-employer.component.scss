@@ -20,10 +20,23 @@ table {
       padding: 8px;
     }
     td {
+      max-width: 100px;
       height: 50px;
       border: 1px solid #a6a6a6;
       padding: 8px;
       background-color: #f2f2f2;
+      .link {
+        white-space: nowrap;
+        width: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        a {
+          white-space: nowrap;
+          width: 50px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
       button {
         border: none;
       }

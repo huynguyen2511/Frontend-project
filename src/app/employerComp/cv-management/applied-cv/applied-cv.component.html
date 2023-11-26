@@ -9,31 +9,32 @@
           <th>Name of applicant</th>
           <th>Email</th>
           <th>Apply date</th>
-          <th>Job post</th>
+          <th style="width: 30%">Job post</th>
           <th style="width: 10%">Status</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>tét</td>
-          <td>tết</td>
-          <td>31/11/2023</td>
-          <td>téts</td>
+        <tr *ngFor="let i of appliedList">
+          <td>{{i.userAppliedCv.name}}</td>
+          <td>{{i.userAppliedCv.email}}</td>
+          <td>{{i.dateApply}}</td>
+          <td>{{i.postAppliedCv.title}}</td>
           <td>
-            <select name="" id="">
-              <option value="1">Gửi đề nghị</option>
-              <option value="1">Đã nhận</option>
-              <option value="1">Nhận việc</option>
-              <option value="1">Từ chối</option>
-              <option value="1">Hẹn phỏng vấn</option>
+            <select name="" id="" #status (change)="setStatus(status.value)">
+              <option value="">{{i.status}}</option>
+              <option value="Send invitation">Send invitation</option>
+              <option value="Received">Received</option>
+              <option value="Accepted">Accepted</option>
+              <option value="Refused">Refused</option>
+              <option value="Appointment interview">Appointment interview</option>
             </select>
           </td>
           <td>
-            <button routerLink="/dashboard/cv-management/candidate-cv">
+            <button [routerLink]="['/dashboard/cv-management/candidate-cv']" [queryParams]="{id: i.id}">
               View
             </button>
-            <button>Delete</button>
+            <button [disabled]="isDisabled" (click)="saveStatus(i.id)">Save</button>
           </td>
         </tr>
       </tbody>

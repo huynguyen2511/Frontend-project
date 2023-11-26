@@ -51,5 +51,15 @@ export class EmployerService {
     return this.http.get<any>(this.url + "post/allPostsByEmployer", {headers:header_obj});
   }
 
+  getAppliedCvs():Observable<any>{
+    let token = localStorage.getItem('Employer auth')
+    let header_obj = new HttpHeaders().set("Authorization", token)
+    return this.http.get<any>(this.url + "applyCv/getAppliedCvs", {headers:header_obj});
+  }
 
+  setStatus(data):Observable<any>{
+    let token = localStorage.getItem('Employer auth')
+    let header_obj = new HttpHeaders().set("Authorization", token)
+    return this.http.put<any>(this.url + "applyCv/setStatus", data, {headers:header_obj});
+  }
 }

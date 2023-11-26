@@ -71,7 +71,7 @@ export class AuthService implements OnInit {
     return this.http.get<any>(this.url + 'user/', { headers: header_obj }).pipe(
       catchError((err) => {
         let Error = err.error;
-        if (Error.err == 1) {
+        if (Error.err == 1 || Error.err == 2) {
           localStorage.removeItem('User auth');
           this.loggedIn.next(false);
           this.loggedOut.next(true);

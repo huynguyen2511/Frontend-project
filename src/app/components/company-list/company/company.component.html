@@ -22,7 +22,7 @@
             </div>
             <div class="info" *ngIf="company.staffSize">
               <i class="fa-solid fa-building-user"></i>
-              <span class="info-text">{{company.staffSize}}+ nhân viên</span>
+              <span class="info-text">{{company.staffSize}}</span>
             </div>
           </div>
         </div>
@@ -52,21 +52,33 @@
                         <div class="item">
                             <div class="item-header">
                                 <i class="fa-solid fa-location-dot"></i>
-                                <span>Địa chỉ công ty</span>
+                                <span>Company address</span>
                             </div>
                             <div class="item-desc">
-                                {{company.address}}, Thành phố {{company.province.value}}, Việt Nam
+                                {{company.address}}, {{company.province.value}}, Viet Nam
+                            </div>
+                        </div>
+                        <div class="item" *ngIf="company.field_of_activity">
+                            <div class="item-header">
+                              <i class="fa-solid fa-briefcase"></i>
+                                <span>Field of activity</span>
+                            </div>
+                            <div class="item-desc">
+                              {{company.field_of_activity}}
                             </div>
                         </div>
                         <div class="item">
-                            <div class="item-header">
-                                <i></i>
-                                <span>Địa chỉ công ty</span>
-                            </div>
-                            <div class="item-desc">
-                                14 Trần Kim Xuyến, Phường Yên Hoà, Quận Cầu Giấy, Thành phố Hà Nội, Việt Nam
-                            </div>
-                        </div>
+                          <div class="item-header">
+                            <i class="fa-solid fa-address-book"></i>
+                              <span>Field of activity</span>
+                          </div>
+                          <div class="item-desc" *ngIf="company.email" style="margin-bottom: 5px;">
+                            Email: {{company.email}}
+                          </div>
+                          <div class="item-desc" *ngIf="company.phone">
+                            Phone: {{company.phone}}
+                          </div>
+                      </div>
                     </div>
                 </div>
             </div>

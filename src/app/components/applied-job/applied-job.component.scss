@@ -105,6 +105,41 @@
                 }
               }
             }
+            .list-job{
+              table {
+                width: 100%;
+                thead {
+                  tr {
+                    th {
+                      text-align: center;
+                      border: 1px solid #a6a6a6;
+                      padding: 8px;
+                    }
+                  }
+                }
+                tbody {
+                  tr {
+                    height: max-content;
+                    td {
+                      text-align: center;
+                      height: 50px;
+                      border: 1px solid #a6a6a6;
+                      padding: 8px;
+                      background-color: #f2f2f2;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      button {
+                        border: none;
+                      }
+                      button:hover {
+                        color: rgb(109, 109, 74);
+                        text-decoration: underline;
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

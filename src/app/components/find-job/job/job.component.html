@@ -16,7 +16,7 @@
             </div>
             <div class="info-section-content">
               <div class="info-section-content-title">Salary</div>
-              <div class="info-section-content-value">{{post.attributes.salary}}</div>
+              <div class="info-section-content-value">{{post.salary}}</div>
             </div>
           </div>
           <div class="info-section">
@@ -40,7 +40,7 @@
             </div>
             <div class="info-section-content">
               <div class="info-section-content-title">Experience</div>
-              <div class="info-section-content-value">{{post.attributes.experience}} years</div>
+              <div class="info-section-content-value">{{post.experience}} years</div>
             </div>
           </div>
         </div>
@@ -50,10 +50,13 @@
           ></span>
           Hạn nộp hồ sơ: 30/11/2023
         </div>
-        <div class="info-action">
-          <a href=""
-            ><span><i></i></span>Apply now</a
-          >
+        <div class="info-action" *ngIf="isLoggedOut$ | async as isLoggedOut">
+          <button class="btn-apply" (click)="login()"><span><i></i></span>Apply now</button>
+        </div>
+        <div class="info-action" *ngIf="isLoggedIn$ | async as isLoggedIn">
+          <button class="btn-apply" (click)="apply(post.employer.id)" *ngIf="applied == 0 "><span><i></i></span>Apply now</button>
+          <button class="btn-apply" (click)="apply(post.employer.id)" *ngIf="applied == 1 "><span><i></i></span>Reapply</button>
+          <button class="btn-apply" (click)="annoy()" *ngIf="applied == 2 "><span><i></i></span>You have already sent your CV, please wait for a response</button>
         </div>
       </div>
       <div class="job-detail_detail flex-column">
@@ -103,7 +106,7 @@
         </div>
         <div class="detail-actions">
           <div class="detail-actions-button">
-            <a href="">Apply now</a>
+            <button (click)="apply(post.employer.id)">Apply now</button>
           </div>
           <div class="detail-actions-label">Hạn nộp hồ sơ: 30/11/2023</div>
         </div>

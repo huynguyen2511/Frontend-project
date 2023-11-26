@@ -19,7 +19,7 @@
         <tr *ngFor="let i of jobLists">
           <td>{{i.title}}</td>
           <td>{{i.attributes.published}}</td>
-          <td>31/11/2023</td>
+          <td>{{i.overview.expired | date: "dd/M/yyyy"}}</td>
           <td>{{i.attributes.recruitNumber}} {{i.attributes.level}}s</td>
           <td>3</td>
           <td>On</td>

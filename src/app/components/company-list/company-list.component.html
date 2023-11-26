@@ -13,15 +13,16 @@
               cho bạn
             </p>
           </div>
-          <form action="" class="form-search">
+          <form action="" class="form-search" [formGroup]="findForm">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input
               type="text"
               class="form-control"
               placeholder="Enter company name"
               id="keyword"
+              formControlName="companyName"
             />
-            <button class="btn btn-search">Find</button>
+            <button class="btn btn-search" (click)="findCompany()">Find</button>
           </form>
         </div>
         <div class="box-img"></div>
@@ -34,14 +35,14 @@
             <p class="count">DANH SÁCH CÁC CÔNG TY NỔI BẬT</p>
 
             <table class="search-result">
-              <tr class="result-company" *ngFor="let i of companyLists" [routerLink]="['/company-list/company']" [queryParams]="{id: i.id}">
+              <tr class="result-company" *ngFor="let i of searchedCompany" [routerLink]="['/company-list/company']" [queryParams]="{id: i.id}">
                 <a href="" class="logo"
                   ><img src="https://s3.amazonaws.com/freestock-prod/450/freestock_565622158.jpg" style="background: rgb(197, 195, 195)" alt="Company" class="img-responsive"
                 /></a>
                 <div class="company-info">
                   <div class="title">
                     <strong><a [routerLink]="['/company-list/company']" [queryParams]="{id: i.id}" class="company-name">{{i.companyName}}</a></strong>
-                    <span class="count-job"><i class="fa-solid fa-minus" style="color: rgba(156, 156, 183, 0.468); margin: auto;"></i> Đang tuyển 0 vị trí</span>
+                    
                   </div>
                   <div class="address d-flex">
                     <i class="fa-solid fa-compass fa-lg"></i>

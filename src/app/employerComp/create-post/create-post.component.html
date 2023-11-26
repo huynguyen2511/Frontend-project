@@ -2,7 +2,20 @@
     <p>Create new post</p>
 </mat-toolbar>
 <div class="body">
-  <div class="form-wrapper">
+  <div *ngIf="employer == 'Pending verified'" class="row justify-content-center">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">Notification</div>
+        <div class="card-body">
+          <h2 class="text-center">Your account is awaiting verification</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="employer == 'Unverified'">
+    <h2>Please fill in all information in the account settings to be verified</h2>
+  </div>
+  <div class="form-wrapper" *ngIf="employer == 'Verified'">
     <form action="" method="POST" [formGroup]="createPostForm" #localform="ngForm" (ngSubmit)="onCreate()" class="form">
       <div class="form-group">
         <mat-label>Title</mat-label>

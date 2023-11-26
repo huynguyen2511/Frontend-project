@@ -109,6 +109,7 @@
       }
     }
     .feature-company {
+      min-height: 500px;
       margin-right: auto;
       margin-left: auto;
       background-color: #f3f5f7;
@@ -141,6 +142,7 @@
                 display: block;
                 border: 1px solid #f4f4f4;
                 width: 100%;
+                min-height: 110px;
                 border-radius: 10px;
                 box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.05);
                 box-sizing: border-box;

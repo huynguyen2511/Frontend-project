@@ -12,8 +12,7 @@
     width: auto;
     padding: 20px 15%;
     height: 25%;
-    border: 1px solid black;
-    background-image: url("../image/back-ground-darkgreen.png");
+    background-image: url("../../image/back-ground-darkgreen.png");
     form {
       width: auto;
       display: block;
@@ -25,8 +24,8 @@
           .th-input {
             width: 100%;
             display: block;
-            i{
-              position:absolute;
+            i {
+              position: absolute;
               padding-top: 14px;
               padding-left: 10px;
               font-size: 18px;
@@ -81,6 +80,7 @@
     }
   }
   .result-job-search {
+    min-height: 500px;
     display: block;
     width: 100%;
     padding-left: 13%;
@@ -91,6 +91,7 @@
       display: block;
       background-color: white;
       .row {
+        min-height: 500px;
         .col {
           display: block;
         }
@@ -260,6 +261,29 @@
                     }
                   }
                 }
+              }
+            }
+          }
+          .bl {
+            display: block;
+            .none-suitable-job__content {
+              align-items: center;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 20px 0;
+              img {
+                height: 200px;
+                width: 200px;
+                vertical-align: middle;
+                border: 0;
+              }
+              span {
+                color: #6f7882;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 16px;
               }
             }
           }

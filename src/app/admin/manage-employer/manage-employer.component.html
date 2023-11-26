@@ -7,13 +7,14 @@
     <table>
       <thead>
         <tr style="background-color: rgb(240, 248, 193)">
-          <th style="width: 8%">Action</th>
-          <th style="width: 10%">Name</th>
-          <th style="width: 5%">Gender</th>
-          <th style="width: 15%">Email</th>
-          <th style="width: 15%">Job position</th>
-          <th style="width: 15%">Company</th>
-          <th style="width: 5%">License</th>
+          <th style="width: 5%">Action</th>
+          <th style="width: 8%">Name</th>
+          <th style="width: 3%">Gender</th>
+          <th style="width: 10%">Email</th>
+          <th style="width: 8%">Job position</th>
+          <th style="width: 10%">Company</th>
+          <th style="width: 8%">License</th>
+          <th style="width: 8%">License status</th>
           <th style="width: 10%">Status</th>
         </tr>
       </thead>
@@ -21,16 +22,34 @@
         <tr class="trchild" *ngFor="let i of employerArr">
           <td>
             <button>View</button>
-            <button>Delete</button>
+            <button (click)="saveStatus(i.id)">
+              Save
+            </button>
           </td>
-
-          <td>{{i.name}}</td>
-          <td>{{i.gender}}</td>
-          <td>{{i.email}}</td>
-          <td>{{i.jobPosition}}</td>
-          <td>{{i.employerComp.companyName}}</td>
-          <td>{{i.employerLicense.statusCode}}</td>
-          <td>{{i.statusData.value}}</td>
+          <td>{{ i.name }}</td>
+          <td>{{ i.gender }}</td>
+          <td>{{ i.email }}</td>
+          <td>{{ i.jobPosition }}</td>
+          <td>{{ i.employerComp.companyName }}</td>
+          <td>
+            <div class="link" *ngIf="i.employerLicense.related_documents">
+              <a href="{{ i.employerLicense.related_documents }}">{{
+                i.employerLicense.related_documents
+              }}</a>
+            </div>
+            <span *ngIf="!i.employerLicense.related_documents"
+              >Haven't upload license</span
+            >
+          </td>
+          <td>{{ i.employerLicense.statusCode }}</td>
+          <td>
+            <select name="" id="" #status (change)="setStatus(status.value)">
+              <option value="{{ i.statusCode }}">{{ i.statusCode }}</option>
+              <option value="Unverified">Unverified</option>
+              <option value="Pending verified">Pending verified</option>
+              <option value="Verified">Verified</option>
+            </select>
+          </td>
         </tr>
       </tbody>
     </table>

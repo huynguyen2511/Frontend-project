@@ -45,15 +45,15 @@
             </table>
         </form>
         <div class="sum">
-            <span class="span-sum">Found <span>200</span> results</span>
+            <span class="span-sum">Found <span>{{jobListQuery.length}}</span> results</span>
         </div>
     </div>
     <div class="result-job-search">
       <div class="job-body">
         <div class="row">
           <div class="col col-9">
-            <table >
-              <tr *ngFor="let i of jobLists">
+            <table *ngIf="jobListQuery.length > 0">
+              <tr *ngFor="let i of jobListQuery">
                 <div class="content" [routerLink]="['/find-job/job']" [queryParams]="{id: i.id}">
                   <div class="content-logo">
                     <img class="logo" src="https://s3.amazonaws.com/freestock-prod/450/freestock_565622158.jpg" alt="Logo">
@@ -62,7 +62,6 @@
                     <div class="content-main">
                       <div class="left">
                         <span><strong>{{i.title}}</strong></span>
-                        <a [routerLink]="['/company-list/company']" [queryParams]="{id: i.companyPost.id}" class="company">{{i.companyPost.companyName}}</a>
                       </div>
                       <div class="right">
                         <label for="" class="salary">{{i.salary}}</label>
@@ -72,7 +71,7 @@
                       <div class="info-left">
                         <label for="" class="address">{{i.address}}</label>
                         <label for="" class="address">{{i.experience}}</label>
-                        <label for="" class="address">{{i.expired | date:'dd/MM/yyy'}}</label>
+                        <label for="" class="address">{{i.expired | date:'dd/MM/yyyy'}}</label>
                       </div>
                       <div class=" info-right">
                         <button>Apply for this job</button>
@@ -82,17 +81,24 @@
                 </div>
               </tr>
             </table>
+            <div class="bl">
+              <div *ngIf="jobListQuery.length == 0" class="none-suitable-job__content">
+                <img src="https://static.topcv.vn/v4/image/job-list/none-result.png" alt="None suitable job">
+                <span>No jobs found that match your requirements</span>
+              </div>
+            </div>
+            
           </div>
           <div class="col col-3">
             <div class="random-job">
-              <span class="random-title">U may care</span>
+              <span class="random-title">You may care</span>
               <div class="random">
                 <span class="companyName">{{randomJob.companyPost.companyName}}</span>
                 <span class="split-line"></span>
                 <span class="title">{{randomJob.title}}</span>
                 <div class="random-footer">
                   <span class="salary" style="margin-right: 20px;">{{randomJob.salary}}</span>
-                  <span class="date">{{randomJob.overview.expired | date:'dd/MM/yyy'}}</span>
+                  <span class="date">{{randomJob.overview.expired | date:'dd/MM/yyyy'}}</span>
                 </div>
                 <button [routerLink]="['/find-job/job']" [queryParams]="{id: randomJob.id}">Find out now</button>
               </div>

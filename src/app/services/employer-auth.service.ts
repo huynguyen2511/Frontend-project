@@ -63,7 +63,7 @@ export class EmployerAuthService {
     return this.http.get<any>(this.url + "employer/", {headers:header_obj}).pipe(
       catchError((err) => {
         let Error = err.error;
-        if (Error.err == 1) {
+        if (Error.err == 1 || Error.err == 2) {
           localStorage.removeItem('Employer auth');
           this.loggedIn.next(false);
           this.loggedOut.next(true);

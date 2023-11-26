@@ -8,8 +8,115 @@ mat-toolbar {
     font-family: Arial, Helvetica, sans-serif;
   }
 }
-.body{
-    min-height: 595px;
-    color: black;
-    font-family:Arial, Helvetica, sans-serif;
+.body {
+  .box-search {
+    box-sizing: border-box;
+    .caption {
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      .description {
+        margin-top: 20px;
+        color: #333;
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+    }
+    .form-search:hover {
+      border: 1px solid red;
+    }
+    .form-search {
+      margin-left: 20px;
+      border: 1px solid rgba(0, 0, 255, 0.21);
+      background: #fff 0 0 no-repeat padding-box;
+      border-radius: 100px;
+      display: flex;
+      height: 50px;
+      overflow: hidden;
+      position: relative;
+      max-width: 400px;
+      i {
+        left: 32px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      #keyword {
+        border-color: transparent;
+        box-shadow: none;
+        font-size: 14px;
+        height: 100%;
+        outline: none;
+        padding-left: 62px;
+        width: 100%;
+      }
+      .form-control {
+        transition: none;
+        appearance: none;
+        background-clip: padding-box;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        color: #212529;
+        display: block;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        width: 100%;
+      }
+      .btn-search {
+        text-transform: none;
+        background: #00b14f;
+        border-radius: 100px;
+        color: #fff;
+        font-size: 16px;
+        position: absolute;
+        right: 7px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  min-height: 595px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  .table-form {
+    width: 100%;
+    padding: 10px 20px;
+    height: max-content;
+    table {
+      width: 100%;
+      height: max-content;
+      thead {
+        tr {
+          th {
+            text-align: center;
+            border: 1px solid #a6a6a6;
+            padding: 8px;
+          }
+        }
+      }
+      tbody {
+        tr {
+          height: max-content;
+          td {
+            text-align: center;
+            height: 50px;
+            border: 1px solid #a6a6a6;
+            padding: 8px;
+            background-color: #f2f2f2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            button {
+              border: none;
+            }
+            button:hover {
+              color: rgb(109, 109, 74);
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
 }

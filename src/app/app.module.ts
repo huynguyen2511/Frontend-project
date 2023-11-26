@@ -20,6 +20,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { DatePipe } from '@angular/common';
+import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 
 
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -58,9 +60,10 @@ import { UpdateDemandJobComponent } from './components/update-demand-job/update-
 import { AppliedJobComponent } from './components/applied-job/applied-job.component';
 import { FindCvComponent } from './employerComp/cv-management/find-cv/find-cv.component';
 import { AppliedCvComponent } from './employerComp/cv-management/applied-cv/applied-cv.component';
-import { ConfirmationDialogComponent } from './employerComp/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { PostComponent } from './employerComp/job-posts/post/post.component';
 import { CandidateCvComponent } from './employerComp/cv-management/candidate-cv/candidate-cv.component';
+import { JobQueryComponent } from './components/find-job/job-query/job-query.component';
 
 
 
@@ -107,6 +110,7 @@ import { CandidateCvComponent } from './employerComp/cv-management/candidate-cv/
     ConfirmationDialogComponent,
     PostComponent,
     CandidateCvComponent,
+    JobQueryComponent,
 
   ],
   imports: [
@@ -130,9 +134,15 @@ import { CandidateCvComponent } from './employerComp/cv-management/candidate-cv/
     NgbModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    
   ],
-  providers: [],
+  providers: [
+    {
+      provide: DATE_PIPE_DEFAULT_OPTIONS,
+      useValue: {dateFormat: "longDate"}
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

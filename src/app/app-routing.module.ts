@@ -35,26 +35,47 @@ import { AppliedCvComponent } from './employerComp/cv-management/applied-cv/appl
 import { PostComponent } from './employerComp/job-posts/post/post.component';
 import { CandidateCvComponent } from './employerComp/cv-management/candidate-cv/candidate-cv.component';
 import { EmployerNavComponent } from './employerComp/employer-nav/employer-nav.component';
+import { userGuard } from './shared/user.guard';
+import { employerGuard } from './shared/employer.guard';
+import { JobQueryComponent } from './components/find-job/job-query/job-query.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'account-setting', component: UserInfoComponent },
-  { path: 'password', component: UserChangePassComponent },
-  { path: 'manage-Cv', component: ManageCvComponent },
+  {
+    path: 'account-setting',
+    component: UserInfoComponent,
+    canActivate: [userGuard],
+  },
+  {
+    path: 'password',
+    component: UserChangePassComponent,
+    canActivate: [userGuard],
+  },
+  { path: 'manage-Cv', component: ManageCvComponent, canActivate: [userGuard] },
   { path: 'company-list', component: CompanyListComponent },
   { path: 'company-list/company', component: CompanyComponent },
-  { path: 'upload-Cv', component: UploadCvComponent },
-  { path: 'update-demand-job', component: UpdateDemandJobComponent },
-  { path: 'job-applied-for', component: AppliedJobComponent },
+  { path: 'upload-Cv', component: UploadCvComponent, canActivate: [userGuard] },
+  {
+    path: 'update-demand-job',
+    component: UpdateDemandJobComponent,
+    canActivate: [userGuard],
+  },
+  {
+    path: 'job-applied-for',
+    component: AppliedJobComponent,
+    canActivate: [userGuard],
+  },
 
   { path: 'find-job', component: FindJobComponent },
   { path: 'find-job/job', component: JobComponent },
+  { path: 'find-query', component: JobQueryComponent },
 
   {
     path: 'dashboard',
+    canActivate: [employerGuard],
     component: EmployerNavComponent,
     children: [
       { path: 'news', component: EmployerDashboardComponent },
@@ -104,7 +125,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

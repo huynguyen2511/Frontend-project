@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -49,4 +49,23 @@ export class UserService {
     let header_obj = new HttpHeaders().set("Authorization", token)
     return this.http.put<any>(this.url + "user/setMainCv", data, {headers:header_obj});
   }
+
+  applyCv(data):Observable<any>{
+    let token = localStorage.getItem('User auth')
+    let header_obj = new HttpHeaders().set("Authorization", token)
+    return this.http.post<any>(this.url + "applyCv/createApplyCv", data, {headers:header_obj});
+  }
+
+  getAppliedPosts():Observable<any>{
+    let token = localStorage.getItem('User auth')
+    let header_obj = new HttpHeaders().set("Authorization", token)
+    return this.http.get<any>(this.url + "applyCv/getAppliedPosts", {headers:header_obj});
+  }
+
+  getCompanyByName(companyName: string): Observable<any> {
+    const params = new HttpParams()
+      .set('companyName', companyName)
+    return this.http.get<any>(this.url + 'user/searchedCompany', {params});
+  }
+
 }

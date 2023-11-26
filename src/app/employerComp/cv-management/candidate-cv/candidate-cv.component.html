@@ -1,7 +1,14 @@
 <mat-toolbar>
-    <p>Candidate's Cv</p>
-  </mat-toolbar>
-  <div class="body">
-    
+  <p>Candidate's Cv</p>
+</mat-toolbar>
+<div class="body">
+  <div class="info">
+    <span class="title">Candidate name: {{cv.userAppliedCv.name}}</span>
+    <span class="sub-info">Cv status: {{cv.status}}</span>
+    <span class="sub-info">Application date: {{cv.dateApply}}</span>
+    <span class="sub-info">Candidate email: {{cv.userAppliedCv.email}}</span>
   </div>
-  
+  <div class="cv-img">
+    <img [src]="[cv.cvAppliedCv.cv_document]" alt="">
+  </div>
+</div>

@@ -95,12 +95,13 @@
           flex-wrap: wrap;
           gap: 12px;
           margin-top: 4px;
-          a {
-            background: #1176a1;
+          .btn-apply {
+            background-color: #1176a1;
             color: #fff;
             width: 100%;
             align-items: center;
             border-radius: 6px;
+            border: none;
             cursor: pointer;
             display: flex;
             font-size: 14px;
@@ -112,6 +113,15 @@
             line-height: 22px;
             padding: 8px 16px 8px 12px;
             text-decoration: none;
+            box-shadow: 0 5px #999;
+          }
+          .btn-apply:hover{
+            background-color: #0b678f;
+          }
+          .btn-apply:active{
+            background-color: #0b678f;
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
           }
         }
       }
@@ -163,7 +173,7 @@
           .detail-actions-button {
             align-items: center;
             display: flex;
-            a {
+            button {
               align-items: center;
               background: #1176a1;
               border: unset;
@@ -179,6 +189,11 @@
               padding: 8px 16px;
               width: fit-content;
               text-decoration: none;
+            }
+            button:active{
+              background-color: #0b678f;
+              box-shadow: 0 1px #666;
+              transform: translateY(2px);
             }
           }
           .detail-actions-label {

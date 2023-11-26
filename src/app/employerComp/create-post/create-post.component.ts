@@ -6,6 +6,7 @@ import Cate from '../../data/category.json';
 import JobP from '../../data/jobPosition.json';
 import Exp from '../../data/experience.json';
 import Salary from '../../data/salary.json'
+import { EmployerService } from 'src/app/services/employer.service';
 
 @Component({
   selector: 'app-create-post',
@@ -20,8 +21,10 @@ export class CreatePostComponent implements OnInit{
   public removedExp = this.exp.splice(1,1)
   public salary = Salary;
   public genderC = ["Male", "Female", "Not required"]
-
-  constructor(private postService: JobPostsService) {}
+  employer;
+  private isDisabled: boolean = true;
+  constructor(private postService: JobPostsService, private empService:EmployerService) {
+  }
 
   createPostForm: FormGroup = new FormGroup(
     {
@@ -43,7 +46,13 @@ export class CreatePostComponent implements OnInit{
     { updateOn: 'submit' }
   );
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.empService.GetEmployer().subscribe((data:any)=>{
+      this.employer = data.response.statusCode
+      console.log(this.employer);
+      
+    })
+  }
 
   onCreate() {
     if (this.createPostForm.invalid) {

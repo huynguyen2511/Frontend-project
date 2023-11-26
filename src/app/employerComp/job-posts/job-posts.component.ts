@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployerService } from 'src/app/services/employer.service';
-import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
+import { ConfirmationDialogService } from '../../confirmation-dialog/confirmation-dialog.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-job-posts',
