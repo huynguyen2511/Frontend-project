@@ -43,7 +43,7 @@
               margin-bottom: 0;
             }
           }
-          .form-search:focus{
+          .form-search:focus {
             border: 1px solid red;
           }
           .form-search {
@@ -215,6 +215,10 @@
                       margin-right: 15px;
                     }
                     p {
+                      white-space: nowrap;
+                      width: 50px;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
                       margin: 0 0 10px;
                     }
                   }

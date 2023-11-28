@@ -22,7 +22,6 @@ export class EmployerNavComponent implements OnInit {
     this.employerAuthService.CheckToken().subscribe((data) => {
       if (data) {
         let arr = Object.values(data);
-        console.log(arr);
       } else {
         window.location.reload();
       }

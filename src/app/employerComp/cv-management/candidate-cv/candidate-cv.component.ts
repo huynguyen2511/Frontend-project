@@ -20,9 +20,7 @@ export class CandidateCvComponent implements OnInit {
     this.appliedCvId = this.activatedRoute.snapshot.queryParamMap.get('id');
     this.empService.getAppliedCvs().subscribe((res: any) => {
       this.appliedList = res.response;
-      console.log(this.appliedList);
       this.cv = this.appliedList.find((x) => x.id == this.appliedCvId);
-      console.log(this.cv);
     });
   }
 

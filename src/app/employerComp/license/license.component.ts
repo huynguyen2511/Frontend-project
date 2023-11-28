@@ -39,9 +39,13 @@ export class LicenseComponent implements OnInit{
 
   upload(){
     console.log(this.uploadForm.get('profile').value);
-    this.employerService.uploadLicense(this.uploadForm.get('profile').value).subscribe(res => {
-      console.log(res);
+    this.employerService.uploadLicense(this.uploadForm.get('profile').value).subscribe((res:any) => {
+      if (res.err == 0){
       alert("Uploaded")
+      }else {
+        alert(res.mes)
+        return
+      }
     })
   }
 

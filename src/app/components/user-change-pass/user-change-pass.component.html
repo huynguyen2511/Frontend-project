@@ -52,7 +52,12 @@
               type="password"
               class="form-control"
               formControlName="enterAgain"
+              [class.is-invalid]="
+                localform.submitted &&
+                updatePassword.get('newPassword')?.invalid
+              "
             />
+            <div class="invalid-feedback">Re-enter password is required</div>
           </div>
           <button class="btn" type="submit">
             <span>Save</span>
@@ -64,34 +69,33 @@
       <div class="box box-white">
         <div class="box-header">
           <div class="profile-avatar">
-            <img src="https://p.kindpng.com/picc/s/421-4212275_transparent-default-avatar-png-avatar-img-png-download.png" alt="avatar" />
+            <img
+              src="https://p.kindpng.com/picc/s/421-4212275_transparent-default-avatar-png-avatar-img-png-download.png"
+              alt="avatar"
+            />
           </div>
           <div class="profile-info">
-            <div class="text-welcome">Chào bạn,</div>
-            <h4 class="fullname">{{user.name}}</h4>
-            <div class="account-type">
-            </div>
+            <div class="text-welcome">Hello,</div>
+            <h4 class="fullname">{{ user.name }}</h4>
+            <div class="account-type"></div>
           </div>
         </div>
         <div class="box-body">
           <div>
             <div class="col-xs-12 group-switch">
               <div class="switch-box">
-                <input type="checkbox" id="switch" class="checkbox"/>
-                <label for="switch" class="toggle">
-                </label>
+                <input type="checkbox" id="switch" class="checkbox" />
+                <label for="switch" class="toggle"> </label>
               </div>
               <span class="job-waiting-status-text job-off-show">
                 <strong class="text-neutral-neutral-40"
-                  >Đang Tắt tìm việc</strong
+                  >Job search status is off</strong
                 >
               </span>
               <span class="job-waiting-status-text job-on-show">
-                <strong class="text-highlight"
-                  >Trạng thái tìm việc đang bật</strong
-                >
+                <strong class="text-highlight">Job search status is on</strong>
                 <a href="" style="display: inline-block; margin-left: 10px">
-                  <i class="fa-solid fa-pencil"></i> Chỉnh sửa tiêu chí</a
+                  <i class="fa-solid fa-pencil"></i> Edit criteria</a
                 >
               </span>
             </div>

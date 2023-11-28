@@ -10,7 +10,6 @@
           <th style="width: 10%">Posting date</th>
           <th style="width: 10%">Expiration date</th>
           <th style="width: 10%">Number of recruitment</th>
-          <th style="width: 10%">Number of applied CVs</th>
           <th style="width: 10%">Status</th>
           <th>Action</th>
         </tr>
@@ -21,11 +20,10 @@
           <td>{{i.attributes.published}}</td>
           <td>{{i.overview.expired | date: "dd/M/yyyy"}}</td>
           <td>{{i.attributes.recruitNumber}} {{i.attributes.level}}s</td>
-          <td>3</td>
           <td>On</td>
           <td>
             <button routerLink="/dashboard/recruitment-post/post/{{i.id}}">View</button>
-            <button (click)="openConfirmationDialog()">Delete</button>
+            <button (click)="openConfirmationDialog(i.id)">Delete</button>
           </td>
         </tr>
       </tbody>

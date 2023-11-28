@@ -5,7 +5,7 @@
   <div class="job-detail">
     <div class="job-detail_body-left flex-column">
       <div class="job-detail_info flex-column">
-        <h1 class="info-title">{{post.overview.area}}</h1>
+        <h1 class="info-title">{{ post.overview.area }}</h1>
         <div class="info-sections">
           <div class="info-section">
             <div class="info-section-icon">
@@ -16,7 +16,7 @@
             </div>
             <div class="info-section-content">
               <div class="info-section-content-title">Salary</div>
-              <div class="info-section-content-value">{{post.salary}}</div>
+              <div class="info-section-content-value">{{ post.salary }}</div>
             </div>
           </div>
           <div class="info-section">
@@ -28,7 +28,9 @@
             </div>
             <div class="info-section-content">
               <div class="info-section-content-title">Location</div>
-              <div class="info-section-content-value">{{post.province.value}}</div>
+              <div class="info-section-content-value">
+                {{ post.province.value }}
+              </div>
             </div>
           </div>
           <div class="info-section">
@@ -40,7 +42,9 @@
             </div>
             <div class="info-section-content">
               <div class="info-section-content-title">Experience</div>
-              <div class="info-section-content-value">{{post.experience}} years</div>
+              <div class="info-section-content-value">
+                {{ post.experience }} years
+              </div>
             </div>
           </div>
         </div>
@@ -48,77 +52,102 @@
           <span class="info-deadline-icon"
             ><i class="fa-solid fa-clock"></i
           ></span>
-          Hạn nộp hồ sơ: 30/11/2023
+          The deadline for submission: {{post.expired | date:'dd/MM/yyyy'}}
         </div>
         <div class="info-action" *ngIf="isLoggedOut$ | async as isLoggedOut">
-          <button class="btn-apply" (click)="login()"><span><i></i></span>Apply now</button>
+          <button class="btn-apply" (click)="login()">
+            <span><i></i></span>Apply now
+          </button>
         </div>
         <div class="info-action" *ngIf="isLoggedIn$ | async as isLoggedIn">
-          <button class="btn-apply" (click)="apply(post.employer.id)" *ngIf="applied == 0 "><span><i></i></span>Apply now</button>
-          <button class="btn-apply" (click)="apply(post.employer.id)" *ngIf="applied == 1 "><span><i></i></span>Reapply</button>
-          <button class="btn-apply" (click)="annoy()" *ngIf="applied == 2 "><span><i></i></span>You have already sent your CV, please wait for a response</button>
+          <button
+            class="btn-apply"
+            (click)="apply(post.employer.id)"
+            *ngIf="applied == 0"
+          >
+            <span><i></i></span>Apply now
+          </button>
+          <button
+            class="btn-apply"
+            (click)="reApply()"
+            *ngIf="applied == 1"
+          >
+            <span><i></i></span>Reapply
+          </button>
+          <button class="btn-apply" (click)="annoy()" *ngIf="applied == 2">
+            <span><i></i></span>You have already sent your CV, please wait for a
+            response
+          </button>
         </div>
       </div>
       <div class="job-detail_detail flex-column">
-        <h2 class="detail-title">Chi tiết tin tuyển dụng</h2>
+        <h2 class="detail-title">Recruitment details</h2>
         <div class="detail-contents">
           <div class="job-description">
             <div class="job-description-item">
-              <h3>Mô tả công việc</h3>
+              <h3>Recruitment details</h3>
               <div class="job-description-item-content">
                 <p>
-                  {{post.description}}
+                  {{ post.description }}
                 </p>
               </div>
             </div>
             <div class="job-description-item">
-              <h3>Yêu cầu ứng viên</h3>
+              <h3>Candidate requirements</h3>
               <div class="job-description-item-content">
                 <p>
-                  {{post.attributes.requirements}}
+                  {{ post.attributes.requirements }}
                 </p>
               </div>
             </div>
             <div class="job-description-item">
-              <h3>Quyền lợi</h3>
+              <h3>Candidate benefits</h3>
               <div class="job-description-item-content">
                 <p>
-                  {{post.attributes.benefits}}
+                  {{ post.attributes.benefits }}
                 </p>
               </div>
             </div>
             <div class="job-description-item">
-              <h3>Địa điểm làm việc</h3>
+              <h3>Work location</h3>
               <div class="job-description-item-content">
                 <p>
-                  {{post.address}}
+                  {{ post.address }}
                 </p>
               </div>
             </div>
             <div class="job-description-item">
-              <h3>Cách thức ứng tuyển</h3>
+              <h3>How to apply</h3>
               <div class="job-description-item-content">
-                Ứng viên nộp hồ sơ trực tuyến bằng cách bấm
-                <strong>Ứng tuyển</strong> ngay dưới đây.
+                Candidates apply online by clicking
+                <strong>Apply now</strong> right below.
               </div>
             </div>
           </div>
         </div>
         <div class="detail-actions">
           <div class="detail-actions-button">
-            <button (click)="apply(post.employer.id)">Apply now</button>
+            <button (click)="apply(post.employer.id)" *ngIf="applied == 0">
+              <span><i></i></span>Apply now
+            </button>
+            <button (click)="reApply()" *ngIf="applied == 1">
+              <span><i></i></span>Reapply
+            </button>
+            <button (click)="annoy()" *ngIf="applied == 2">
+              <span><i></i></span>Wait for a response
+            </button>
           </div>
-          <div class="detail-actions-label">Hạn nộp hồ sơ: 30/11/2023</div>
+          <div class="detail-actions-label">The deadline for submission: {{post.expired | date:'dd/MM/yyyy'}}</div>
         </div>
         <div class="detail-report">
           <span class="detail-report-icon"
             ><i class="fa-solid fa-circle-info"></i
           ></span>
           <span
-            >Báo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không
-            đúng hoặc có dấu hiệu lừa đảo
+            >Report job posting: If you find that this job posting is not
+            true or shows signs of fraud
             <a href="" class="btn-notice-job color-green"
-              >hãy phản ánh với chúng tôi.</a
+              >please reflect to us.</a
             ></span
           >
         </div>
@@ -129,55 +158,82 @@
         <div class="company-info">
           <div class="company-name company-info-item">
             <a href="" class="company-logo">
-              <img src="" alt="logo">
+              <img src="" alt="logo" />
             </a>
             <h2 class="company-name-label">
-              <a href="" class="name">{{post.companyPost.companyName}}</a>
+              <a href="" class="name">{{ post.companyPost.companyName }}</a>
             </h2>
           </div>
           <div class="company-scale company-info-item">
-            <div class="company-title"><i class="fa-solid fa-users fa-lg" style="color: #2d579f;"></i> Quy mô: </div>
-            <div class="company-value">{{post.companyPost.staffSize}} nhân viên</div>
+            <div class="company-title">
+              <i class="fa-solid fa-users fa-lg" style="color: #2d579f"></i> Employee size:
+            </div>
+            <div class="company-value">
+              {{ post.companyPost.staffSize }}
+            </div>
           </div>
           <div class="company-address company-info-item">
-            <div class="company-title"><i class="fa-solid fa-location-dot fa-lg" style="color: #2d579f;"></i> Địa điểm: </div>
-            <div class="company-value">{{post.address}}</div>
+            <div class="company-title">
+              <i
+                class="fa-solid fa-location-dot fa-lg"
+                style="color: #2d579f"
+              ></i>
+              Location:
+            </div>
+            <div class="company-value">{{ post.address }}</div>
           </div>
         </div>
         <div class="company-link">
-          <a [routerLink]="['/company-list/company']" [queryParams]="{id: post.companyPost.id}">Xem trang công ty</a>
+          <a
+            [routerLink]="['/company-list/company']"
+            [queryParams]="{ id: post.companyPost.id }"
+            >See company page</a
+          >
           <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </div>
       </div>
       <div class="job-detail_box-right job-detail_general">
-        <h2 class="box-title">Thông tin chung</h2>
+        <h2 class="box-title">General information</h2>
         <div class="general-content">
           <div class="general-group">
-            <div class="general-group-icon"><i class="fa-solid fa-medal fa-lg" style="color: #ffffff;"></i></div>
+            <div class="general-group-icon">
+              <i class="fa-solid fa-medal fa-lg" style="color: #ffffff"></i>
+            </div>
             <div class="general-group-info">
-              <div class="group-info-title">Cấp bậc</div>
-              <div class="group-info-value">{{post.attributes.level}}</div>
+              <div class="group-info-title">Required level</div>
+              <div class="group-info-value">{{ post.attributes.level }}</div>
             </div>
           </div>
           <div class="general-group">
-            <div class="general-group-icon"><i class="fa-solid fa-users fa-lg" style="color: #ffffff;"></i></div>
+            <div class="general-group-icon">
+              <i class="fa-solid fa-users fa-lg" style="color: #ffffff"></i>
+            </div>
             <div class="general-group-info">
-              <div class="group-info-title">Số lượng tuyển</div>
-              <div class="group-info-value">{{post.attributes.recruitNumber}} people</div>
+              <div class="group-info-title">Number of recruits</div>
+              <div class="group-info-value">
+                {{ post.attributes.recruitNumber }} people
+              </div>
             </div>
           </div>
           <div class="general-group">
-            <div class="general-group-icon"><i class="fa-solid fa-briefcase fa-lg" style="color: #ffffff;"></i></div>
+            <div class="general-group-icon">
+              <i class="fa-solid fa-briefcase fa-lg" style="color: #ffffff"></i>
+            </div>
             <div class="general-group-info">
-              <div class="group-info-title">Hình thức làm việc</div>
-              <div class="group-info-value">{{post.overview.category}}</div>
+              <div class="group-info-title">Form of work</div>
+              <div class="group-info-value">{{ post.overview.category }}</div>
             </div>
           </div>
           <div class="general-group">
-            <div class="general-group-icon"><i class="fa-solid fa-person-half-dress fa-lg" style="color: #ffffff;"></i></div>
+            <div class="general-group-icon">
+              <i
+                class="fa-solid fa-person-half-dress fa-lg"
+                style="color: #ffffff"
+              ></i>
+            </div>
             <div class="general-group-info">
-              <div class="group-info-title">Giới tính</div>
-              <div class="group-info-value">{{post.attributes.gender}}</div>
+              <div class="group-info-title">Gender</div>
+              <div class="group-info-value">{{ post.attributes.gender }}</div>
             </div>
           </div>
         </div>

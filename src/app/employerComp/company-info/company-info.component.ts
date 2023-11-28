@@ -54,10 +54,7 @@ export class CompanyInfoComponent implements OnInit{
     if(this.companyUpdate.invalid){
       return;
     }
-    console.log(this.companyUpdate.value);
-    
     this.companyService.UpdateCompany(this.companyUpdate.value).subscribe((res: any) =>{
-      console.log(res);
       alert("Update successful")
     });
 

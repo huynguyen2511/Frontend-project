@@ -19,12 +19,10 @@ export class EmployerDashboardComponent implements OnInit{
     })
     this.empService.getPostById().subscribe((data:any) =>{
       this.numberPost = data.response.length
-      console.log(this.numberPost);
       
     })
     this.empService.getAppliedCvs().subscribe((data:any) =>{
       this.numberCv = data.response.length
-      console.log(this.numberCv);
       
     })
   }

@@ -35,11 +35,11 @@
             <div class="col-md-8">
                 <div class="company-intro">
                     <div class="info">
-                        <h2 class="title">Giới thiệu công ty</h2>
+                        <h2 class="title">Company introduction</h2>
                         <div class="box-body">
                             <div class="content">
                                 <p *ngIf="company.description">{{company.description}}</p>
-                                <p *ngIf="!company.description">Công ty này hiện không có thông tin gì</p>
+                                <p *ngIf="!company.description">This company currently has no information</p>
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
             </div>
             <div class="col-md-4">
                 <div class="company-contact">
-                    <h2 class="title">Thông tin liên hệ</h2>
+                    <h2 class="title">Contact Info</h2>
                     <div class="box-body">
                         <div class="item">
                             <div class="item-header">
@@ -70,7 +70,7 @@
                         <div class="item">
                           <div class="item-header">
                             <i class="fa-solid fa-address-book"></i>
-                              <span>Field of activity</span>
+                              <span>Contact</span>
                           </div>
                           <div class="item-desc" *ngIf="company.email" style="margin-bottom: 5px;">
                             Email: {{company.email}}

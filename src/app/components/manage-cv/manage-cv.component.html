@@ -7,9 +7,9 @@
       <div class="col-md-8 manage-cv">
         <div id="cv-upload-list" class="box-block">
           <div class="box-header">
-            <h1 class="title">CV đã tải lên</h1>
+            <h1 class="title">CV uploaded</h1>
             <a routerLink="/upload-Cv" class="btn btn-upload-cv btn-primary-hover">
-              <i class="fa-solid fa-upload"></i> Tải CV lên
+              <i class="fa-solid fa-upload"></i> Upload CV
             </a>
           </div>
           <div class="box-content">
@@ -19,7 +19,7 @@
                   <img src="{{e.cv_document}}" alt="" class="img-responsive" />
                   <div class="box-bg">
                     <div class="cv-main">
-                      <a (click)="setCvMain(e.id)" *ngIf="e.status == 'Off'">Đặt làm CV chính</a>
+                      <a (click)="setCvMain(e.id)" *ngIf="e.status == 'Off'">Set main CV</a>
                       <span class="main" *ngIf="e.status == 'On'">
                         <i class="fa-solid fa-star" style="color: #fbff00;"></i>
                         Main Cv
@@ -35,7 +35,7 @@
                       <ul class="action" style="padding-left: 0">
                         <li>
                           <a href="" class="btn btn-sm bold">
-                            <i class="fa-solid fa-download"></i> Tải xuống
+                            <i class="fa-solid fa-download"></i>
                           </a>
                         </li>
                         <li class="li-lasst-child">
@@ -61,7 +61,7 @@
               <img src="https://p.kindpng.com/picc/s/421-4212275_transparent-default-avatar-png-avatar-img-png-download.png" alt="avatar" />
             </div>
             <div class="profile-info">
-              <div class="text-welcome">Chào bạn,</div>
+              <div class="text-welcome">Hello,</div>
               <h4 class="fullname">{{user.name}}</h4>
               <div class="account-type">
               </div>
@@ -77,15 +77,15 @@
                 </div>
                 <span class="job-waiting-status-text job-off-show">
                   <strong class="text-neutral-neutral-40"
-                    >Đang Tắt tìm việc</strong
+                    >Job search status is off</strong
                   >
                 </span>
                 <span class="job-waiting-status-text job-on-show">
                   <strong class="text-highlight"
-                    >Trạng thái tìm việc đang bật</strong
+                    >Job search status is on</strong
                   >
                   <a href="" style="display: inline-block; margin-left: 10px">
-                    <i class="fa-solid fa-pencil"></i> Chỉnh sửa tiêu chí</a
+                    <i class="fa-solid fa-pencil"></i> Edit criteria</a
                   >
                 </span>
               </div>

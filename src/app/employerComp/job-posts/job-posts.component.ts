@@ -10,6 +10,7 @@ import { DatePipe } from '@angular/common';
 })
 export class JobPostsComponent  implements OnInit{
   jobLists : any
+  currentdate;
   constructor(private employerService:EmployerService, private confirmationDialogService: ConfirmationDialogService){}
 
   ngOnInit(): void {
@@ -19,11 +20,25 @@ export class JobPostsComponent  implements OnInit{
       console.log(this.jobLists);
       
     })
+    this.currentdate = new Date()
+    
   }
 
-  public openConfirmationDialog() {
+  public openConfirmationDialog(id) {
     this.confirmationDialogService.confirm('Please confirm to delete', 'Do you really want to delete this post ?')
-    .then((confirmed) => console.log('User confirmed:', confirmed))
+    .then((confirmed) => {
+      if(confirmed){
+        this.employerService.deletePost(id).subscribe((data:any)=>{
+          if(data.err == 0){
+            alert(data.mes)
+            window.location.reload()
+          } else {
+            alert(data.mes)
+            return;
+          }
+        })
+      }
+    })
     .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
   }
 }

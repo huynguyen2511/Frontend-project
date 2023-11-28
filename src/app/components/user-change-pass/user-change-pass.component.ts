@@ -32,22 +32,31 @@ export class UserChangePassComponent implements OnInit{
     email: new FormControl(''),
     password: new FormControl('', Validators.required),
     newPassword: new FormControl('', Validators.minLength(6)),
-    enterAgain: new FormControl(''),
+    enterAgain: new FormControl('',Validators.required),
   }, {updateOn: 'submit'});
 
 
 
   onCreate(values){
     if(this.updatePassword.invalid){
+      alert('Please enter every fields')
       return;
     }else if(values.newPassword !== values.enterAgain){
       alert('Re-enter the new password incorrectly')
+      return;
     } else {
       delete values.enterAgain;
       console.log(values);
       this.userService.changePassword(values).subscribe((res: any) =>{
         console.log(res);
-        alert("Updated password successfully")
+        if(res.err == 0){
+          alert("Updated password successfully")
+          
+          window.location.reload()
+        }else{
+          alert(res.mes)
+        }
+        
       });
     }  
     

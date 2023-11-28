@@ -40,15 +40,17 @@ export class JobComponent implements OnInit {
       let arr = Object.values(data);
       this.jobList = arr[2];
       this.post = this.jobList.find((x) => x.id == this.postId);
+      console.log('1',this.post);
+      
     });
     this.userService.getAppliedPosts().subscribe((res: any) =>{
       this.applyCvList = res.response
       this.postCv = this.applyCvList.find((x) => x.postAppliedCv.id == this.postId)
-      console.log(this.postCv);
+      console.log('2',this.postCv);
       
-      if(typeof this.postCv != 'undefined'){
+      if(this.postCv != undefined){
         let i = this.postCv.status;
-        if(i == 'Refuse'){
+        if(i == 'Refused'){
           this.applied = 1
           console.log(this.applied);
         }else{
@@ -77,6 +79,23 @@ export class JobComponent implements OnInit {
     this.userService.applyCv(this.applyCvForm.value).subscribe((res: any)=>{
       if(res.err == 0){
         alert("CV submitted successfully");
+        window.location.reload()
+      }else{
+        alert(res.mes)
+        return
+      }
+    })
+  }
+
+  reApply() {
+    this.applyCvForm.patchValue({
+      jobPostId: this.postId,
+    });
+    console.log(this.applyCvForm);
+    
+    this.userService.reApplyCv(this.applyCvForm.value).subscribe((res: any)=>{
+      if(res.err == 0){
+        alert("CV re-submitted successfully");
         window.location.reload()
       }else{
         alert(res.mes)

@@ -9,50 +9,54 @@
         <h2>Employer Information</h2>
         <div class="form-group">
           <mat-label>Fullname</mat-label>
-          <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="name"
+          <input matInput type="text" class="form-control" placeholder="Ex. Nguyen Van D" formControlName="name"
           [class.is-invalid]="localform.submitted && employerRegisForm.get('name')?.invalid" />
           <div class="invalid-feedback">Your name is required</div>
         </div>
     
         <div class="form-group">
           <mat-label>Email</mat-label>
-          <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="email"
+          <input matInput type="text" class="form-control" placeholder="Ex. nguyenD@gmail.com" formControlName="email"
           [class.is-invalid]="localform.submitted && employerRegisForm.get('email')?.invalid" />
           <div class="invalid-feedback">Email is required</div>
         </div>
     
         <div class="form-group">
           <mat-label>Password</mat-label>
-          <input matInput type="password" class="form-control" placeholder="Ex. hehe" formControlName="password"
+          <input matInput type="password" class="form-control" placeholder="Ex. ******" formControlName="password"
           [class.is-invalid]="localform.submitted && employerRegisForm.get('password')?.invalid" />
           <div class="invalid-feedback">Password is required</div>
         </div>
     
         <div class="form-group">
           <mat-label>Gender</mat-label>
-          <select name="gender" class="form-control" formControlName="gender">
-            <option>--Select gender--</option>
+          <select name="gender" class="form-control" formControlName="gender"
+          [class.is-invalid]="localform.submitted && employerRegisForm.get('gender')?.invalid">
+            <option value="">--Select gender--</option>
             <option *ngFor="let i of genderC">
                 {{i}}
             </option>
         </select>
+        <div class="invalid-feedback">Gender is required</div>
         </div>
     
         <div class="form-group">
           <mat-label>Phone</mat-label>
-          <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="phone"
+          <input matInput type="text" class="form-control" placeholder="Ex. 0987654321" formControlName="phone"
           [class.is-invalid]="localform.submitted && employerRegisForm.get('phone')?.invalid" />
           <div class="invalid-feedback">Phone is required</div>
         </div>
     
         <div class="form-group">
           <mat-label>Job Position</mat-label>
-          <select name="jobPosition" class="form-control" formControlName="jobPosition">
-            <option>--Select job position--</option>
+          <select name="jobPosition" class="form-control" formControlName="jobPosition"
+          [class.is-invalid]="localform.submitted && employerRegisForm.get('jobPosition')?.invalid">
+            <option value="">--Select job position--</option>
             <option *ngFor="let i of jobC">
                 {{i}}
             </option>
           </select>
+          <div class="invalid-feedback">Job Position is required</div>
         </div>
       </div>
       
@@ -74,12 +78,14 @@
         
         <div class="form-group">
           <mat-label>Province</mat-label>
-          <select name="provinceCode" class="form-control" formControlName="provinceCode">
-            <option>--Select province--</option>
+          <select name="provinceCode" class="form-control" formControlName="provinceCode"
+          [class.is-invalid]="localform.submitted && employerRegisForm.get('provinceCode')?.invalid">
+            <option value="">--Select province--</option>
             <option *ngFor="let i of provinceC" value="{{i.code}}">
                 {{i.value}}
             </option>
         </select>
+        <div class="invalid-feedback">Province is required</div>
         </div>
       </div>
       <button

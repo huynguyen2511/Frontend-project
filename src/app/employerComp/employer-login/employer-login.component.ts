@@ -28,7 +28,6 @@ export class EmployerLoginComponent implements OnInit{
     }
     
     this.employerAuthService.employerLogin(this.employerLoginForm.value).subscribe((res: any) =>{
-      console.log(res);
       if (res.err == 0) {
         this.router.navigateByUrl('/dashboard/news')
       } else {

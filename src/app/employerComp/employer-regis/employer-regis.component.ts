@@ -24,12 +24,12 @@ export class EmployerRegisComponent implements OnInit {
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
-      gender: new FormControl(Validators.required),
+      gender: new FormControl('',Validators.required),
       phone: new FormControl('', Validators.required),
-      jobPosition: new FormControl(Validators.required),
+      jobPosition: new FormControl('',Validators.required),
       companyName: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
-      provinceCode: new FormControl(Validators.required),
+      provinceCode: new FormControl('',Validators.required),
     },
     { updateOn: 'submit' }
   );
@@ -38,15 +38,12 @@ export class EmployerRegisComponent implements OnInit {
 
   onCreate() {
     if (this.employerRegisForm.invalid) {
-      console.log(this.employerRegisForm.value);
       return;
     } else {
-      console.log(this.employerRegisForm.value);
       this.employerAuthService
         .employerRegister(this.employerRegisForm.value)
         .subscribe((data) => {
           if(data.err == 1){
-            console.log(data.mes);
             alert(data.mes);
           }else if(data.err == 0){
             alert('Register successful!!!');
@@ -54,9 +51,7 @@ export class EmployerRegisComponent implements OnInit {
           }else{
             alert('Register failed, please try again.');
             return;
-          }
-          
-          
+          }    
         });
     }
   }

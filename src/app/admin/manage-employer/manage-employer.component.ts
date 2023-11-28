@@ -43,6 +43,7 @@ export class ManageEmployerComponent implements OnInit{
     this.adminService.setStatus(this.setStatusForm.value).subscribe((data:any)=>{
       if(data.err == 0){
         alert(data.mes)
+        window.location.reload()
       }else{
         alert('update fail')
       }

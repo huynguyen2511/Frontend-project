@@ -29,7 +29,6 @@ export class EmployerInfoComponent implements OnInit{
       console.log(arr);
       
       this.employer = arr[0]
-      console.log(this.employer);
       
       this.employerUpdate.setValue({
         name : this.employer.name,
@@ -47,7 +46,6 @@ export class EmployerInfoComponent implements OnInit{
     if(this.employerUpdate.invalid){
       return;
     }
-    console.log(this.employerUpdate.value);
     
     this.employerService.UpdateEmployer(this.employerUpdate.value).subscribe((res: any) =>{
       console.log(res);

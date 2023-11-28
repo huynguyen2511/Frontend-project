@@ -17,7 +17,6 @@ export class AppliedCvComponent implements OnInit{
   ngOnInit(): void {
     this.empService.getAppliedCvs().subscribe((res: any) => {
       this.appliedList = res.response;
-      console.log(this.appliedList);
       
       if (
         typeof this.appliedList != 'undefined' &&
@@ -26,10 +25,8 @@ export class AppliedCvComponent implements OnInit{
         this.appliedList.length > 0
       ) {
         this.list = 1;
-        console.log(this.list);
       } else {
         this.list = 0;
-        console.log(this.list);
       }
     });
   }
@@ -39,18 +36,15 @@ export class AppliedCvComponent implements OnInit{
   });
   setStatus(status) {
     this.selected = status
-    console.log(this.selected);
     if (this.isDisabled == true) {
       this.isDisabled = false;
     }
   }
   saveStatus(id){
-    console.log(id);
     this.setStatusForm.patchValue({
       id: id,
       status: this.selected
     });
-    console.log(this.setStatusForm.value);
     this.empService.setStatus(this.setStatusForm.value).subscribe((data:any)=>{
       if(data.err == 0){
         alert(data.mes)

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { Observable, catchError, first } from 'rxjs';
 
@@ -61,5 +61,13 @@ export class EmployerService {
     let token = localStorage.getItem('Employer auth')
     let header_obj = new HttpHeaders().set("Authorization", token)
     return this.http.put<any>(this.url + "applyCv/setStatus", data, {headers:header_obj});
+  }
+
+  deletePost(postId):Observable<any>{
+    const params = new HttpParams()
+      .set('postId', postId)
+    let token = localStorage.getItem('Employer auth')
+    let header_obj = new HttpHeaders().set("Authorization", token)
+    return this.http.delete<any>(this.url + "post/deletePost", {headers:header_obj , params});
   }
 }

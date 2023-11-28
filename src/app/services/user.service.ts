@@ -56,6 +56,12 @@ export class UserService {
     return this.http.post<any>(this.url + "applyCv/createApplyCv", data, {headers:header_obj});
   }
 
+  reApplyCv(data):Observable<any>{
+    let token = localStorage.getItem('User auth')
+    let header_obj = new HttpHeaders().set("Authorization", token)
+    return this.http.put<any>(this.url + "applyCv/reapplyCv", data, {headers:header_obj});
+  }
+
   getAppliedPosts():Observable<any>{
     let token = localStorage.getItem('User auth')
     let header_obj = new HttpHeaders().set("Authorization", token)
