@@ -43,6 +43,17 @@ export class ManageCvComponent implements OnInit {
       window.location.reload();
       alert('Set main Cv successful')
     })
-    
+  }
+
+  deleteCv(id){
+    this.userService.deleteCv(id).subscribe((data:any) =>{
+      console.log(data);
+      if (data.err ==0){
+        alert('Cv deleted successful')
+        window.location.reload()
+      }else{
+        alert('Delete Cv failed')
+      }
+    })
   }
 }

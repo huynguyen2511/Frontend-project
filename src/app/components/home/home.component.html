@@ -2,8 +2,91 @@
     <app-navigation></app-navigation>
 </div>
 <div class="search">
-    <app-search-module></app-search-module>
+    <div class="search-form">
+        <form action="" [formGroup]="findForm" (ngSubmit)="onSubmit()">
+            <table>
+                <tr>
+                    <th class="th-input">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      <input type="text" class="drop-select" formControlName="position">
+                        
+                    </th>
+                    <th class="th-input">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <select name="province" class="drop-select" formControlName="province" id="province">
+                        <option value="">All location</option>
+                        <option *ngFor="let i of pro" value="{{i.code}}">
+                          {{i.value}}
+                        </option>
+                      </select>
+                    </th>
+                    <th class="th-input">
+                      <i class="fa-solid fa-graduation-cap"></i>
+                      <select name="workExperience" class="drop-select" formControlName="workExperience">
+                        <option value="">All experience</option>
+                        <option *ngFor="let i of exp" value="{{i}}">
+                          {{i}}
+                        </option>
+                      </select>
+                    </th>
+                    <th class="th-input">
+                      <i class="fa-solid fa-coins"></i>
+                      <select name="salary" class="drop-select" formControlName="salary">
+                        <option value="">All salary range</option>
+                        <option *ngFor="let i of sal" value="{{i}}">
+                          {{i}}
+                        </option>
+                      </select>
+                    </th>
+                    <th class="th-button" type="submit">
+                        <button>Find</button>
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="img">
+        <div class="inner-img"></div>
+    </div>
 </div>
 <div class="randomjob">
-    <app-random-job></app-random-job>
+    <div class="result-job-search">
+        <div class="job-body">
+          <div class="row">
+            <div class="col">
+                <h2 class="title">Latest posts</h2>
+              <table >
+                <tr *ngFor="let i of jobLists">
+                  <div class="content" [routerLink]="['/find-job/job']" [queryParams]="{id: i.id}">
+                    <div class="content-logo">
+                      <img class="logo" src="https://s3.amazonaws.com/freestock-prod/450/freestock_565622158.jpg" alt="Logo">
+                    </div>
+                    <div class="content-body">
+                      <div class="content-main">
+                        <div class="left">
+                          <span><strong>{{i.title}}</strong></span>
+                          <a [routerLink]="['/company-list/company']" [queryParams]="{id: i.companyPost.id}" class="company">{{i.companyPost.companyName}}</a>
+                        </div>
+                        <div class="right">
+                          <label for="" class="salary">{{i.salary}}</label>
+                        </div>
+                      </div>
+                      <div class="info">
+                        <div class="info-left">
+                          <label for="" class="address">{{i.address}}</label>
+                          <label for="" class="address">{{i.experience}}</label>
+                          <label for="" class="address">{{i.expired | date:'dd/MM/yyy'}}</label>
+                        </div>
+                        <div class=" info-right">
+                          <button>Apply for this job</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>

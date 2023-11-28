@@ -60,8 +60,13 @@ export class AuthService implements OnInit {
     return this.http
       .post<any>('http://localhost:5000/api/auth/register', data)
       .pipe(
-        first(),
-        catchError(this.errorHandlerService.handlerError<any>('register'))
+        tap((response) => {
+          if (response.err == 0) {
+           console.log('resgister success');
+          } else {
+            console.log('resgister failed');
+          }
+        })
       );
   }
 

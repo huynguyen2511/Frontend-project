@@ -68,4 +68,11 @@ export class UserService {
     return this.http.get<any>(this.url + 'user/searchedCompany', {params});
   }
 
+  deleteCv(cvId):Observable<any>{
+    const params = new HttpParams()
+      .set('cvId', cvId)
+    let token = localStorage.getItem('User auth')
+    let header_obj = new HttpHeaders().set("Authorization", token)
+    return this.http.delete<any>(this.url + "user/deleteCv", {headers:header_obj , params});
+  }
 }

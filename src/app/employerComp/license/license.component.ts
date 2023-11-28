@@ -17,11 +17,9 @@ export class LicenseComponent implements OnInit{
 
   // additionalFile: File = null;
   constructor(private employerService: EmployerService, private formBuilder: FormBuilder){
-    this.employerService.getLicense().subscribe(data => {
-      let arr = Object.values(data)
-      this.licenseArr = arr[2]
-      let i = this.licenseArr.statusData
-      this.status = i.value
+    this.employerService.getLicense().subscribe(data => { 
+      this.licenseArr = data.response
+      this.status = this.licenseArr.statusCode
     })
   }
 

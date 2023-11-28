@@ -19,19 +19,21 @@
     <form action="" method="POST" [formGroup]="createPostForm" #localform="ngForm" (ngSubmit)="onCreate()" class="form">
       <div class="form-group">
         <mat-label>Title</mat-label>
-        <input matInput type="text" class="form-control" placeholder="Ex. Tuyen nhan vien Abc" formControlName="title"
+        <input matInput type="text" class="form-control" placeholder="Ex. Recruit staff for ..." formControlName="title"
           [class.is-invalid]="localform.submitted && createPostForm.get('title')?.invalid" />
         <div class="invalid-feedback">Title is required</div>
       </div>
       
       <div class="form-group">
         <mat-label>Province</mat-label>
-        <select name="provinceCode" class="select" formControlName="provinceCode">
+        <select name="provinceCode" class="select" formControlName="provinceCode"
+        [class.is-invalid]="localform.submitted && createPostForm.get('provinceCode')?.invalid">
           <option value="">-- Choose where you want to find the candidate --</option>
           <option *ngFor="let i of provinceC" value="{{i.code}}">
             {{i.value}}
           </option>
         </select>
+        <div class="invalid-feedback">Province is required</div>
       </div>
   
       <div class="form-group">
@@ -44,33 +46,39 @@
           
       <div class="form-group">
         <mat-label>Form of work</mat-label>
-        <select name="category" class="select" formControlName="category">
+        <select name="category" class="select" formControlName="category"
+        [class.is-invalid]="localform.submitted && createPostForm.get('category')?.invalid">
           <option value="">-- Choose form of work --</option>
           <option *ngFor="let i of cate" value="{{i.value}}">
             {{i.value}}
           </option>
         </select>
+        <div class="invalid-feedback">Form of work is required</div>
       </div>
   
       <div class="form-group">
         <mat-label>Experience</mat-label>
-        <select name="experience" class="select" formControlName="experience">
+        <select name="experience" class="select" formControlName="experience"
+        [class.is-invalid]="localform.submitted && createPostForm.get('experience')?.invalid" >
           <option value="">-- Select the required experience for the candidate --</option>
           <option *ngFor="let i of exp" value="{{i}}">
             {{i}}
           </option>
         </select>
+        <div class="invalid-feedback">Experience is required</div>
       </div>
   
       <div class="form-group">
         <mat-label>Level required</mat-label>
-        <select name="level" class="select" formControlName="level">
+        <select name="level" class="select" formControlName="level"
+        [class.is-invalid]="localform.submitted && createPostForm.get('level')?.invalid">
           <option value="">-- Select the required level for the candidate --</option>
           <option *ngFor="let i of jobP" value="{{i}}">
             {{i}}
           </option>
           <option value="Intern">Intern</option>
         </select>
+        <div class="invalid-feedback">Level required is required</div>
       </div>
   
       <div class="form-group">
@@ -82,17 +90,20 @@
   
       <div class="form-group">
         <mat-label>Gender</mat-label>
-        <select name="gender" class="select" formControlName="gender">
+        <select name="gender" class="select" formControlName="gender"
+        [class.is-invalid]="localform.submitted && createPostForm.get('gender')?.invalid">
           <option value="">-- Select the required gender for the candidate --</option>
           <option *ngFor="let i of genderC" value="{{i}}">
             {{i}}
           </option>
         </select>
+        <div class="invalid-feedback">Gender is required</div>
       </div>
   
       <div class="form-group">
         <mat-label>Salary</mat-label>
-        <select name="gender" class="select" formControlName="salary" [class.is-invalid]="localform.submitted && createPostForm.get('salary')?.invalid">
+        <select name="gender" class="select" formControlName="salary" 
+        [class.is-invalid]="localform.submitted && createPostForm.get('salary')?.invalid">
           <option value="">-- Select salary range --</option>
           <option *ngFor="let i of salary" value="{{i}}">
             {{i}}
@@ -104,7 +115,7 @@
       <div class="form-group">
         <mat-label>Benefits</mat-label>
         <textarea matInput type="text" class="form-control" formControlName="benefits" cols="30" rows="5"
-        [class.is-invalid]="localform.submitted && createPostForm.get('benefits')?.invalid"></textarea>
+        [class.is-invalid]="localform.submitted && createPostForm.get('benefits')?.invalid" placeholder="- The job benefit is ..."></textarea>
         <div class="invalid-feedback">Benefits is required</div>
       </div>
    
@@ -114,7 +125,7 @@
         [class.is-invalid]="localform.submitted && createPostForm.get('requirements')?.invalid" /> -->
         <textarea matInput type="text" class="form-control" formControlName="requirements" cols="30" rows="5"
         [class.is-invalid]="localform.submitted && createPostForm.get('requirements')?.invalid"
-        ></textarea>
+        placeholder="- The job requirement is ..."></textarea>
         <div class="invalid-feedback">Requirements is required</div>
       </div>
   
@@ -122,7 +133,7 @@
         <mat-label>Description</mat-label>
         <!-- <input matInput type="text" class="form-control" placeholder="Ex. hehe" formControlName="description"/> -->
         <textarea matInput type="text" class="form-control" formControlName="description" cols="30" rows="5"
-        ></textarea>
+        placeholder="- The job is ..."></textarea>
       </div>
           
       <button

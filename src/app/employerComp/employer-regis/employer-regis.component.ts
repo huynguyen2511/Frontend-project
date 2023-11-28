@@ -45,9 +45,18 @@ export class EmployerRegisComponent implements OnInit {
       this.employerAuthService
         .employerRegister(this.employerRegisForm.value)
         .subscribe((data) => {
-          console.log(data);
-          alert('Register successful!!!');
-          this.router.navigateByUrl('/employerlogin');
+          if(data.err == 1){
+            console.log(data.mes);
+            alert(data.mes);
+          }else if(data.err == 0){
+            alert('Register successful!!!');
+            this.router.navigateByUrl('/employerlogin');
+          }else{
+            alert('Register failed, please try again.');
+            return;
+          }
+          
+          
         });
     }
   }
